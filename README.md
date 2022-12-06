@@ -1,8 +1,6 @@
 # EXE
 useful applications
 
-##
-geek uninstaller
+## geek uninstaller
 
-##
-Losslesscut
+## Losslesscut
