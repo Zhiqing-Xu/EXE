@@ -1,5 +1,5 @@
 # EXE
-useful applications
+A list of useful applications
 
 ## geek uninstaller
 
