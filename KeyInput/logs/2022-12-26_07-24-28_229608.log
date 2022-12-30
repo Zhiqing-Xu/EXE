@@ -1,0 +1,55 @@
+2022-12-26 07:24:28.250 | INFO     | UIFunc:__init__:82 - assets root:C:\Users\cesiu\AppData\Local\Temp\_MEI131842\assets
+2022-12-26 07:24:37.684 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:24:37.685 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Desktop\EXE\KeyInput\scripts\doomsday2.txt
+2022-12-26 07:24:37.685 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:24:37.686 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:24:43.120 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:24:57.419 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:24:57.420 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Desktop\EXE\KeyInput\scripts\doomsday2.txt
+2022-12-26 07:24:57.420 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:24:57.421 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:24:57.426 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:24:59.810 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:24:59.812 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Desktop\EXE\KeyInput\scripts\doomsday2.txt
+2022-12-26 07:24:59.812 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:24:59.813 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:24:59.817 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:25:02.843 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:25:02.844 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Desktop\EXE\KeyInput\scripts\doomsday2.txt
+2022-12-26 07:25:02.844 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:25:02.845 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:25:02.849 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:25:03.523 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:25:03.524 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Desktop\EXE\KeyInput\scripts\doomsday2.txt
+2022-12-26 07:25:03.524 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:25:03.525 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:25:03.529 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:25:04.131 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:25:04.132 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Desktop\EXE\KeyInput\scripts\doomsday2.txt
+2022-12-26 07:25:04.132 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:25:04.133 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:25:04.244 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:25:04.645 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:25:04.646 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Desktop\EXE\KeyInput\scripts\doomsday2.txt
+2022-12-26 07:25:04.646 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:25:04.648 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:25:04.867 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:25:04.870 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:25:04.936 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:25:04.937 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Desktop\EXE\KeyInput\scripts\doomsday2.txt
+2022-12-26 07:25:04.938 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:25:04.939 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:25:04.954 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:25:04.955 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:25:04.956 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Desktop\EXE\KeyInput\scripts\doomsday2.txt
+2022-12-26 07:25:04.956 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:25:04.957 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:25:04.961 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:25:05.025 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:25:05.043 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:25:05.061 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:25:05.062 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Desktop\EXE\KeyInput\scripts\doomsday2.txt
+2022-12-26 07:25:05.063 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:25:05.064 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:25:05.210 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:25:05.210 | INFO     | UIFunc:run:563 - Script run finish

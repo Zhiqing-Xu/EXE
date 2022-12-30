@@ -1,0 +1,119 @@
+2022-12-26 07:11:04.752 | INFO     | UIFunc:__init__:82 - assets root:C:\Users\cesiu\AppData\Local\Temp\_MEI46722\assets
+2022-12-26 07:14:00.984 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:14:00.984 | INFO     | UIFunc:recordMethod:426 - Record start
+2022-12-26 07:14:22.703 | INFO     | UIFunc:recordMethod:405 - Record stop
+2022-12-26 07:14:22.704 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\1226_0714.txt
+2022-12-26 07:14:22.704 | INFO     | UIFunc:hotkeymethod:228 - Record stop
+2022-12-26 07:15:58.045 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:15:58.045 | INFO     | UIFunc:recordMethod:426 - Record start
+2022-12-26 07:16:12.820 | INFO     | UIFunc:recordMethod:405 - Record stop
+2022-12-26 07:16:12.820 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\1226_0716.txt
+2022-12-26 07:16:12.821 | INFO     | UIFunc:hotkeymethod:228 - Record stop
+2022-12-26 07:17:53.049 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:17:53.049 | INFO     | UIFunc:recordMethod:426 - Record start
+2022-12-26 07:18:02.559 | INFO     | UIFunc:recordMethod:405 - Record stop
+2022-12-26 07:18:02.560 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\1226_0718.txt
+2022-12-26 07:18:02.561 | INFO     | UIFunc:hotkeymethod:228 - Record stop
+2022-12-26 07:19:27.685 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:19:27.686 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:19:27.686 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:19:27.688 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:19:33.120 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:19:39.148 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:19:39.150 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:19:39.151 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:19:39.152 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:19:39.158 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:19:43.293 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:19:43.294 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:19:43.294 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:19:43.295 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:19:43.300 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:19:48.508 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:19:48.509 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:19:48.510 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:19:48.511 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:19:48.515 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:19:50.004 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:19:50.005 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:19:50.006 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:19:50.007 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:19:50.013 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:19:51.125 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:19:51.126 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:19:51.126 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:19:51.127 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:19:51.130 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:20:09.589 | INFO     | UIFunc:OnBtrunButton:444 - Script start
+2022-12-26 07:20:09.591 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:20:09.591 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:20:09.593 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:20:15.034 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:20:34.715 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:20:34.717 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:20:34.717 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:20:34.718 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:20:34.723 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:20:35.467 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:20:35.468 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:20:35.468 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:20:35.470 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:20:35.474 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:20:36.259 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:20:36.261 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:20:36.261 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:20:36.262 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:20:36.268 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:20:36.947 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:20:36.950 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:20:36.950 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:20:36.951 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:20:36.955 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:20:37.563 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:20:37.565 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:20:37.565 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:20:37.566 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:20:38.043 | INFO     | UIFunc:hotkeymethod:214 - Script pause
+2022-12-26 07:20:53.450 | INFO     | UIFunc:hotkeymethod:209 - Script resume
+2022-12-26 07:20:55.522 | INFO     | UIFunc:hotkeymethod:214 - Script pause
+2022-12-26 07:20:55.633 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:20:57.186 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:20:57.187 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:20:57.187 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:20:57.189 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:20:57.192 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:20:58.186 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:20:58.187 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:20:58.188 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:20:58.189 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:20:58.193 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:20:58.914 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:20:58.915 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:20:58.916 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:20:58.917 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:20:58.921 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:21:00.410 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:21:00.412 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:21:00.412 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:21:00.413 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:21:00.417 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:21:01.010 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:21:01.012 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:21:01.012 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:21:01.013 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:21:01.120 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:21:01.538 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:21:01.539 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:21:01.540 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:21:01.541 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:21:01.729 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:21:02.106 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:21:02.108 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:21:02.108 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:21:02.109 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:21:02.337 | INFO     | UIFunc:run:563 - Script run finish
+2022-12-26 07:21:03.154 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:21:03.156 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Downloads\scripts\doomsday2.txt
+2022-12-26 07:21:03.156 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:21:03.157 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:21:08.595 | INFO     | UIFunc:run:563 - Script run finish

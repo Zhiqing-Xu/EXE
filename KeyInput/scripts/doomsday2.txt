@@ -1,0 +1,8 @@
+[
+ [3231,"EK","key down",[32,"Space",0]],
+ [73,"EK","key down",[39,"Right",1]],
+ [23,"EK","key up",[32,"Space",0]],
+ [73,"EK","key up",[39,"Right",1]],
+ [1823,"EK","key down",[13,"Return",0]],
+ [120,"EK","key up",[13,"Return",0]]
+]

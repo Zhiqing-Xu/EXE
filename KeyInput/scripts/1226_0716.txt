@@ -1,0 +1,19 @@
+[
+ [1103,"EM","mouse move",[3048,575]],
+ [200,"EM","mouse move",[1215,752]],
+ [200,"EM","mouse move",[1161,673]],
+ [201,"EM","mouse move",[1880,804]],
+ [218,"EM","mouse move",[2232,827]],
+ [1438,"EK","key down",[32,"Space",0]],
+ [112,"EK","key up",[32,"Space",0]],
+ [40,"EK","key down",[39,"Right",1]],
+ [105,"EK","key up",[39,"Right",1]],
+ [1496,"EK","key down",[13,"Return",0]],
+ [103,"EK","key up",[13,"Return",0]],
+ [3391,"EM","mouse move",[2302,827]],
+ [450,"EM","mouse move",[2295,918]],
+ [200,"EM","mouse move",[2280,890]],
+ [347,"EM","mouse move",[2275,888]],
+ [217,"EM","mouse move",[2287,858]],
+ [200,"EM","mouse move",[2292,849]]
+]

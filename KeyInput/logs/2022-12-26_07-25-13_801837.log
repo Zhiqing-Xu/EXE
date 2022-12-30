@@ -1,0 +1,6 @@
+2022-12-26 07:25:13.817 | INFO     | UIFunc:__init__:82 - assets root:C:\Users\cesiu\AppData\Local\Temp\_MEI87002\assets
+2022-12-26 07:25:49.177 | INFO     | UIFunc:hotkeymethod:201 - Script start
+2022-12-26 07:25:49.179 | INFO     | UIFunc:get_script_path:354 - Script path: C:\Users\cesiu\Desktop\EXE\KeyInput\scripts\doomsday2.txt
+2022-12-26 07:25:49.179 | INFO     | UIFunc:run:512 - doomsday2.txt running..
+2022-12-26 07:25:49.180 | INFO     | UIFunc:getextension:589 - Load plugin class <class 'Extension.Extension'> in module Extension
+2022-12-26 07:25:54.600 | INFO     | UIFunc:run:563 - Script run finish
