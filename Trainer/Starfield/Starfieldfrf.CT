@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="45">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"Help + Updates"</Description>
+      <Color>0000FF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{$LUA}
+  if syntaxcheck then return end
+  [ENABLE]
+
+--Updated table! (Start)
+    --messageDialog('Enable Dark Mode?', mtInformation,mbYes,mbNo)
+    if messageDialog("Updated table available!\r\n\r\nYou will need Mod Engine to get more cheats and the new updated table\r\n\r\nDownload Mod Engine?", mtConfirmation, mbYes, mbNo) ==mrYes then
+       shellExecute("https://modengine.net")
+    else
+    end
+--Updated table! (End)
+  [DISABLE]
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"No Injury Status"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(insjirg,Starfield.exe,48 83 EC * C5 F8 29 * * * C5 F8 28 F0 E8 * * * * * 8D * * * * * * 89 * 24) // should be unique
+insjirg:
+  db C3
+registersymbol(insjirg)
+
+[DISABLE]
+insjirg:
+  db 48
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"Infinite Oxygen"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(oxygensigg,Starfield.exe,74 06 C5 F8 28 DA EB * C5 E8 * * * * * * FF 50) // should be unique
+oxygensigg:
+  db 66 90
+registersymbol(oxygensigg)
+
+[DISABLE]
+oxygensigg:
+  db 74 06
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"Infinite Ammo"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(amoyy,Starfield.exe,0F 84 * * 00 00 * 85 * 0F 8E * * 00 00 80 * * 31 0F 85 * * 00 00) // should be unique
+amoyy:
+  db 90 E9
+registersymbol(amoyy)
+
+[DISABLE]
+amoyy:
+  db 0F 84
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>3</ID>
+      <Description>"No Reload"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(norloeady,Starfield.exe,44 8B CD 44 8B C3 * 8B * * 8B * E8 * * * * 8B * * 8D * * * E8) // should be unique
+norloeady:
+  db 45 31 C9 44 8B C3
+registersymbol(norloeady)
+
+[DISABLE]
+norloeady:
+  db 44 8B CD 44 8B C3
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>4</ID>
+      <Description>"Infinite Weapon Energy"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(weapnenergy,Starfield.exe,C5 FA 10 47 20 C5 FA 58 * * * * * * * * * * * E8 * * * * C5) // should be unique
+alloc(newmem,$1000,weapnenergy)
+label(code)
+label(return)
+
+newmem:
+  mov [rdi+20],(float)1
+code:
+  vmovss xmm0,[rdi+20]
+  jmp return
+
+weapnenergy:
+  jmp newmem
+return:
+registersymbol(weapnenergy)
+
+[DISABLE]
+
+weapnenergy:
+  db C5 FA 10 47 20
+dealloc(newmem)
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>12</ID>
+      <Description>"Edit Skills"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+
+aobscanmodule(skillpts,Starfield.exe,8B 88 20 0F 00 00) // should be unique
+alloc(newmem,$1000,skillpts)
+
+label(code)
+label(return)
+label(skillptr)
+registersymbol(skillptr)
+newmem:
+mov ecx,[skillptr]
+mov [rax+00000F20], ecx
+code:
+// mov ecx,[rax+00000F20]
+  jmp return
+
+skillptr:
+dd 0
+
+skillpts:
+  jmp newmem
+  nop
+return:
+registersymbol(skillpts)
+
+[DISABLE]
+
+skillpts:
+  db 8B 88 20 0F 00 00
+
+unregistersymbol(skillpts)
+dealloc(newmem)
+
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>15</ID>
+          <Description>"Skill Points"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>skillptr</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>13</ID>
+      <Description>"Edit Credits"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+
+aobscanmodule(credotss,Starfield.exe,03 48 08 48 83 C0 10 EB F2 49 8B 04) // should be unique
+alloc(newmem,$1000,credotss)
+
+label(code)
+label(return)
+label(creditptr)
+registersymbol(creditptr)
+newmem:
+push rbx
+mov rbx, [creditptr]
+mov [rax+08], rbx
+pop rbx
+code:
+  add ecx,[rax+08]
+  add rax,10
+  jmp return
+
+creditptr:
+dd 0
+
+credotss:
+  jmp newmem
+  nop 2
+return:
+registersymbol(credotss)
+
+[DISABLE]
+
+credotss:
+  db 03 48 08 48 83 C0 10
+
+unregistersymbol(credotss)
+dealloc(newmem)
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>14</ID>
+          <Description>"Credits"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>creditptr</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>16</ID>
+      <Description>"Get Player"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(playercharsignature,Starfield.exe,F6 80 * * 00 00 08 74 * * 32 * * * * * * * FF 90 * * 00 00) // should be unique
+alloc(newmem,$1000,playercharsignature)
+label(code)
+label(return)
+label(playarstruct)
+registersymbol(playarstruct)
+
+newmem:
+  mov [playarstruct],rax
+code:
+  test byte ptr [rax+10E2],08
+  jmp return
+
+playarstruct:
+dq 0
+
+playercharsignature:
+  jmp newmem
+  nop 2
+return:
+registersymbol(playercharsignature)
+
+[DISABLE]
+
+playercharsignature:
+  db F6 80 e2 10 00 00 08
+dealloc(newmem)
+
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>17</ID>
+          <Description>"No Damage"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(dmgsignatre,Starfield.exe,4C 39 A1 60 02 00 00 0F 84 * * 00 00 E8 * * * * * 8B * * * 00 00 * 81) // should be unique
+alloc(newmem,$1000,dmgsignatre)
+label(code)
+label(return)
+
+newmem:
+  push rax
+  mov rax,playarstruct
+  cmp [rax],rcx
+  pop rax
+  je avoidme
+code:
+  cmp [rcx+260],r12
+avoidme:
+  jmp return
+
+dmgsignatre:
+  jmp newmem
+  nop 2
+return:
+registersymbol(dmgsignatre)
+
+[DISABLE]
+
+dmgsignatre:
+  db 4C 39 A1 60 02 00 00
+dealloc(newmem)
+
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <LuaScript>--Updated table! (Start)
+    --messageDialog('Enable Dark Mode?', mtInformation,mbYes,mbNo)
+    if messageDialog("Updated table available!\r\n\r\nYou will need Mod Engine to get more cheats and the new updated table\r\n\r\nDownload Mod Engine?", mtConfirmation, mbYes, mbNo) ==mrYes then
+       shellExecute("https://modengine.net")
+    else
+    end
+--Updated table! (End)
+
+
+
+</LuaScript>
+</CheatTable>

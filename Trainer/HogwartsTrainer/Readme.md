@@ -1,0 +1,1 @@
+Put the extracted file to Hogwarts Legacy\Phoenix\Content\Paks\~mods (create the ~mods folder if you don't have it)
