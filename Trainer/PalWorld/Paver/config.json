@@ -1,0 +1,25 @@
+{
+  "gameSaveDirectoryPath": "D:/PalWorld_2/steamapps/common/PalServer/Pal/Saved/SaveGames/0/1E65792E4B9305155AB9C0AAD72FE9B6",
+  "skipSavJsonConversion": false,
+  "changesToMake": {
+    "enableGuardrails": true,
+    "world"           : {},
+    "players"         : [
+      {
+        "handle": "Fujiji233_8"    , 
+        "level"              : 26  , 
+        "techPoints"         : 200 , 
+        "ancientTechPoints"  : 100 , 
+        "countEffigiesFound" : 100 , 
+        "unusedStatusPoint"  : 0   , 
+        "statusPoints": {
+          "maxHp"     : 100   , 
+          "attack"    : 50    , 
+          "weight"    : 5000  , 
+          "catchRate" : 200   , 
+          "workSpeed" : 200
+        }
+      }
+    ]
+  }
+}

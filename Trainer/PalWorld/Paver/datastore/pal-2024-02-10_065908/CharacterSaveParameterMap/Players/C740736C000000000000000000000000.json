@@ -1,0 +1,430 @@
+{
+  "key": {
+    "PlayerUId": {
+      "struct_type": "Guid",
+      "struct_id": "00000000-0000-0000-0000-000000000000",
+      "id": null,
+      "value": "c740736c-0000-0000-0000-000000000000",
+      "type": "StructProperty"
+    },
+    "InstanceId": {
+      "struct_type": "Guid",
+      "struct_id": "00000000-0000-0000-0000-000000000000",
+      "id": null,
+      "value": "e023c782-467a-71cd-afeb-38b409377dc2",
+      "type": "StructProperty"
+    },
+    "DebugName": {
+      "id": null,
+      "value": "",
+      "type": "StrProperty"
+    }
+  },
+  "value": {
+    "RawData": {
+      "array_type": "ByteProperty",
+      "id": null,
+      "value": {
+        "object": {
+          "SaveParameter": {
+            "struct_type": "PalIndividualCharacterSaveParameter",
+            "struct_id": "00000000-0000-0000-0000-000000000000",
+            "id": null,
+            "value": {
+              "Level": {
+                "id": null,
+                "value": 50,
+                "type": "IntProperty"
+              },
+              "Exp": {
+                "id": null,
+                "value": 10700000,
+                "type": "IntProperty"
+              },
+              "NickName": {
+                "id": null,
+                "value": "Fujiji233_9",
+                "type": "StrProperty"
+              },
+              "HP": {
+                "struct_type": "FixedPoint64",
+                "struct_id": "00000000-0000-0000-0000-000000000000",
+                "id": null,
+                "value": {
+                  "Value": {
+                    "id": null,
+                    "value": 500000,
+                    "type": "Int64Property"
+                  }
+                },
+                "type": "StructProperty"
+              },
+              "FullStomach": {
+                "id": null,
+                "value": 65.46559143066406,
+                "type": "FloatProperty"
+              },
+              "IsPlayer": {
+                "value": true,
+                "id": null,
+                "type": "BoolProperty"
+              },
+              "MaxHP": {
+                "struct_type": "FixedPoint64",
+                "struct_id": "00000000-0000-0000-0000-000000000000",
+                "id": null,
+                "value": {
+                  "Value": {
+                    "id": null,
+                    "value": 500000,
+                    "type": "Int64Property"
+                  }
+                },
+                "type": "StructProperty"
+              },
+              "Support": {
+                "id": null,
+                "value": 100,
+                "type": "IntProperty"
+              },
+              "CraftSpeed": {
+                "id": null,
+                "value": 100,
+                "type": "IntProperty"
+              },
+              "CraftSpeeds": {
+                "array_type": "StructProperty",
+                "id": null,
+                "value": {
+                  "prop_name": "CraftSpeeds",
+                  "prop_type": "StructProperty",
+                  "values": [
+                    {
+                      "WorkSuitability": {
+                        "id": null,
+                        "value": {
+                          "type": "EPalWorkSuitability",
+                          "value": "EPalWorkSuitability::EmitFlame"
+                        },
+                        "type": "EnumProperty"
+                      },
+                      "Rank": {
+                        "id": null,
+                        "value": 5,
+                        "type": "IntProperty"
+                      }
+                    },
+                    {
+                      "WorkSuitability": {
+                        "id": null,
+                        "value": {
+                          "type": "EPalWorkSuitability",
+                          "value": "EPalWorkSuitability::Watering"
+                        },
+                        "type": "EnumProperty"
+                      },
+                      "Rank": {
+                        "id": null,
+                        "value": 5,
+                        "type": "IntProperty"
+                      }
+                    },
+                    {
+                      "WorkSuitability": {
+                        "id": null,
+                        "value": {
+                          "type": "EPalWorkSuitability",
+                          "value": "EPalWorkSuitability::Seeding"
+                        },
+                        "type": "EnumProperty"
+                      },
+                      "Rank": {
+                        "id": null,
+                        "value": 5,
+                        "type": "IntProperty"
+                      }
+                    },
+                    {
+                      "WorkSuitability": {
+                        "id": null,
+                        "value": {
+                          "type": "EPalWorkSuitability",
+                          "value": "EPalWorkSuitability::GenerateElectricity"
+                        },
+                        "type": "EnumProperty"
+                      },
+                      "Rank": {
+                        "id": null,
+                        "value": 5,
+                        "type": "IntProperty"
+                      }
+                    },
+                    {
+                      "WorkSuitability": {
+                        "id": null,
+                        "value": {
+                          "type": "EPalWorkSuitability",
+                          "value": "EPalWorkSuitability::Handcraft"
+                        },
+                        "type": "EnumProperty"
+                      },
+                      "Rank": {
+                        "id": null,
+                        "value": 5,
+                        "type": "IntProperty"
+                      }
+                    },
+                    {
+                      "WorkSuitability": {
+                        "id": null,
+                        "value": {
+                          "type": "EPalWorkSuitability",
+                          "value": "EPalWorkSuitability::Collection"
+                        },
+                        "type": "EnumProperty"
+                      },
+                      "Rank": {
+                        "id": null,
+                        "value": 5,
+                        "type": "IntProperty"
+                      }
+                    },
+                    {
+                      "WorkSuitability": {
+                        "id": null,
+                        "value": {
+                          "type": "EPalWorkSuitability",
+                          "value": "EPalWorkSuitability::Deforest"
+                        },
+                        "type": "EnumProperty"
+                      },
+                      "Rank": {
+                        "id": null,
+                        "value": 5,
+                        "type": "IntProperty"
+                      }
+                    },
+                    {
+                      "WorkSuitability": {
+                        "id": null,
+                        "value": {
+                          "type": "EPalWorkSuitability",
+                          "value": "EPalWorkSuitability::Mining"
+                        },
+                        "type": "EnumProperty"
+                      },
+                      "Rank": {
+                        "id": null,
+                        "value": 5,
+                        "type": "IntProperty"
+                      }
+                    },
+                    {
+                      "WorkSuitability": {
+                        "id": null,
+                        "value": {
+                          "type": "EPalWorkSuitability",
+                          "value": "EPalWorkSuitability::OilExtraction"
+                        },
+                        "type": "EnumProperty"
+                      },
+                      "Rank": {
+                        "id": null,
+                        "value": 5,
+                        "type": "IntProperty"
+                      }
+                    },
+                    {
+                      "WorkSuitability": {
+                        "id": null,
+                        "value": {
+                          "type": "EPalWorkSuitability",
+                          "value": "EPalWorkSuitability::ProductMedicine"
+                        },
+                        "type": "EnumProperty"
+                      },
+                      "Rank": {
+                        "id": null,
+                        "value": 5,
+                        "type": "IntProperty"
+                      }
+                    },
+                    {
+                      "WorkSuitability": {
+                        "id": null,
+                        "value": {
+                          "type": "EPalWorkSuitability",
+                          "value": "EPalWorkSuitability::Cool"
+                        },
+                        "type": "EnumProperty"
+                      },
+                      "Rank": {
+                        "id": null,
+                        "value": 5,
+                        "type": "IntProperty"
+                      }
+                    },
+                    {
+                      "WorkSuitability": {
+                        "id": null,
+                        "value": {
+                          "type": "EPalWorkSuitability",
+                          "value": "EPalWorkSuitability::Transport"
+                        },
+                        "type": "EnumProperty"
+                      },
+                      "Rank": {
+                        "id": null,
+                        "value": 5,
+                        "type": "IntProperty"
+                      }
+                    },
+                    {
+                      "WorkSuitability": {
+                        "id": null,
+                        "value": {
+                          "type": "EPalWorkSuitability",
+                          "value": "EPalWorkSuitability::MonsterFarm"
+                        },
+                        "type": "EnumProperty"
+                      },
+                      "Rank": {
+                        "id": null,
+                        "value": 5,
+                        "type": "IntProperty"
+                      }
+                    }
+                  ],
+                  "type_name": "PalWorkSuitabilityInfo",
+                  "id": "00000000-0000-0000-0000-000000000000"
+                },
+                "type": "ArrayProperty"
+              },
+              "SanityValue": {
+                "id": null,
+                "value": 64.03999328613281,
+                "type": "FloatProperty"
+              },
+              "UnusedStatusPoint": {
+                "id": null,
+                "value": 12,
+                "type": "IntProperty"
+              },
+              "GotStatusPointList": {
+                "array_type": "StructProperty",
+                "id": null,
+                "value": {
+                  "prop_name": "GotStatusPointList",
+                  "prop_type": "StructProperty",
+                  "values": [
+                    {
+                      "StatusName": {
+                        "id": null,
+                        "value": "最大HP",
+                        "type": "NameProperty"
+                      },
+                      "StatusPoint": {
+                        "id": null,
+                        "value": 0,
+                        "type": "IntProperty"
+                      }
+                    },
+                    {
+                      "StatusName": {
+                        "id": null,
+                        "value": "最大SP",
+                        "type": "NameProperty"
+                      },
+                      "StatusPoint": {
+                        "id": null,
+                        "value": 0,
+                        "type": "IntProperty"
+                      }
+                    },
+                    {
+                      "StatusName": {
+                        "id": null,
+                        "value": "攻撃力",
+                        "type": "NameProperty"
+                      },
+                      "StatusPoint": {
+                        "id": null,
+                        "value": 0,
+                        "type": "IntProperty"
+                      }
+                    },
+                    {
+                      "StatusName": {
+                        "id": null,
+                        "value": "所持重量",
+                        "type": "NameProperty"
+                      },
+                      "StatusPoint": {
+                        "id": null,
+                        "value": 37,
+                        "type": "IntProperty"
+                      }
+                    },
+                    {
+                      "StatusName": {
+                        "id": null,
+                        "value": "捕獲率",
+                        "type": "NameProperty"
+                      },
+                      "StatusPoint": {
+                        "id": null,
+                        "value": 0,
+                        "type": "IntProperty"
+                      }
+                    },
+                    {
+                      "StatusName": {
+                        "id": null,
+                        "value": "作業速度",
+                        "type": "NameProperty"
+                      },
+                      "StatusPoint": {
+                        "id": null,
+                        "value": 0,
+                        "type": "IntProperty"
+                      }
+                    }
+                  ],
+                  "type_name": "PalGotStatusPoint",
+                  "id": "00000000-0000-0000-0000-000000000000"
+                },
+                "type": "ArrayProperty"
+              },
+              "LastJumpedLocation": {
+                "struct_type": "Vector",
+                "struct_id": "00000000-0000-0000-0000-000000000000",
+                "id": null,
+                "value": {
+                  "x": -187070.54775006822,
+                  "y": 387772.4529389389,
+                  "z": 3344.328041327196
+                },
+                "type": "StructProperty"
+              },
+              "VoiceID": {
+                "id": null,
+                "value": 6,
+                "type": "IntProperty"
+              }
+            },
+            "type": "StructProperty"
+          }
+        },
+        "unknown_bytes": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "group_id": "86c7e5c9-4361-68f2-81c7-069eede0f1d9"
+      },
+      "type": "ArrayProperty",
+      "custom_type": ".worldSaveData.CharacterSaveParameterMap.Value.RawData"
+    }
+  }
+}

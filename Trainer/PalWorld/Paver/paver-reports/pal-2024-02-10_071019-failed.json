@@ -1,0 +1,518 @@
+{
+  "summary": {
+    "about-summary": "This is just general information about your primary world save, and some aggregate stats. If there's anything else in particular you'd like to see here or throughout the report, please let me know!",
+    "need-help-or-have-questions": "If you need help or have questions, please reach out to me on Discord (https://discord.gg/Zy3h6p7pA9) or open an issue on GitHub. I'm happy to help!",
+    "paver": {
+      "runtimeStartedAt": "pal-2024-02-10_071019",
+      "runtimeCompletedAt": "2024-02-10T12:10:25.804Z"
+    },
+    "pythonVersion": "Python 3.9.12",
+    "configLocation": "./config.json",
+    "targetGameDirectory": "D:/PalWorld_2/steamapps/common/PalServer/Pal/Saved/SaveGames/0/1E65792E4B9305155AB9C0AAD72FE9B6",
+    "conversionSettings": {
+      "skipSavJsonConversion": false,
+      "cheahjsSaveToolsUrl": "https://github.com/cheahjs/palworld-save-tools/releases/download/v0.18.0/palworld-save-tools-windows-v0.18.0.zip",
+      "cheahjsSaveToolsInstallPath": "./helpers/cheahjs-save-tools"
+    },
+    "levelSavJsonSizeInMB": 10.890022277832031,
+    "levelSavJsonDatastorePath": "./datastore/pal-2024-02-10_071019"
+  },
+  "criticalErrors": [],
+  "warnings": [],
+  "changelog": [
+    {
+      "entity": "player",
+      "entityId": "A49A76D5000000000000000000000000",
+      "file": "Level.sav",
+      "field": "handle",
+      "keyInFile": "NickName.value",
+      "newValue": "Fujiji233_8",
+      "validationPassed": true,
+      "oldValue": "Fujiji233_8"
+    },
+    {
+      "entity": "player",
+      "entityId": "A49A76D5000000000000000000000000",
+      "file": "Level.sav",
+      "field": "maxHp",
+      "keyInFile": "MaxHP.value.Value.value",
+      "newValue": 10500000,
+      "notes": "maxHp should be the base amount (100) plus (status points * 100). This field was modified because this player's \"statusPoints.maxHp\" was updated.",
+      "oldValue": 10500000,
+      "validationPassed": true
+    },
+    {
+      "entity": "player",
+      "entityId": "A49A76D5000000000000000000000000",
+      "file": "Level.sav",
+      "field": "maxHp",
+      "keyInFile": "GotStatusPointList.value.values",
+      "newValue": 100,
+      "validationPassed": true,
+      "oldValue": 100
+    },
+    {
+      "entity": "player",
+      "entityId": "A49A76D5000000000000000000000000",
+      "file": "Level.sav",
+      "field": "maxSp",
+      "keyInFile": "MaxSP.value.Value.value",
+      "newValue": 1100,
+      "notes": "maxSp should be the base amount (100) plus (status points * 10). This field was modified because this player's \"statusPoints.maxSp\" was updated.",
+      "oldValue": "Not Set",
+      "validationPassed": true
+    },
+    {
+      "entity": "player",
+      "entityId": "A49A76D5000000000000000000000000",
+      "file": "Level.sav",
+      "field": "maxSp",
+      "keyInFile": "GotStatusPointList.value.values",
+      "newValue": 100,
+      "validationPassed": true,
+      "oldValue": "Not Set"
+    },
+    {
+      "entity": "player",
+      "entityId": "A49A76D5000000000000000000000000",
+      "file": "Level.sav",
+      "field": "attack",
+      "keyInFile": "GotStatusPointList.value.values",
+      "newValue": 10,
+      "validationPassed": true,
+      "oldValue": "Not Set"
+    },
+    {
+      "entity": "player",
+      "entityId": "A49A76D5000000000000000000000000",
+      "file": "Level.sav",
+      "field": "weight",
+      "keyInFile": "GotStatusPointList.value.values",
+      "newValue": 2000,
+      "validationPassed": true,
+      "oldValue": "Not Set"
+    },
+    {
+      "entity": "player",
+      "entityId": "A49A76D5000000000000000000000000",
+      "file": "Level.sav",
+      "field": "workSpeed",
+      "keyInFile": "CraftSpeed.value",
+      "newValue": 5100,
+      "notes": "Work speed should be the base amount (100) plus (status points * 50). This field was modified because this player's \"statusPoints.workSpeed\" was updated.",
+      "oldValue": 100,
+      "validationPassed": true
+    },
+    {
+      "entity": "player",
+      "entityId": "A49A76D5000000000000000000000000",
+      "file": "Level.sav",
+      "field": "workSpeed",
+      "keyInFile": "GotStatusPointList.value.values",
+      "newValue": 100,
+      "validationPassed": true,
+      "oldValue": "Not Set"
+    }
+  ],
+  "playerData": {
+    "about-playerData": "This is where we'll store some general player data, and any applicable notes/warnings we find over time. If there's anything else in particular you'd like to see here or throughout the report, please let me know!",
+    "A49A76D5000000000000000000000000": {
+      "didPaverAttemptLevelSavChanges": true,
+      "NickName": {
+        "id": null,
+        "value": "Fujiji233_8",
+        "type": "StrProperty"
+      },
+      "HP": {
+        "struct_type": "FixedPoint64",
+        "struct_id": "00000000-0000-0000-0000-000000000000",
+        "id": null,
+        "value": {
+          "Value": {
+            "id": null,
+            "value": 500000,
+            "type": "Int64Property"
+          }
+        },
+        "type": "StructProperty"
+      },
+      "FullStomach": {
+        "id": null,
+        "value": 99.31002807617188,
+        "type": "FloatProperty"
+      },
+      "IsPlayer": {
+        "value": true,
+        "id": null,
+        "type": "BoolProperty"
+      },
+      "MaxHP": {
+        "struct_type": "FixedPoint64",
+        "struct_id": "00000000-0000-0000-0000-000000000000",
+        "id": null,
+        "value": {
+          "Value": {
+            "id": null,
+            "value": 10500000,
+            "type": "Int64Property"
+          }
+        },
+        "type": "StructProperty"
+      },
+      "Support": {
+        "id": null,
+        "value": 100,
+        "type": "IntProperty"
+      },
+      "CraftSpeed": {
+        "id": null,
+        "value": 5100,
+        "type": "IntProperty"
+      },
+      "CraftSpeeds": {
+        "array_type": "StructProperty",
+        "id": null,
+        "value": {
+          "prop_name": "CraftSpeeds",
+          "prop_type": "StructProperty",
+          "values": [
+            {
+              "WorkSuitability": {
+                "id": null,
+                "value": {
+                  "type": "EPalWorkSuitability",
+                  "value": "EPalWorkSuitability::EmitFlame"
+                },
+                "type": "EnumProperty"
+              },
+              "Rank": {
+                "id": null,
+                "value": 5,
+                "type": "IntProperty"
+              }
+            },
+            {
+              "WorkSuitability": {
+                "id": null,
+                "value": {
+                  "type": "EPalWorkSuitability",
+                  "value": "EPalWorkSuitability::Watering"
+                },
+                "type": "EnumProperty"
+              },
+              "Rank": {
+                "id": null,
+                "value": 5,
+                "type": "IntProperty"
+              }
+            },
+            {
+              "WorkSuitability": {
+                "id": null,
+                "value": {
+                  "type": "EPalWorkSuitability",
+                  "value": "EPalWorkSuitability::Seeding"
+                },
+                "type": "EnumProperty"
+              },
+              "Rank": {
+                "id": null,
+                "value": 5,
+                "type": "IntProperty"
+              }
+            },
+            {
+              "WorkSuitability": {
+                "id": null,
+                "value": {
+                  "type": "EPalWorkSuitability",
+                  "value": "EPalWorkSuitability::GenerateElectricity"
+                },
+                "type": "EnumProperty"
+              },
+              "Rank": {
+                "id": null,
+                "value": 5,
+                "type": "IntProperty"
+              }
+            },
+            {
+              "WorkSuitability": {
+                "id": null,
+                "value": {
+                  "type": "EPalWorkSuitability",
+                  "value": "EPalWorkSuitability::Handcraft"
+                },
+                "type": "EnumProperty"
+              },
+              "Rank": {
+                "id": null,
+                "value": 5,
+                "type": "IntProperty"
+              }
+            },
+            {
+              "WorkSuitability": {
+                "id": null,
+                "value": {
+                  "type": "EPalWorkSuitability",
+                  "value": "EPalWorkSuitability::Collection"
+                },
+                "type": "EnumProperty"
+              },
+              "Rank": {
+                "id": null,
+                "value": 5,
+                "type": "IntProperty"
+              }
+            },
+            {
+              "WorkSuitability": {
+                "id": null,
+                "value": {
+                  "type": "EPalWorkSuitability",
+                  "value": "EPalWorkSuitability::Deforest"
+                },
+                "type": "EnumProperty"
+              },
+              "Rank": {
+                "id": null,
+                "value": 5,
+                "type": "IntProperty"
+              }
+            },
+            {
+              "WorkSuitability": {
+                "id": null,
+                "value": {
+                  "type": "EPalWorkSuitability",
+                  "value": "EPalWorkSuitability::Mining"
+                },
+                "type": "EnumProperty"
+              },
+              "Rank": {
+                "id": null,
+                "value": 5,
+                "type": "IntProperty"
+              }
+            },
+            {
+              "WorkSuitability": {
+                "id": null,
+                "value": {
+                  "type": "EPalWorkSuitability",
+                  "value": "EPalWorkSuitability::OilExtraction"
+                },
+                "type": "EnumProperty"
+              },
+              "Rank": {
+                "id": null,
+                "value": 5,
+                "type": "IntProperty"
+              }
+            },
+            {
+              "WorkSuitability": {
+                "id": null,
+                "value": {
+                  "type": "EPalWorkSuitability",
+                  "value": "EPalWorkSuitability::ProductMedicine"
+                },
+                "type": "EnumProperty"
+              },
+              "Rank": {
+                "id": null,
+                "value": 5,
+                "type": "IntProperty"
+              }
+            },
+            {
+              "WorkSuitability": {
+                "id": null,
+                "value": {
+                  "type": "EPalWorkSuitability",
+                  "value": "EPalWorkSuitability::Cool"
+                },
+                "type": "EnumProperty"
+              },
+              "Rank": {
+                "id": null,
+                "value": 5,
+                "type": "IntProperty"
+              }
+            },
+            {
+              "WorkSuitability": {
+                "id": null,
+                "value": {
+                  "type": "EPalWorkSuitability",
+                  "value": "EPalWorkSuitability::Transport"
+                },
+                "type": "EnumProperty"
+              },
+              "Rank": {
+                "id": null,
+                "value": 5,
+                "type": "IntProperty"
+              }
+            },
+            {
+              "WorkSuitability": {
+                "id": null,
+                "value": {
+                  "type": "EPalWorkSuitability",
+                  "value": "EPalWorkSuitability::MonsterFarm"
+                },
+                "type": "EnumProperty"
+              },
+              "Rank": {
+                "id": null,
+                "value": 5,
+                "type": "IntProperty"
+              }
+            }
+          ],
+          "type_name": "PalWorkSuitabilityInfo",
+          "id": "00000000-0000-0000-0000-000000000000"
+        },
+        "type": "ArrayProperty"
+      },
+      "GotStatusPointList": {
+        "array_type": "StructProperty",
+        "id": null,
+        "value": {
+          "prop_name": "GotStatusPointList",
+          "prop_type": "StructProperty",
+          "values": [
+            {
+              "StatusName": {
+                "id": null,
+                "value": "最大HP",
+                "type": "NameProperty"
+              },
+              "StatusPoint": {
+                "id": null,
+                "value": 100,
+                "type": "IntProperty"
+              }
+            },
+            {
+              "StatusName": {
+                "id": null,
+                "value": "最大SP",
+                "type": "NameProperty"
+              },
+              "StatusPoint": {
+                "id": null,
+                "value": 100,
+                "type": "IntProperty"
+              }
+            },
+            {
+              "StatusName": {
+                "id": null,
+                "value": "攻撃力",
+                "type": "NameProperty"
+              },
+              "StatusPoint": {
+                "id": null,
+                "value": 10,
+                "type": "IntProperty"
+              }
+            },
+            {
+              "StatusName": {
+                "id": null,
+                "value": "所持重量",
+                "type": "NameProperty"
+              },
+              "StatusPoint": {
+                "id": null,
+                "value": 2000,
+                "type": "IntProperty"
+              }
+            },
+            {
+              "StatusName": {
+                "id": null,
+                "value": "捕獲率",
+                "type": "NameProperty"
+              },
+              "StatusPoint": {
+                "id": null,
+                "value": 0,
+                "type": "IntProperty"
+              }
+            },
+            {
+              "StatusName": {
+                "id": null,
+                "value": "作業速度",
+                "type": "NameProperty"
+              },
+              "StatusPoint": {
+                "id": null,
+                "value": 100,
+                "type": "IntProperty"
+              }
+            }
+          ],
+          "type_name": "PalGotStatusPoint",
+          "id": "00000000-0000-0000-0000-000000000000"
+        },
+        "type": "ArrayProperty"
+      },
+      "DecreaseFullStomachRates": {
+        "struct_type": "FloatContainer",
+        "struct_id": "00000000-0000-0000-0000-000000000000",
+        "id": null,
+        "value": {},
+        "type": "StructProperty"
+      },
+      "CraftSpeedRates": {
+        "struct_type": "FloatContainer",
+        "struct_id": "00000000-0000-0000-0000-000000000000",
+        "id": null,
+        "value": {},
+        "type": "StructProperty"
+      },
+      "LastJumpedLocation": {
+        "struct_type": "Vector",
+        "struct_id": "00000000-0000-0000-0000-000000000000",
+        "id": null,
+        "value": {
+          "x": -170827.31313823262,
+          "y": 409567.99993836787,
+          "z": 4138.90469282538
+        },
+        "type": "StructProperty"
+      },
+      "VoiceID": {
+        "id": null,
+        "value": 6,
+        "type": "IntProperty"
+      },
+      "MaxSP": {
+        "value": {
+          "Value": {
+            "id": null,
+            "value": 1100,
+            "type": "Int64Property"
+          }
+        }
+      }
+    }
+  },
+  "levelSavMetaData": {
+    "header": {
+      "magic": 1396790855,
+      "save_game_version": 3,
+      "package_file_version": "UE4: 522, UE5: 1008",
+      "engineVersion": "5.1.undefined-0-++UE5+Release-5.1",
+      "custom_version_format": 3,
+      "save_game_class_name": "/Script/Pal.PalWorldSaveGame",
+      "custom_versions": "See header.json in local datastore for more details."
+    },
+    "trailer": "AAAAAA=="
+  }
+}

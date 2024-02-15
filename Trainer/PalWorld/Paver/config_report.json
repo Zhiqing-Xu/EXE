@@ -1,0 +1,12 @@
+{
+  "gameSaveDirectoryPath": "D:/PalWorld/steamapps/common/PalServer/Pal/Saved/SaveGames/0/1E65792E4B9305155AB9C0AAD72FE9B6",
+  "reporting": {
+    "export": true,
+    "exportPath": "./reports",
+    "showSummary": true,
+    "showCapturedPals": true,
+    "showPlayerData": true,
+    "showPlayerUnlockedRecipes": true,
+    "showPlayerAppearance": true
+  }
+}
