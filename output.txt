@@ -1,3 +1,0 @@
-List of files larger than 100MB 
-C:\Users\cesiu\Desktop\github_all\Git_EXE\.git\objects\pack\pack-a3e297c98fcb8570f4d41778445f2772bc0fff1f.pack 
-C:\Users\cesiu\Desktop\github_all\Git_EXE\Trainer\Elden Ring\Elden Ring Debug Tool 0.8.5.3\Elden Ring Debug Tool.exe 
