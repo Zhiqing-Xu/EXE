@@ -1,0 +1,68 @@
+启动服务器
+重启服务器
+关闭服务器，前面写通知，后面写几秒后
+使用recon命令，你也可以用网页后台，那个你可能熟悉一点
+
+# WebUI 设置
+web:
+  # WebUI 管理员密码
+  password: ""
+  # WebUI 访问端口
+  port: 8080
+  # 是否开启使用 HTTPS TLS 访问
+  tls: false
+  # TLS Cert 如果开启使用 HTTPS 请输入证书文件路径
+  cert_path: ""
+  # TLS Key 如果开启使用 HTTPS 请输入证书密钥文件路径
+  key_path: ""
+  # 若开启 HTTPS 访问请填写你的 HTTPS 证书绑定的域名 eg. https://yourdomain.com
+  public_url: ""
+
+# 任务相关设置
+task:
+  # 定时向游戏服务获取玩家在线情况的间隔，单位秒
+  sync_interval: 60
+  # 玩家进入/离开服务器通知
+  player_logging: true
+  # 玩家进入服务器消息
+  player_login_message: "玩家 {username} 加入服务器!\n当前在线人数: {online_num}"
+  # 玩家离开服务器消息
+  player_logout_message: "玩家 {username} 离开服务器!\n当前在线人数: {online_num}"
+
+# RCON 相关设置
+rcon:
+  # RCON 的地址和端口
+  address: "127.0.0.1:25575"
+  # 服务端设置的 RCON AdminPassword
+  password: ""
+  # 服务器是否已使用 PalGuard 功能插件的 Base64 RCON 功能(需自行安装)
+  use_base64: false
+  # RCON 通信超时时间，推荐 <= 5
+  timeout: 5
+
+# REST API 相关配置
+rest:
+  # REST 的地址
+  address: "http://127.0.0.1:8212"
+  # Base Auth 的用户名，固定为 admin
+  username: "admin"
+  # 服务端设置的 AdminPassword
+  password: ""
+  # 通信超时时间，推荐 <= 5
+  timeout: 5
+
+# sav_cli Config 存档文件解析相关配置
+save:
+  # 存档文件路径
+  path: "C:\\PalServer\\Palworld Admin\\steamcmd\steamapps\\common\\PalServer\\Pal\\Saved"
+  # 存档解析工具路径，一般和 pst 在同一目录，可以为空
+  decode_path: ""
+  # 定时从存档获取数据的间隔，单位秒，推荐 >= 120
+  sync_interval: 120
+  # 存档定时备份间隔，单位秒，设置为0时禁用
+  backup_interval: 14400
+
+# Automation Config 自动化管理相关
+manage:
+  # 玩家不在白名单是否自动踢出
+  kick_non_whitelist: false

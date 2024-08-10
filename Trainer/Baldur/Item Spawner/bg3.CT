@@ -2,856 +2,101 @@
 <CheatTable CheatEngineTableVersion="45">
   <CheatEntries>
     <CheatEntry>
-      <ID>871</ID>
+      <ID>4944</ID>
       <Description>"Last Item Moved (moved item must have quantity of 2 or more)"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
-aobscanmodule(LastItemMoved,$process,44 38 ?? ?? ?? 0F 85 ?? ?? ?? ?? 48 8D ?? ?? ?? 48 8B ?? ?? ?? E8)
-alloc(newmem,$1000,LastItemMoved)
-
-label(LastItemMovedPtr)
-label(LastItemMovedBkp)
-label(return)
-
-newmem:
-LastItemMovedBkp:
-  readmem(LastItemMoved+10,5)
-  mov rax,LastItemMovedPtr
-  mov [rax],rcx
-  jmp return
-
-align 10
-LastItemMovedPtr:
-  dq 0
-
-LastItemMoved+10:
-  jmp newmem
-return:
-registersymbol(LastItemMoved)
-registersymbol(LastItemMovedBkp)
-registersymbol(LastItemMovedPtr)
-
-[DISABLE]
-LastItemMoved+10:
-  readmem(LastItemMovedBkp,5)
-unregistersymbol(LastItemMoved)
-unregistersymbol(LastItemMovedBkp)
-unregistersymbol(LastItemMovedPtr)
-dealloc(newmem)
-
-{
-// ORIGINAL CODE - INJECTION POINT: bg3.exe+13EFEE3
-
-bg3.exe+13EFEB0: 4A 8D 0C CD 00 00 00 00  - lea rcx,[r9*8+00000000]
-bg3.exe+13EFEB8: 49 3B C8                 - cmp rcx,r8
-bg3.exe+13EFEBB: 0F 85 AF 00 00 00        - jne bg3.exe+13EFF70
-bg3.exe+13EFEC1: 4C 8D 44 24 20           - lea r8,[rsp+20]
-bg3.exe+13EFEC6: 48 8B D5                 - mov rdx,rbp
-bg3.exe+13EFEC9: 48 8D 4C 24 38           - lea rcx,[rsp+38]
-bg3.exe+13EFECE: E8 7D C4 D2 00           - call bg3.exe+211C350
-bg3.exe+13EFED3: 44 38 64 24 40           - cmp [rsp+40],r12b
-bg3.exe+13EFED8: 0F 85 9C 00 00 00        - jne bg3.exe+13EFF7A
-bg3.exe+13EFEDE: 48 8D 54 24 28           - lea rdx,[rsp+28]
-// ---------- INJECTING HERE ----------
-bg3.exe+13EFEE3: 48 8B 4C 24 38           - mov rcx,[rsp+38]
-// ---------- DONE INJECTING  ----------
-bg3.exe+13EFEE8: E8 43 29 E8 00           - call bg3.exe+2272830
-bg3.exe+13EFEED: 48 8B 38                 - mov rdi,[rax]
-bg3.exe+13EFEF0: 48 89 7C 24 20           - mov [rsp+20],rdi
-bg3.exe+13EFEF5: 48 8D 44 24 38           - lea rax,[rsp+38]
-bg3.exe+13EFEFA: 48 8B 4C 24 40           - mov rcx,[rsp+40]
-bg3.exe+13EFEFF: 84 C9                    - test cl,cl
-bg3.exe+13EFF01: 49 0F 45 C4              - cmovne rax,r12
-bg3.exe+13EFF05: 48 85 C0                 - test rax,rax
-bg3.exe+13EFF08: 0F 84 DA 00 00 00        - je bg3.exe+13EFFE8
-bg3.exe+13EFF0E: 48 8B 10                 - mov rdx,[rax]
-}
-</AssemblerScript>
-      <CheatEntries>
-        <CheatEntry>
-          <ID>830</ID>
-          <Description>"Quantity"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>LastItemMovedPtr</Address>
-          <Offsets>
-            <Offset>4</Offset>
-            <Offset>10</Offset>
-          </Offsets>
-        </CheatEntry>
-      </CheatEntries>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>927</ID>
-      <Description>"Saved Character Pointers"</Description>
-      <Options moHideChildren="1"/>
-      <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript Async="1">[ENABLE]
-aobscanmodule(saveChar,$process,?? 8B ?? ?? ?? 8B ?? E8 ?? ?? ?? ?? ?? 8B ?? ?? 0F 10 ?? 0F 10 ?? ?? 44 0F 10 ?? ?? 44 0F 10 ?? ?? 44 0F 10 ?? ?? F2)
-alloc(newmem,$1000,saveChar)
+aobscanmodule(moved,$process,75 ?? 48 B8 ?? ?? ?? ?? ?? ?? ?? ?? EB ?? 48 8B ?? ?? 0F)
+alloc(newmem,$1000,moved)
 
-label(saveCharPtr)
-label(saveCharBkp)
+label(movedPtr)
+label(movedBkp)
 label(return)
 
 newmem:
-  test r14,r14
-  je @f
-  xor rcx,rcx
-  mov ecx,[r14+34]
-  cmp ecx,#20
-  jg @f
-  mov r9,saveCharPtr
-  mov [r9+rcx*8],rax
-saveCharBkp:
-  readmem(saveChar,7)
+movedBkp:
+  readmem(moved+0E,7)
+  push rdx
+  mov rdx,movedPtr
+  mov [rdx],rax
+  pop rdx
   jmp return
 
 align 10
-saveCharPtr:
-  dq 0
-  dq 0
-  dq 0
-  dq 0
-  dq 0
-  dq 0
-  dq 0
-  dq 0
-  dq 0
-  dq 0
-  dq 0
-  dq 0
-  dq 0
-  dq 0
-  dq 0
-  dq 0
-  dq 0
-  dq 0
-  dq 0
+movedPtr:
   dq 0
 
-saveChar:
+moved+0E:
   jmp newmem
   nop 2
 return:
-registersymbol(saveChar)
-registersymbol(saveCharBkp)
-registersymbol(saveCharPtr)
+registersymbol(moved)
+registersymbol(movedBkp)
+registersymbol(movedPtr)
 
 [DISABLE]
-saveChar:
-  readmem(saveCharBkp,7)
-unregistersymbol(saveChar)
-unregistersymbol(saveCharBkp)
-unregistersymbol(saveCharPtr)
+moved+0E:
+  readmem(movedBkp,7)
+unregistersymbol(moved)
+unregistersymbol(movedBkp)
+unregistersymbol(movedPtr)
 dealloc(newmem)
 
 {
-// ORIGINAL CODE - INJECTION POINT: bg3.exe+2C4374C
+// ORIGINAL CODE - INJECTION POINT: bg3.exe+24A266F
 
-bg3.exe+2C43725: 48 0F A3 D1        - bt rcx,rdx
-bg3.exe+2C43729: 0F 92 C0           - setb al
-bg3.exe+2C4372C: 84 C0              - test al,al
-bg3.exe+2C4372E: 0F 84 CE 00 00 00  - je bg3.exe+2C43802
-bg3.exe+2C43734: 48 8B 13           - mov rdx,[rbx]
-bg3.exe+2C43737: 45 33 C0           - xor r8d,r8d
-bg3.exe+2C4373A: 49 8B 4E 08        - mov rcx,[r14+08]
-bg3.exe+2C4373E: E8 3D BF A4 FE     - call bg3.exe+168F680
-bg3.exe+2C43743: 4C 8B 44 24 48     - mov r8,[rsp+48]
-bg3.exe+2C43748: 48 8D 55 80        - lea rdx,[rbp-80]
+bg3.exe+24A2646: 48 8B D0                       - mov rdx,rax
+bg3.exe+24A2649: 0F 57 C0                       - xorps xmm0,xmm0
+bg3.exe+24A264C: 0F 11 45 DF                    - movups [rbp-21],xmm0
+bg3.exe+24A2650: 48 85 C0                       - test rax,rax
+bg3.exe+24A2653: 0F 84 74 01 00 00              - je bg3.exe+24A27CD
+bg3.exe+24A2659: 48 89 45 DF                    - mov [rbp-21],rax
+bg3.exe+24A265D: 44 39 60 1C                    - cmp [rax+1C],r12d
+bg3.exe+24A2661: 75 0C                          - jne bg3.exe+24A266F
+bg3.exe+24A2663: 48 B8 00 00 00 00 00 00 C0 FF  - mov rax,FFC0000000000000
+bg3.exe+24A266D: EB 1F                          - jmp bg3.exe+24A268E
 // ---------- INJECTING HERE ----------
-bg3.exe+2C4374C: 49 8B 4E 10        - mov rcx,[r14+10]
+bg3.exe+24A266F: 48 8B 40 10                    - mov rax,[rax+10]
 // ---------- DONE INJECTING  ----------
-bg3.exe+2C43750: 4C 8B C8           - mov r9,rax
-bg3.exe+2C43753: E8 A8 6A 07 00     - call bg3.exe+2CBA200
-bg3.exe+2C43758: 41 8B 4E 30        - mov ecx,[r14+30]
-bg3.exe+2C4375C: 0F 10 30           - movups xmm6,[rax]
-bg3.exe+2C4375F: 0F 10 78 10        - movups xmm7,[rax+10]
-bg3.exe+2C43763: 44 0F 10 40 20     - movups xmm8,[rax+20]
-bg3.exe+2C43768: 44 0F 10 48 30     - movups xmm9,[rax+30]
-bg3.exe+2C4376D: 44 0F 10 50 40     - movups xmm10,[rax+40]
-bg3.exe+2C43772: F2 44 0F 10 58 50  - movsd xmm11,[rax+50]
-bg3.exe+2C43778: 41 8B 46 34        - mov eax,[r14+34]
+bg3.exe+24A2673: 0F B7 08                       - movzx ecx,word ptr [rax]
+bg3.exe+24A2676: 3B 4A 0C                       - cmp ecx,[rdx+0C]
+bg3.exe+24A2679: 7C 0C                          - jl bg3.exe+24A2687
+bg3.exe+24A267B: 48 B8 00 00 00 00 00 00 C0 FF  - mov rax,FFC0000000000000
+bg3.exe+24A2685: EB 07                          - jmp bg3.exe+24A268E
+bg3.exe+24A2687: 48 8B 02                       - mov rax,[rdx]
+bg3.exe+24A268A: 48 8B 04 C8                    - mov rax,[rax+rcx*8]
+bg3.exe+24A268E: 48 89 45 AF                    - mov [rbp-51],rax
+bg3.exe+24A2692: 48 8B 1A                       - mov rbx,[rdx]
+bg3.exe+24A2695: 48 85 DB                       - test rbx,rbx
 }
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
-          <ID>1008</ID>
-          <Description>"Save the game. Pointers will populate. Change values. Save the game again. Load that save."</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>928</ID>
-          <Description>"Character 1"</Description>
-          <Options moHideChildren="1"/>
+          <ID>4945</ID>
+          <Description>"Quantity"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <GroupHeader>1</GroupHeader>
-          <Address>saveCharPtr+0</Address>
+          <VariableType>4 Bytes</VariableType>
+          <Address>movedPtr</Address>
           <Offsets>
-            <Offset>0</Offset>
+            <Offset>4</Offset>
           </Offsets>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>929</ID>
-              <Description>"Name (do NOT change)"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>String</VariableType>
-              <Length>99</Length>
-              <Unicode>0</Unicode>
-              <CodePage>0</CodePage>
-              <ZeroTerminate>1</ZeroTerminate>
-              <Address>+28</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>930</ID>
-              <Description>"Strength"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+44</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>931</ID>
-              <Description>"Dexterity"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+48</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>932</ID>
-              <Description>"Constitution"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+4C</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>933</ID>
-              <Description>"Intelligence"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+50</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>934</ID>
-              <Description>"Wisdom"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+54</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>935</ID>
-              <Description>"Charisma"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+58</Address>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>936</ID>
-          <Description>"Character 2"</Description>
-          <Options moHideChildren="1"/>
-          <ShowAsSigned>0</ShowAsSigned>
-          <GroupHeader>1</GroupHeader>
-          <Address>saveCharPtr+8</Address>
-          <Offsets>
-            <Offset>0</Offset>
-          </Offsets>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>937</ID>
-              <Description>"Name (do NOT change)"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>String</VariableType>
-              <Length>99</Length>
-              <Unicode>0</Unicode>
-              <CodePage>0</CodePage>
-              <ZeroTerminate>1</ZeroTerminate>
-              <Address>+28</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>938</ID>
-              <Description>"Strength"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+44</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>939</ID>
-              <Description>"Dexterity"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+48</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>940</ID>
-              <Description>"Constitution"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+4C</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>941</ID>
-              <Description>"Intelligence"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+50</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>942</ID>
-              <Description>"Wisdom"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+54</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>943</ID>
-              <Description>"Charisma"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+58</Address>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>944</ID>
-          <Description>"Character 3"</Description>
-          <Options moHideChildren="1"/>
-          <ShowAsSigned>0</ShowAsSigned>
-          <GroupHeader>1</GroupHeader>
-          <Address>saveCharPtr+10</Address>
-          <Offsets>
-            <Offset>0</Offset>
-          </Offsets>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>945</ID>
-              <Description>"Name (do NOT change)"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>String</VariableType>
-              <Length>99</Length>
-              <Unicode>0</Unicode>
-              <CodePage>0</CodePage>
-              <ZeroTerminate>1</ZeroTerminate>
-              <Address>+28</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>946</ID>
-              <Description>"Strength"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+44</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>947</ID>
-              <Description>"Dexterity"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+48</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>948</ID>
-              <Description>"Constitution"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+4C</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>949</ID>
-              <Description>"Intelligence"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+50</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>950</ID>
-              <Description>"Wisdom"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+54</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>951</ID>
-              <Description>"Charisma"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+58</Address>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>952</ID>
-          <Description>"Character 4"</Description>
-          <Options moHideChildren="1"/>
-          <ShowAsSigned>0</ShowAsSigned>
-          <GroupHeader>1</GroupHeader>
-          <Address>saveCharPtr+18</Address>
-          <Offsets>
-            <Offset>0</Offset>
-          </Offsets>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>953</ID>
-              <Description>"Name (do NOT change)"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>String</VariableType>
-              <Length>99</Length>
-              <Unicode>0</Unicode>
-              <CodePage>0</CodePage>
-              <ZeroTerminate>1</ZeroTerminate>
-              <Address>+28</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>954</ID>
-              <Description>"Strength"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+44</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>955</ID>
-              <Description>"Dexterity"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+48</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>956</ID>
-              <Description>"Constitution"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+4C</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>957</ID>
-              <Description>"Intelligence"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+50</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>958</ID>
-              <Description>"Wisdom"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+54</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>959</ID>
-              <Description>"Charisma"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+58</Address>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>960</ID>
-          <Description>"Character 5"</Description>
-          <Options moHideChildren="1"/>
-          <ShowAsSigned>0</ShowAsSigned>
-          <GroupHeader>1</GroupHeader>
-          <Address>saveCharPtr+20</Address>
-          <Offsets>
-            <Offset>0</Offset>
-          </Offsets>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>961</ID>
-              <Description>"Name (do NOT change)"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>String</VariableType>
-              <Length>99</Length>
-              <Unicode>0</Unicode>
-              <CodePage>0</CodePage>
-              <ZeroTerminate>1</ZeroTerminate>
-              <Address>+28</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>962</ID>
-              <Description>"Strength"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+44</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>963</ID>
-              <Description>"Dexterity"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+48</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>964</ID>
-              <Description>"Constitution"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+4C</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>965</ID>
-              <Description>"Intelligence"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+50</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>966</ID>
-              <Description>"Wisdom"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+54</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>967</ID>
-              <Description>"Charisma"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+58</Address>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>968</ID>
-          <Description>"Character 6"</Description>
-          <Options moHideChildren="1"/>
-          <ShowAsSigned>0</ShowAsSigned>
-          <GroupHeader>1</GroupHeader>
-          <Address>saveCharPtr+28</Address>
-          <Offsets>
-            <Offset>0</Offset>
-          </Offsets>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>969</ID>
-              <Description>"Name (do NOT change)"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>String</VariableType>
-              <Length>99</Length>
-              <Unicode>0</Unicode>
-              <CodePage>0</CodePage>
-              <ZeroTerminate>1</ZeroTerminate>
-              <Address>+28</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>970</ID>
-              <Description>"Strength"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+44</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>971</ID>
-              <Description>"Dexterity"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+48</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>972</ID>
-              <Description>"Constitution"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+4C</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>973</ID>
-              <Description>"Intelligence"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+50</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>974</ID>
-              <Description>"Wisdom"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+54</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>975</ID>
-              <Description>"Charisma"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+58</Address>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>976</ID>
-          <Description>"Character 7"</Description>
-          <Options moHideChildren="1"/>
-          <ShowAsSigned>0</ShowAsSigned>
-          <GroupHeader>1</GroupHeader>
-          <Address>saveCharPtr+30</Address>
-          <Offsets>
-            <Offset>0</Offset>
-          </Offsets>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>977</ID>
-              <Description>"Name (do NOT change)"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>String</VariableType>
-              <Length>99</Length>
-              <Unicode>0</Unicode>
-              <CodePage>0</CodePage>
-              <ZeroTerminate>1</ZeroTerminate>
-              <Address>+28</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>978</ID>
-              <Description>"Strength"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+44</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>979</ID>
-              <Description>"Dexterity"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+48</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>980</ID>
-              <Description>"Constitution"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+4C</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>981</ID>
-              <Description>"Intelligence"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+50</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>982</ID>
-              <Description>"Wisdom"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+54</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>983</ID>
-              <Description>"Charisma"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+58</Address>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>984</ID>
-          <Description>"Character 8"</Description>
-          <Options moHideChildren="1"/>
-          <ShowAsSigned>0</ShowAsSigned>
-          <GroupHeader>1</GroupHeader>
-          <Address>saveCharPtr+38</Address>
-          <Offsets>
-            <Offset>0</Offset>
-          </Offsets>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>985</ID>
-              <Description>"Name (do NOT change)"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>String</VariableType>
-              <Length>99</Length>
-              <Unicode>0</Unicode>
-              <CodePage>0</CodePage>
-              <ZeroTerminate>1</ZeroTerminate>
-              <Address>+28</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>986</ID>
-              <Description>"Strength"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+44</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>987</ID>
-              <Description>"Dexterity"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+48</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>988</ID>
-              <Description>"Constitution"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+4C</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>989</ID>
-              <Description>"Intelligence"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+50</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>990</ID>
-              <Description>"Wisdom"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+54</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>991</ID>
-              <Description>"Charisma"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+58</Address>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>992</ID>
-          <Description>"Character 9"</Description>
-          <Options moHideChildren="1"/>
-          <ShowAsSigned>0</ShowAsSigned>
-          <GroupHeader>1</GroupHeader>
-          <Address>saveCharPtr+40</Address>
-          <Offsets>
-            <Offset>0</Offset>
-          </Offsets>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>993</ID>
-              <Description>"Name (do NOT change)"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>String</VariableType>
-              <Length>99</Length>
-              <Unicode>0</Unicode>
-              <CodePage>0</CodePage>
-              <ZeroTerminate>1</ZeroTerminate>
-              <Address>+28</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>994</ID>
-              <Description>"Strength"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+44</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>995</ID>
-              <Description>"Dexterity"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+48</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>996</ID>
-              <Description>"Constitution"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+4C</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>997</ID>
-              <Description>"Intelligence"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+50</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>998</ID>
-              <Description>"Wisdom"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+54</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>999</ID>
-              <Description>"Charisma"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+58</Address>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>1000</ID>
-          <Description>"Character 10"</Description>
-          <Options moHideChildren="1"/>
-          <ShowAsSigned>0</ShowAsSigned>
-          <GroupHeader>1</GroupHeader>
-          <Address>saveCharPtr+48</Address>
-          <Offsets>
-            <Offset>0</Offset>
-          </Offsets>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>1001</ID>
-              <Description>"Name (do NOT change)"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>String</VariableType>
-              <Length>99</Length>
-              <Unicode>0</Unicode>
-              <CodePage>0</CodePage>
-              <ZeroTerminate>1</ZeroTerminate>
-              <Address>+28</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>1002</ID>
-              <Description>"Strength"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+44</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>1003</ID>
-              <Description>"Dexterity"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+48</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>1004</ID>
-              <Description>"Constitution"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+4C</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>1005</ID>
-              <Description>"Intelligence"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+50</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>1006</ID>
-              <Description>"Wisdom"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+54</Address>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>1007</ID>
-              <Description>"Charisma"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>4 Bytes</VariableType>
-              <Address>+58</Address>
-            </CheatEntry>
-          </CheatEntries>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
     <CheatEntry>
       <ID>143</ID>
-      <Description>"Ability Stat Points (save game to populate, then save and load to see results)"</Description>
+      <Description>"Character Ability Points Invested"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript Async="1">// Search player name followed by:
-// Group: 4:6 4:0 4:7 4:0 4:0 4:12 4:10 4:12 4:12 4:12 4:11 4:0
+      <AssemblerScript Async="1">{
+Points spent on Abilities at Character Creation
+Group: 4:0 4:2 4:5 4:6 4:2 4:2 4:7
+Prior to invested points is also character's name
+4:2054054234 4:29285 4:0 4:0 4:6 4:15 4:0 4:2 4:5 4:6 4:2 4:2 4:7
+}
 [ENABLE]
-aobscanmodule(stats,$process,45 8B 44 96 ??)
+aobscanmodule(stats,$process,8B ?? ?? 40 89 ?? 41 FF)
 alloc(newmem,$1000,stats)
 
 label(statsBkp)
@@ -859,18 +104,18 @@ label(return)
 label(statsPtr)
 
 newmem:
-  test rdx,rdx
+  test rcx,rcx
   jne statsBkp
-  mov r8,statsPtr
-  cmp [r8],20
+  mov rdx,statsPtr
+  cmp [rdx],A0
   jl @f
-  mov [r8],0
+  mov [rdx],0
 @@:
-  add [r8],08
-  add r8,[r8]
-  mov [r8],r14
+  add [rdx],08
+  add rdx,[rdx]
+  mov [rdx],rsi
 statsBkp:
-  readmem(stats,5)
+  readmem(stats,6)
   jmp return
 
 statsPtr:
@@ -879,9 +124,26 @@ statsPtr:
   dq 0
   dq 0
   dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
 
 stats:
   jmp newmem
+  nop
 return:
 registersymbol(stats)
 registersymbol(statsBkp)
@@ -889,11 +151,39 @@ registersymbol(statsPtr)
 
 [DISABLE]
 stats:
-  readmem(statsBkp,5)
+  readmem(statsBkp,6)
 unregistersymbol(stats)
 unregistersymbol(statsBkp)
 unregistersymbol(statsPtr)
 dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: bg3.exe+1587413
+
+bg3.exe+15873EF: 89 48 18        - mov [rax+18],ecx
+bg3.exe+15873F2: 48 89 44 24 50  - mov [rsp+50],rax
+bg3.exe+15873F7: 4C 89 4C 24 58  - mov [rsp+58],r9
+bg3.exe+15873FC: 0F 10 44 24 50  - movups xmm0,[rsp+50]
+bg3.exe+1587401: 0F 11 45 E8     - movups [rbp-18],xmm0
+bg3.exe+1587405: 44 8B C3        - mov r8d,ebx
+bg3.exe+1587408: 49 3B C1        - cmp rax,r9
+bg3.exe+158740B: 74 18           - je bg3.exe+1587425
+bg3.exe+158740D: 0F 1F 00        - nop dword ptr [rax]
+bg3.exe+1587410: 49 63 C8        - movsxd  rcx,r8d
+// ---------- INJECTING HERE ----------
+bg3.exe+1587413: 8B 54 8E 40     - mov edx,[rsi+rcx*4+40]
+// ---------- DONE INJECTING  ----------
+bg3.exe+1587417: 89 10           - mov [rax],edx
+bg3.exe+1587419: 41 FF C0        - inc r8d
+bg3.exe+158741C: 48 83 C0 04     - add rax,04
+bg3.exe+1587420: 49 3B C1        - cmp rax,r9
+bg3.exe+1587423: 75 EB           - jne bg3.exe+1587410
+bg3.exe+1587425: 41 8B 4D 30     - mov ecx,[r13+30]
+bg3.exe+1587429: 41 8B 45 34     - mov eax,[r13+34]
+bg3.exe+158742D: 3B C8           - cmp ecx,eax
+bg3.exe+158742F: 7F 17           - jg bg3.exe+1587448
+bg3.exe+1587431: FF C0           - inc eax
+}
 
 {
 // ORIGINAL CODE - INJECTION POINT: bg3.exe+8CB7D15
@@ -950,11 +240,83 @@ bg3.exe+8CB7D39: 5F                       - pop rdi
 "bg3.exe"+245B397: 41 5E                    -  pop r14
 "bg3.exe"+245B399: 5F                       -  pop rdi
 }
+
+{
+bg3.exe+158733C - 84 C0                 - test al,al
+bg3.exe+158733E - 0F84 84010000         - je bg3.exe+15874C8
+bg3.exe+1587344 - 48 8B 17              - mov rdx,[rdi]
+bg3.exe+1587347 - 49 8B 4D 08           - mov rcx,[r13+08]
+bg3.exe+158734B - E8 00234FFF           - call bg3.exe+A79650 &lt;--- retrieves pointer
+bg3.exe+1587350 - 48 8B F0              - mov rsi,rax
+bg3.exe+1587353 - 0F10 00               - movups xmm0,[rax]
+bg3.exe+1587356 - 0F29 45 A0            - movaps [rbp-60],xmm0
+bg3.exe+158735A - 0F10 48 10            - movups xmm1,[rax+10]
+bg3.exe+158735E - 0F29 4D B0            - movaps [rbp-50],xmm1
+bg3.exe+1587362 - 0FB6 48 20            - movzx ecx,byte ptr [rax+20]
+bg3.exe+1587366 - 88 4D C0              - mov [rbp-40],cl
+bg3.exe+1587369 - 0FB6 48 21            - movzx ecx,byte ptr [rax+21]
+bg3.exe+158736D - 48 89 4D C8           - mov [rbp-38],rcx
+bg3.exe+1587371 - 0FB6 48 5C            - movzx ecx,byte ptr [rax+5C]
+bg3.exe+1587375 - 48 89 4D D0           - mov [rbp-30],rcx
+bg3.exe+1587379 - 48 8D 48 28           - lea rcx,[rax+28]
+bg3.exe+158737D - 83 78 3C 10           - cmp dword ptr [rax+3C],10 { 16
+bg3.exe+1587381 - 72 04                 - jb bg3.exe+1587387
+bg3.exe+1587383 - 48 8B 48 28           - mov rcx,[rax+28]
+bg3.exe+1587387 - 48 89 4C 24 78        - mov [rsp+78],rcx
+bg3.exe+158738C - 8B 40 38              - mov eax,[rax+38]
+bg3.exe+158738F - 89 45 80              - mov [rbp-80],eax
+bg3.exe+1587392 - 0F10 44 24 78         - movups xmm0,[rsp+78]
+bg3.exe+1587397 - 0F11 45 D8            - movups [rbp-28],xmm0
+bg3.exe+158739B - 48 89 5C 24 60        - mov [rsp+60],rbx
+bg3.exe+15873A0 - 48 8B 4C 24 40        - mov rcx,[rsp+40]
+bg3.exe+15873A5 - 48 83 C1 08           - add rcx,08 { 8
+bg3.exe+15873A9 - 48 8D 44 24 60        - lea rax,[rsp+60]
+bg3.exe+15873AE - 48 89 44 24 20        - mov [rsp+20],rax
+bg3.exe+15873B3 - 41 B9 04000000        - mov r9d,00000004 { 4
+bg3.exe+15873B9 - 45 8D 41 18           - lea r8d,[r9+18]
+bg3.exe+15873BD - 48 8D 55 88           - lea rdx,[rbp-78]
+bg3.exe+15873C1 - E8 2AAB2E02           - call bg3.exe+3871EF0
+bg3.exe+15873C6 - 48 8B 45 88           - mov rax,[rbp-78]
+bg3.exe+15873CA - 48 85 C0              - test rax,rax
+bg3.exe+15873CD - 74 11                 - je bg3.exe+15873E0
+bg3.exe+15873CF - 48 8B 4D 90           - mov rcx,[rbp-70]
+bg3.exe+15873D3 - 48 C1 E9 02           - shr rcx,02 { 2
+bg3.exe+15873D7 - 48 63 C9              - movsxd  rcx,ecx
+bg3.exe+15873DA - 4C 8D 0C 88           - lea r9,[rax+rcx*4]
+bg3.exe+15873DE - EB 03                 - jmp bg3.exe+15873E3
+bg3.exe+15873E0 - 4C 8B CB              - mov r9,rbx
+bg3.exe+15873E3 - 0F57 C0               - xorps xmm0,xmm0
+bg3.exe+15873E6 - 33 C9                 - xor ecx,ecx
+}
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
+          <ID>5040</ID>
+          <Description>"Save the game in order to populate the below pointers"</Description>
+          <Color>008000</Color>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5041</ID>
+          <Description>"After changing a value, you'll have to save and then load to see the changes"</Description>
+          <Color>008000</Color>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5042</ID>
+          <Description>"Before each save, disable and re-enable the script in order to reset counters"</Description>
+          <Color>008000</Color>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5043</ID>
+          <Description>"Note that pointers may not be stable, so you'll just have to cross your fingers"</Description>
+          <Color>008000</Color>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
           <ID>144</ID>
-          <Description>"Abilities 1"</Description>
+          <Description>"Character 1"</Description>
           <Options moHideChildren="1"/>
           <ShowAsSigned>0</ShowAsSigned>
           <GroupHeader>1</GroupHeader>
@@ -1014,7 +376,7 @@ bg3.exe+8CB7D39: 5F                       - pop rdi
         </CheatEntry>
         <CheatEntry>
           <ID>619</ID>
-          <Description>"Abilities 2"</Description>
+          <Description>"Character 2"</Description>
           <Options moHideChildren="1"/>
           <ShowAsSigned>0</ShowAsSigned>
           <GroupHeader>1</GroupHeader>
@@ -1074,7 +436,7 @@ bg3.exe+8CB7D39: 5F                       - pop rdi
         </CheatEntry>
         <CheatEntry>
           <ID>627</ID>
-          <Description>"Abilities 3"</Description>
+          <Description>"Character 3"</Description>
           <Options moHideChildren="1"/>
           <ShowAsSigned>0</ShowAsSigned>
           <GroupHeader>1</GroupHeader>
@@ -1134,7 +496,7 @@ bg3.exe+8CB7D39: 5F                       - pop rdi
         </CheatEntry>
         <CheatEntry>
           <ID>635</ID>
-          <Description>"Abilities 4"</Description>
+          <Description>"Character 4"</Description>
           <Options moHideChildren="1"/>
           <ShowAsSigned>0</ShowAsSigned>
           <GroupHeader>1</GroupHeader>
@@ -1192,94 +554,363 @@ bg3.exe+8CB7D39: 5F                       - pop rdi
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
-      </CheatEntries>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>425</ID>
-      <Description>"Settings Pointer"</Description>
-      <Options moHideChildren="1"/>
-      <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript Async="1">[ENABLE]
-aobscanmodule(settingsAob,$process,48 8B 05 ?? ?? ?? ?? 80 B8 ?? ?? ?? ?? 00 74 ?? BA 01 00 00 00)
-label(settings)
-label(godmode)
-settingsAob+(DWORD)[settingsAob+03]+7:
-settings:
-(DWORD)[settingsAob+09]:
-godmode:
-registersymbol(settings)
-registersymbol(godmode)
-
-[DISABLE]
-unregistersymbol(settings)
-unregistersymbol(godmode)
-
-{
-// ORIGINAL CODE - INJECTION POINT: bg3.exe+32A3AE1
-
-bg3.exe+32A3ABF: 33 DB                 - xor ebx,ebx
-bg3.exe+32A3AC1: 4C 8B 7C 24 20        - mov r15,[rsp+20]
-bg3.exe+32A3AC6: 48 8B 6C 24 58        - mov rbp,[rsp+58]
-bg3.exe+32A3ACB: 48 85 DB              - test rbx,rbx
-bg3.exe+32A3ACE: 74 3E                 - je bg3.exe+32A3B0E
-bg3.exe+32A3AD0: BA 00 08 00 00        - mov edx,00000800
-bg3.exe+32A3AD5: 48 8B CB              - mov rcx,rbx
-bg3.exe+32A3AD8: E8 83 7A 9E FF        - call bg3.exe+2C8B560
-bg3.exe+32A3ADD: 84 C0                 - test al,al
-bg3.exe+32A3ADF: 75 5C                 - jne bg3.exe+32A3B3D
-// ---------- INJECTING HERE ----------
-bg3.exe+32A3AE1: 48 8B 05 18 B0 33 04  - mov rax,[bg3.exe+75DEB00]
-// ---------- DONE INJECTING  ----------
-bg3.exe+32A3AE8: 80 B8 A4 01 00 00 00  - cmp byte ptr [rax+000001A4],00
-bg3.exe+32A3AEF: 74 1D                 - je bg3.exe+32A3B0E
-bg3.exe+32A3AF1: BA 01 00 00 00        - mov edx,00000001
-bg3.exe+32A3AF6: 48 8B CB              - mov rcx,rbx
-bg3.exe+32A3AF9: E8 62 7A 9E FF        - call bg3.exe+2C8B560
-bg3.exe+32A3AFE: 84 C0                 - test al,al
-bg3.exe+32A3B00: 74 0C                 - je bg3.exe+32A3B0E
-bg3.exe+32A3B02: 80 7E 62 00           - cmp byte ptr [rsi+62],00
-bg3.exe+32A3B06: 75 06                 - jne bg3.exe+32A3B0E
-bg3.exe+32A3B08: 80 7E 20 09           - cmp byte ptr [rsi+20],09
-}
-</AssemblerScript>
-      <CheatEntries>
         <CheatEntry>
-          <ID>427</ID>
-          <Description>"Settings"</Description>
+          <ID>4988</ID>
+          <Description>"Character 5"</Description>
           <Options moHideChildren="1"/>
           <ShowAsSigned>0</ShowAsSigned>
           <GroupHeader>1</GroupHeader>
-          <Address>settings</Address>
+          <Address>statsPtr+28</Address>
           <Offsets>
-            <Offset>0</Offset>
+            <Offset>40</Offset>
           </Offsets>
           <CheatEntries>
             <CheatEntry>
-              <ID>428</ID>
-              <Description>"God Mode"</Description>
-              <DropDownList DisplayValueAsItem="1">0:Off
-1:On
-</DropDownList>
+              <ID>4989</ID>
+              <Description>"Name (do NOT change)"</Description>
               <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Byte</VariableType>
-              <Address>+godmode</Address>
+              <VariableType>String</VariableType>
+              <Length>99</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>-18</Address>
             </CheatEntry>
             <CheatEntry>
-              <ID>540</ID>
-              <Description>"Weighted Dice"</Description>
-              <DropDownList DisplayValueAsItem="1">0:Off
-1:On
-</DropDownList>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Byte</VariableType>
-              <Address>+810</Address>
+              <ID>4990</ID>
+              <Description>"Strength"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+04</Address>
             </CheatEntry>
             <CheatEntry>
-              <ID>430</ID>
-              <Description>"Game Speed"</Description>
+              <ID>4991</ID>
+              <Description>"Dexterity"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>4992</ID>
+              <Description>"Constitution"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>4993</ID>
+              <Description>"Intelligence"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+10</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>4994</ID>
+              <Description>"Wisdom"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+14</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>4995</ID>
+              <Description>"Charisma"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+18</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>4996</ID>
+          <Description>"Character 6"</Description>
+          <Options moHideChildren="1"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <GroupHeader>1</GroupHeader>
+          <Address>statsPtr+30</Address>
+          <Offsets>
+            <Offset>40</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>4997</ID>
+              <Description>"Name (do NOT change)"</Description>
               <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>+5C</Address>
+              <VariableType>String</VariableType>
+              <Length>99</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>-18</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>4998</ID>
+              <Description>"Strength"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+04</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>4999</ID>
+              <Description>"Dexterity"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5000</ID>
+              <Description>"Constitution"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5001</ID>
+              <Description>"Intelligence"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+10</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5002</ID>
+              <Description>"Wisdom"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+14</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5003</ID>
+              <Description>"Charisma"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+18</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5004</ID>
+          <Description>"Character 7"</Description>
+          <Options moHideChildren="1"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <GroupHeader>1</GroupHeader>
+          <Address>statsPtr+38</Address>
+          <Offsets>
+            <Offset>40</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>5005</ID>
+              <Description>"Name (do NOT change)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>String</VariableType>
+              <Length>99</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>-18</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5006</ID>
+              <Description>"Strength"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+04</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5007</ID>
+              <Description>"Dexterity"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5008</ID>
+              <Description>"Constitution"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5009</ID>
+              <Description>"Intelligence"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+10</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5010</ID>
+              <Description>"Wisdom"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+14</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5011</ID>
+              <Description>"Charisma"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+18</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5012</ID>
+          <Description>"Character 8"</Description>
+          <Options moHideChildren="1"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <GroupHeader>1</GroupHeader>
+          <Address>statsPtr+40</Address>
+          <Offsets>
+            <Offset>40</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>5013</ID>
+              <Description>"Name (do NOT change)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>String</VariableType>
+              <Length>99</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>-18</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5014</ID>
+              <Description>"Strength"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+04</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5015</ID>
+              <Description>"Dexterity"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5016</ID>
+              <Description>"Constitution"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5017</ID>
+              <Description>"Intelligence"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+10</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5018</ID>
+              <Description>"Wisdom"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+14</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5019</ID>
+              <Description>"Charisma"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+18</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5020</ID>
+          <Description>"Character 9"</Description>
+          <Options moHideChildren="1"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <GroupHeader>1</GroupHeader>
+          <Address>statsPtr+48</Address>
+          <Offsets>
+            <Offset>40</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>5021</ID>
+              <Description>"Name (do NOT change)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>String</VariableType>
+              <Length>99</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>-18</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5022</ID>
+              <Description>"Strength"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+04</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5023</ID>
+              <Description>"Dexterity"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5024</ID>
+              <Description>"Constitution"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5025</ID>
+              <Description>"Intelligence"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+10</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5026</ID>
+              <Description>"Wisdom"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+14</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5027</ID>
+              <Description>"Charisma"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+18</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5028</ID>
+          <Description>"Character 10"</Description>
+          <Options moHideChildren="1"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <GroupHeader>1</GroupHeader>
+          <Address>statsPtr+50</Address>
+          <Offsets>
+            <Offset>40</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>5029</ID>
+              <Description>"Name (do NOT change)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>String</VariableType>
+              <Length>99</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>-18</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5030</ID>
+              <Description>"Strength"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+04</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5031</ID>
+              <Description>"Dexterity"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+08</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5032</ID>
+              <Description>"Constitution"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5033</ID>
+              <Description>"Intelligence"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+10</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5034</ID>
+              <Description>"Wisdom"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+14</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5035</ID>
+              <Description>"Charisma"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+18</Address>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
@@ -1290,28 +921,51 @@ bg3.exe+32A3B08: 80 7E 20 09           - cmp byte ptr [rsi+20],09
       <Description>"Unlimited Prepared Spells (just keep selecting more, ignore slots)"</Description>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript Async="1">[ENABLE]
-aobscanmodule(prepareSpells,$process,33 ?? 41 3B ?? 7C)
-prepareSpells+05:
+aobscanmodule(prepareSpells,$process,7C ?? 48 8B ?? ?? ?? 8B ?? ?? ?? 00 00 ?? 00)
+prepareSpells+00:
   db EB
 registersymbol(prepareSpells)
 
-aobscanmodule(prepareSpells2,$process,0F 8E ?? ?? ?? ?? 44 8D ?? ?? 44 89 ?? ?? 80 ?? ?? ?? ?? ?? 00)
-prepareSpells2:
+aobscanmodule(prepareSpells2,$process,8B 00 3B ?? 0F 8E)
+prepareSpells2+04:
   db EB 04
 registersymbol(prepareSpells2)
 
 [DISABLE]
-prepareSpells+05:
+prepareSpells+00:
   db 7C
 unregistersymbol(prepareSpells)
 
-prepareSpells2:
+prepareSpells2+04:
   db 0F 8E
 unregistersymbol(prepareSpells2)
 
 {
-// ORIGINAL CODE - INJECTION POINT: bg3_dx11.exe+DA5FC1
+bg3.exe+2AA25C9: 49 8B 80 80 00 00 00     - mov rax,[r8+00000080]
+bg3.exe+2AA25D0: 48 8D 14 88              - lea rdx,[rax+rcx*4]
+bg3.exe+2AA25D4: 0F 57 C0                 - xorps xmm0,xmm0
+bg3.exe+2AA25D7: 0F 11 45 50              - movups [rbp+50],xmm0
+bg3.exe+2AA25DB: 48 89 55 50              - mov [rbp+50],rdx
+bg3.exe+2AA25DF: 44 8B 3A                 - mov r15d,[rdx]
+bg3.exe+2AA25E2: EB 80                    - jmp bg3.exe+2AA2564
+bg3.exe+2AA25E4: 41 8B C6                 - mov eax,r14d
+bg3.exe+2AA25E7: 4C 8B 64 24 30           - mov r12,[rsp+30]
+bg3.exe+2AA25EC: 41 3B C7                 - cmp eax,r15d
+// ---------- INJECTING HERE ----------
+bg3.exe+2AA25EF: 7C 6B                    - jl bg3.exe+2AA265C
+// ---------- DONE INJECTING  ----------
+bg3.exe+2AA25F1: 48 8B 44 24 20           - mov rax,[rsp+20]
+bg3.exe+2AA25F6: 8B 80 3C 01 00 00        - mov eax,[rax+0000013C]
+bg3.exe+2AA25FC: A9 00 00 FF FF           - test eax,FFFF0000
+bg3.exe+2AA2601: 66 41 0F 45 C6           - cmovne ax,r14w
+bg3.exe+2AA2606: 66 89 44 24 2A           - mov [rsp+2A],ax
+bg3.exe+2AA260B: 49 8B 9C 24 A8 00 00 00  - mov rbx,[r12+000000A8]
+bg3.exe+2AA2613: 48 85 DB                 - test rbx,rbx
+bg3.exe+2AA2616: 0F 84 7F 01 00 00        - je bg3.exe+2AA279B
+bg3.exe+2AA261C: 49 63 84 24 B4 00 00 00  - movsxd  rax,dword ptr [r12+000000B4]
+bg3.exe+2AA2624: 48 8D 0C C0              - lea rcx,[rax+rax*8]
 
+// old
 bg3_dx11.exe+DA5F9F: EB 9C                 - jmp bg3_dx11.exe+DA5F3D
 bg3_dx11.exe+DA5FA1: 48 8B 83 80 00 00 00  - mov rax,[rbx+00000080]
 bg3_dx11.exe+DA5FA8: 0F 57 C0              - xorps xmm0,xmm0
@@ -1338,8 +992,31 @@ bg3_dx11.exe+DA5FEB: 48 8D 34 CB           - lea rsi,[rbx+rcx*8]
 }
 
 {
-// ORIGINAL CODE - INJECTION POINT: bg3_dx11.exe+164DF64
+bg3.exe+23728B2: 0F 57 C0              - xorps xmm0,xmm0
+bg3.exe+23728B5: 0F 11 85 80 03 00 00  - movups [rbp+00000380],xmm0
+bg3.exe+23728BC: EB 14                 - jmp bg3.exe+23728D2
+bg3.exe+23728BE: 48 8B 00              - mov rax,[rax]
+bg3.exe+23728C1: 0F 57 C0              - xorps xmm0,xmm0
+bg3.exe+23728C4: 0F 11 85 A0 03 00 00  - movups [rbp+000003A0],xmm0
+bg3.exe+23728CB: 48 89 85 A0 03 00 00  - mov [rbp+000003A0],rax
+bg3.exe+23728D2: 4C 89 64 24 38        - mov [rsp+38],r12
+bg3.exe+23728D7: 8B 00                 - mov eax,[rax]
+bg3.exe+23728D9: 3B C3                 - cmp eax,ebx
+// ---------- INJECTING HERE ----------
+bg3.exe+23728DB: 0F 8E 2A 02 00 00     - jng bg3.exe+2372B0B
+// ---------- DONE INJECTING  ----------
+bg3.exe+23728E1: 8D 43 01              - lea eax,[rbx+01]
+bg3.exe+23728E4: 89 85 80 03 00 00     - mov [rbp+00000380],eax
+bg3.exe+23728EA: 4C 8D 85 80 03 00 00  - lea r8,[rbp+00000380]
+bg3.exe+23728F1: 48 8D 55 98           - lea rdx,[rbp-68]
+bg3.exe+23728F5: 48 8D 8D E1 00 00 00  - lea rcx,[rbp+000000E1]
+bg3.exe+23728FC: E8 1F 3F 00 00        - call bg3.exe+2376820
+bg3.exe+2372901: 48 8B 4D 88           - mov rcx,[rbp-78]
+bg3.exe+2372905: 0F B6 5C 24 30        - movzx ebx,byte ptr [rsp+30]
+bg3.exe+237290A: 83 79 44 FF           - cmp dword ptr [rcx+44],-01
+bg3.exe+237290E: 0F 85 B9 00 00 00     - jne bg3.exe+23729CD
 
+// old
 bg3_dx11.exe+164DF37: 0F 11 85 70 02 00 00  - movups [rbp+00000270],xmm0
 bg3_dx11.exe+164DF3E: 48 89 85 70 02 00 00  - mov [rbp+00000270],rax
 bg3_dx11.exe+164DF45: EB 14                 - jmp bg3_dx11.exe+164DF5B
@@ -1372,7 +1049,7 @@ bg3_dx11.exe+164DF8F: 41 B0 01              - mov r8b,01
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript Async="1">[ENABLE]
-aobscanmodule(saveLevel,$process,C3 48 83 ?? ?? 48 8B ?? ?? 45 33 C0 48 8B ?? ?? E8 ?? ?? ?? ?? 8B 00 48 83 ?? ?? C3)
+aobscanmodule(saveLevel,$process,48 83 ?? ?? 48 8B ?? ?? 45 33 C0 48 8B ?? ?? E8 ?? ?? ?? ?? 8B 00 48 83 ?? ?? C3)
 alloc(newmem,$1000,saveLevel)
 
 label(code)
@@ -1387,14 +1064,14 @@ code:
   add rsp,28
   jmp return
 
-saveLevel+15:
+saveLevel+14:
   jmp newmem
   nop
 return:
 registersymbol(saveLevel)
 
 [DISABLE]
-saveLevel+15:
+saveLevel+14:
   db 8B 00 48 83 C4 28
 unregistersymbol(saveLevel)
 dealloc(newmem)
@@ -1456,103 +1133,23 @@ bg3.exe+8D9847: 55              - push rbp
       </CheatEntries>
     </CheatEntry>
     <CheatEntry>
-      <ID>1187</ID>
-      <Description>"Allow DLC Content (probably have to reload a save)"</Description>
-      <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript Async="1">[ENABLE]
-aobscanmodule(dlc1,$process,0F 10 05 ?? ?? ?? ?? 0F 11 ?? ?? ?? 84 C0 75)
-dlc1+0E:
-  db EB
-registersymbol(dlc1)
-
-aobscanmodule(dlc2,$process,84 C0 75 ?? 48 8B ?? ?? ?? ?? ?? 8B ?? ?? 85 ?? 79 ?? 32 C0)
-dlc2+12:
-  mov al,1
-registersymbol(dlc2)
-
-[DISABLE]
-dlc1+0E:
-  db 75
-unregistersymbol(dlc1)
-
-dlc2+12:
-  db 32 C0
-unregistersymbol(dlc2)
-
-{
-// ORIGINAL CODE - INJECTION POINT: bg3.exe+146DCC6
-
-bg3.exe+146DC9B: 48 8B CD              - mov rcx,rbp
-bg3.exe+146DC9E: E8 3D 50 C6 FF        - call bg3.exe+10D2CE0
-bg3.exe+146DCA3: 48 8B F0              - mov rsi,rax
-bg3.exe+146DCA6: 48 85 C0              - test rax,rax
-bg3.exe+146DCA9: 0F 84 5C 01 00 00     - je bg3.exe+146DE0B
-bg3.exe+146DCAF: 48 8D 4D 10           - lea rcx,[rbp+10]
-bg3.exe+146DCB3: E8 F8 4F C6 FF        - call bg3.exe+10D2CB0
-bg3.exe+146DCB8: 0F 10 05 F1 8A 35 04  - movups xmm0,[bg3.exe+57C67B0]
-bg3.exe+146DCBF: 0F 11 44 24 38        - movups [rsp+38],xmm0
-bg3.exe+146DCC4: 84 C0                 - test al,al
-// ---------- INJECTING HERE ----------
-bg3.exe+146DCC6: 75 68                 - jne bg3.exe+146DD30
-// ---------- DONE INJECTING  ----------
-bg3.exe+146DCC8: 48 8D 4D 10           - lea rcx,[rbp+10]
-bg3.exe+146DCCC: E8 0F 06 1F FF        - call bg3.AK::Monitor::PostCodeVaList+C0D0
-bg3.exe+146DCD1: 48 8B D0              - mov rdx,rax
-bg3.exe+146DCD4: 48 8D 4C 24 48        - lea rcx,[rsp+48]
-bg3.exe+146DCD9: E8 62 F2 36 02        - call bg3.exe+37DCF40
-bg3.exe+146DCDE: 90                    - nop
-bg3.exe+146DCDF: 48 8D 54 24 48        - lea rdx,[rsp+48]
-bg3.exe+146DCE4: 48 8D 4C 24 20        - lea rcx,[rsp+20]
-bg3.exe+146DCE9: E8 92 6D C6 FF        - call bg3.exe+10D4A80
-bg3.exe+146DCEE: 90                    - nop
-}
-
-{
-// ORIGINAL CODE - INJECTION POINT: bg3.exe+146DE0B
-
-bg3.exe+146DDE4: 48 C1 E1 04              - shl rcx,04
-bg3.exe+146DDE8: 48 03 8B C8 00 00 00     - add rcx,[rbx+000000C8]
-bg3.exe+146DDEF: 48 8D 54 24 38           - lea rdx,[rsp+38]
-bg3.exe+146DDF4: E8 77 4B 34 00           - call bg3.exe+17B2970
-bg3.exe+146DDF9: 84 C0                    - test al,al
-bg3.exe+146DDFB: 75 4A                    - jne bg3.exe+146DE47
-bg3.exe+146DDFD: 48 8B 83 B8 00 00 00     - mov rax,[rbx+000000B8]
-bg3.exe+146DE04: 8B 14 B8                 - mov edx,[rax+rdi*4]
-bg3.exe+146DE07: 85 D2                    - test edx,edx
-bg3.exe+146DE09: 79 D5                    - jns bg3.exe+146DDE0
-// ---------- INJECTING HERE ----------
-bg3.exe+146DE0B: 32 C0                    - xor al,al
-// ---------- DONE INJECTING  ----------
-bg3.exe+146DE0D: 48 8B 4C 24 70           - mov rcx,[rsp+70]
-bg3.exe+146DE12: 48 33 CC                 - xor rcx,rsp
-bg3.exe+146DE15: E8 76 E7 C7 02           - call bg3.exe+40EC590
-bg3.exe+146DE1A: 4C 8D 9C 24 80 00 00 00  - lea r11,[rsp+00000080]
-bg3.exe+146DE22: 49 8B 5B 10              - mov rbx,[r11+10]
-bg3.exe+146DE26: 49 8B 6B 20              - mov rbp,[r11+20]
-bg3.exe+146DE2A: 49 8B 73 28              - mov rsi,[r11+28]
-bg3.exe+146DE2E: 49 8B E3                 - mov rsp,r11
-bg3.exe+146DE31: 5F                       - pop rdi
-bg3.exe+146DE32: C3                       - ret 
-}
-</AssemblerScript>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>4495</ID>
+      <ID>4973</ID>
       <Description>"Last Item Dropped UUID"</Description>
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
-aobscanmodule(itemDrop,$process,74 ?? 33 ?? 38 ?? ?? ?? 00 00 B0 01)
-alloc(newmem,$1000,itemDrop)
+      <AssemblerScript Async="1">// CanSitOn
+[ENABLE]
+aobscanmodule(canSitOnCmd,$process,C3 48 8B ?? ?? E8 ?? ?? ?? ?? 33 ?? 84 ?? B0 01)
+alloc(newmem,$1000,canSitOnCmd)
 
 label(itemDropUUID)
-label(itemDropBkp)
+label(canSitOnCmdBkp)
 label(return)
 
 newmem:
   push rbx
-  push rcx
-  push rdx
+  test rbx,rbx
+  je @f
   mov rbx,[rbx+08]
   test rbx,rbx
   je @f
@@ -1582,11 +1179,9 @@ newmem:
   mov rdx,[rbx+58]
   mov [rcx+58],rdx
 @@:
-  pop rdx
-  pop rcx
   pop rbx
-itemDropBkp:
-  readmem(itemDrop+04,6)
+canSitOnCmdBkp:
+  readmem(canSitOnCmd+0A,6)
   jmp return
 
 align 10
@@ -1606,48 +1201,48 @@ itemDropUUID:
   dq 0
   dq 0
 
-itemDrop+04:
+canSitOnCmd+0A:
   jmp newmem
   nop
 return:
-registersymbol(itemDrop)
-registersymbol(itemDropBkp)
+registersymbol(canSitOnCmd)
+registersymbol(canSitOnCmdBkp)
 registersymbol(itemDropUUID)
 
 [DISABLE]
-itemDrop+04:
-  readmem(itemDropBkp,6)
-unregistersymbol(itemDrop)
-unregistersymbol(itemDropBkp)
+canSitOnCmd+0A:
+  readmem(canSitOnCmdBkp,6)
+unregistersymbol(canSitOnCmd)
+unregistersymbol(canSitOnCmdBkp)
 unregistersymbol(itemDropUUID)
 dealloc(newmem)
 
 {
-// ORIGINAL CODE - INJECTION POINT: bg3.exe+14519C9
+// ORIGINAL CODE - INJECTION POINT: bg3.exe+2681DC7
 
-bg3.exe+14519AB: 48 8B CB           - mov rcx,rbx
-bg3.exe+14519AE: E8 FD 2D C8 FF     - call bg3.exe+10D47B0
-bg3.exe+14519B3: 48 85 C0           - test rax,rax
-bg3.exe+14519B6: 74 25              - je bg3.exe+14519DD
-bg3.exe+14519B8: 33 D2              - xor edx,edx
-bg3.exe+14519BA: 48 8B C8           - mov rcx,rax
-bg3.exe+14519BD: E8 0E AE C9 FF     - call bg3.exe+10EC7D0
-bg3.exe+14519C2: 48 85 C0           - test rax,rax
-bg3.exe+14519C5: 74 16              - je bg3.exe+14519DD
-bg3.exe+14519C7: 33 C9              - xor ecx,ecx
+bg3.exe+2681DA9: 33 D2           - xor edx,edx
+bg3.exe+2681DAB: 48 8B CB        - mov rcx,rbx
+bg3.exe+2681DAE: E8 7D CD 8B FF  - call bg3.exe+1F3EB30
+bg3.exe+2681DB3: 48 85 C0        - test rax,rax
+bg3.exe+2681DB6: 75 06           - jne bg3.exe+2681DBE
+bg3.exe+2681DB8: 48 83 C4 20     - add rsp,20
+bg3.exe+2681DBC: 5B              - pop rbx
+bg3.exe+2681DBD: C3              - ret 
+bg3.exe+2681DBE: 48 8B 48 48     - mov rcx,[rax+48]
+bg3.exe+2681DC2: E8 09 75 F8 FF  - call bg3.exe+26092D0
 // ---------- INJECTING HERE ----------
-bg3.exe+14519C9: 38 88 FA 05 00 00  - cmp [rax+000005FA],cl
+bg3.exe+2681DC7: 33 C9           - xor ecx,ecx
 // ---------- DONE INJECTING  ----------
-bg3.exe+14519CF: B0 01              - mov al,01
-bg3.exe+14519D1: 0F 95 C1           - setne cl
-bg3.exe+14519D4: 89 4B 18           - mov [rbx+18],ecx
-bg3.exe+14519D7: 48 83 C4 20        - add rsp,20
-bg3.exe+14519DB: 5B                 - pop rbx
-bg3.exe+14519DC: C3                 - ret 
-bg3.exe+14519DD: 32 C0              - xor al,al
-bg3.exe+14519DF: 48 83 C4 20        - add rsp,20
-bg3.exe+14519E3: 5B                 - pop rbx
-bg3.exe+14519E4: C3                 - ret 
+bg3.exe+2681DC9: 84 C0           - test al,al
+bg3.exe+2681DCB: B0 01           - mov al,01
+bg3.exe+2681DCD: 0F 95 C1        - setne cl
+bg3.exe+2681DD0: 89 4B 18        - mov [rbx+18],ecx
+bg3.exe+2681DD3: 48 83 C4 20     - add rsp,20
+bg3.exe+2681DD7: 5B              - pop rbx
+bg3.exe+2681DD8: C3              - ret 
+bg3.exe+2681DD9: CC              - int 3 
+bg3.exe+2681DDA: CC              - int 3 
+bg3.exe+2681DDB: CC              - int 3 
 }
 </AssemblerScript>
       <CheatEntries>
@@ -1745,7 +1340,7 @@ bg3.exe+21CE3A6: 48 3B DD        - cmp rbx,rbp
     </CheatEntry>
     <CheatEntry>
       <ID>4919</ID>
-      <Description>"Learn Any Wizard Scroll (activate before loading your save)"</Description>
+      <Description>"Learn Wizard Scroll on Any Character (activate before loading your save)"</Description>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript Async="1">{
 bg3.exe+FB503E - 48 8D 05 0B609D03     - lea rax,[bg3.exe+498B050] ( ("hb050cfccgbefcg446fg89fcg3d389ce0327f") )
@@ -1770,24 +1365,20 @@ bg3.exe+215DF52 - 75 68                 - jne bg3.exe+215DFBC
 bg3.exe+1823CC9 - 0F84 D4000000         - je bg3.exe+1823DA3
 }
 [ENABLE]
-aobscanmodule(isWizard1,$process,80 ?? ?? ?? 00 00 00 75 ?? 48 83 ?? ?? 48 3B ?? 0F 85)
+aobscanmodule(isWizard1,$process,80 ?? ?? ?? 00 00 00 75 ?? 48 83 ?? ?? ?? 3B ?? 0F 85)
 isWizard1+07:
   db EB
 registersymbol(isWizard1)
 
-aobscanmodule(isWizard2,$process,?? 84 ?? 0F 84 ?? ?? ?? ?? 84 ?? 0F 84 ?? ?? ?? ?? 48 8D ?? ?? E8)
+aobscanmodule(isWizard2,$process,?? 84 ?? 0F 84 ?? ?? ?? ?? 84 ?? 0F 84 ?? ?? ?? ?? 80)
 isWizard2:
   db EB 0F
 registersymbol(isWizard2)
 
-aobscanmodule(wizardLevel,$process,3B ?? 0F 8F ?? ?? ?? ?? 85 C0 0F 84 ?? ?? ?? ?? B8 01 00 00 00)
-alloc(wizardLevelBkp,2)
-wizardLevelBkp:
-  readmem(wizardLevel,2)
-wizardLevel:
-  db EB 0E
+aobscanmodule(wizardLevel,$process,E8 ?? ?? ?? ?? ?? ?? ?? ?? 0F 8F ?? ?? ?? ?? 85 ?? 0F 84)
+wizardLevel+09:
+  db EB 0C
 registersymbol(wizardLevel)
-registersymbol(wizardLevelBkp)
 
 [DISABLE]
 isWizard1+07:
@@ -1798,15 +1389,37 @@ isWizard2:
   db 40 84
 unregistersymbol(isWizard2)
 
-wizardLevel:
-  readmem(wizardLevelBkp,2)
+wizardLevel+09:
+  db 0F 8F
 unregistersymbol(wizardLevel)
-unregistersymbol(wizardLevelBkp)
-dealloc(wizardLevelBkp)
 
 {
-// ORIGINAL CODE - INJECTION POINT: bg3.exe+215DF52
+// isWizard1
+bg3.exe+F6601C: 42 8B 14 80           - mov edx,[rax+r8*4]
+bg3.exe+F66020: 85 D2                 - test edx,edx
+bg3.exe+F66022: 79 DC                 - jns bg3.exe+F66000
+bg3.exe+F66024: 33 C0                 - xor eax,eax
+bg3.exe+F66026: 0F 57 C0              - xorps xmm0,xmm0
+bg3.exe+F66029: 0F 11 44 24 10        - movups [rsp+10],xmm0
+bg3.exe+F6602E: C6 44 24 18 01        - mov byte ptr [rsp+18],01
+bg3.exe+F66033: 33 D2                 - xor edx,edx
+bg3.exe+F66035: 66 89 44 24 10        - mov [rsp+10],ax
+bg3.exe+F6603A: 80 BA 87 00 00 00 00  - cmp byte ptr [rdx+00000087],00
+// ---------- INJECTING HERE ----------
+bg3.exe+F66041: 75 68                 - jne bg3.exe+F660AB
+// ---------- DONE INJECTING  ----------
+bg3.exe+F66043: 48 83 C1 28           - add rcx,28
+bg3.exe+F66047: 49 3B C9              - cmp rcx,r9
+bg3.exe+F6604A: 0F 85 60 FF FF FF     - jne bg3.exe+F65FB0
+bg3.exe+F66050: 33 C9                 - xor ecx,ecx
+bg3.exe+F66052: 0F 57 C0              - xorps xmm0,xmm0
+bg3.exe+F66055: 41 0F 11 06           - movups [r14],xmm0
+bg3.exe+F66059: 33 C0                 - xor eax,eax
+bg3.exe+F6605B: 49 89 46 10           - mov [r14+10],rax
+bg3.exe+F6605F: 41 C6 46 10 01        - mov byte ptr [r14+10],01
+bg3.exe+F66064: 66 41 89 0E           - mov [r14],cx
 
+// isWizard1 - Old
 bg3.exe+215DF2E: 8B 04 B8              - mov eax,[rax+rdi*4]
 bg3.exe+215DF31: 85 C0                 - test eax,eax
 bg3.exe+215DF33: 79 DB                 - jns bg3.exe+215DF10
@@ -1833,8 +1446,32 @@ bg3.exe+215DF75: 66 41 89 0E           - mov [r14],cx
 }
 
 {
-// ORIGINAL CODE - INJECTION POINT: bg3.exe+1823CC6
+// isWizard2
+bg3.exe+23645FF: 75 25                 - jne bg3.exe+2364626
+bg3.exe+2364601: B0 01                 - mov al,01
+bg3.exe+2364603: EB 23                 - jmp bg3.exe+2364628
+bg3.exe+2364605: 48 69 C9 E0 00 00 00  - imul rcx,rcx,000000E0
+bg3.exe+236460C: 49 03 88 80 00 00 00  - add rcx,[r8+00000080]
+bg3.exe+2364613: 0F 57 C0              - xorps xmm0,xmm0
+bg3.exe+2364616: 0F 11 85 40 01 00 00  - movups [rbp+00000140],xmm0
+bg3.exe+236461D: 48 89 8D 40 01 00 00  - mov [rbp+00000140],rcx
+bg3.exe+2364624: EB AA                 - jmp bg3.exe+23645D0
+bg3.exe+2364626: 32 C0                 - xor al,al
+// ---------- INJECTING HERE ----------
+bg3.exe+2364628: 40 84 FF              - test dil,dil
+// ---------- DONE INJECTING  ----------
+bg3.exe+236462B: 0F 84 EC 00 00 00     - je bg3.exe+236471D
+bg3.exe+2364631: 84 C0                 - test al,al
+bg3.exe+2364633: 0F 84 E4 00 00 00     - je bg3.exe+236471D
+bg3.exe+2364639: 80 7D 50 00           - cmp byte ptr [rbp+50],00
+bg3.exe+236463D: 75 24                 - jne bg3.exe+2364663
+bg3.exe+236463F: 80 7D 40 00           - cmp byte ptr [rbp+40],00
+bg3.exe+2364643: 75 1A                 - jne bg3.exe+236465F
+bg3.exe+2364645: 83 7D 3C 00           - cmp dword ptr [rbp+3C],00
+bg3.exe+2364649: 75 0B                 - jne bg3.exe+2364656
+bg3.exe+236464B: 33 D2                 - xor edx,edx
 
+// isWizard2 - old
 bg3.exe+1823C97: 66 0F 1F 84 00 00 00 00 00  - nop word ptr [rax+rax+00000000]
 bg3.exe+1823CA0: 0F 10 03                    - movups xmm0,[rbx]
 bg3.exe+1823CA3: 0F 29 44 24 40              - movaps [rsp+40],xmm0
@@ -1861,8 +1498,32 @@ bg3.exe+1823CEE: 8B C8                       - mov ecx,eax
 }
 
 {
-// ORIGINAL CODE - INJECTION POINT: bg3.exe+215B00D
+// wizardLevel
+bg3.exe+F6639A: 41 0F 11 47 10        - movups [r15+10],xmm0
+bg3.exe+F6639F: 41 C6 47 18 01        - mov byte ptr [r15+18],01
+bg3.exe+F663A4: F2 0F 10 45 C7        - movsd xmm0,[rbp-39]
+bg3.exe+F663A9: F2 41 0F 11 07        - movsd [r15],xmm0
+bg3.exe+F663AE: 41 89 4F 08           - mov [r15+08],ecx
+bg3.exe+F663B2: E9 12 01 00 00        - jmp bg3.exe+F664C9
+bg3.exe+F663B7: 48 8B 55 BF           - mov rdx,[rbp-41]
+bg3.exe+F663BB: 48 8D 0D F6 12 BB 04  - lea rcx,[bg3.exe+5B176B8]
+bg3.exe+F663C2: E8 89 5D 0D 00        - call bg3.exe+103C150
+bg3.exe+F663C7: 41 39 45 3C           - cmp [r13+3C],eax
+// ---------- INJECTING HERE ----------
+bg3.exe+F663CB: 0F 8F C7 00 00 00     - jg bg3.exe+F66498
+// ---------- DONE INJECTING  ----------
+bg3.exe+F663D1: 85 C0                 - test eax,eax
+bg3.exe+F663D3: 0F 84 BF 00 00 00     - je bg3.exe+F66498
+bg3.exe+F663D9: 4C 8B 45 C7           - mov r8,[rbp-39]
+bg3.exe+F663DD: 49 8B D5              - mov rdx,r13
+bg3.exe+F663E0: 49 8B CC              - mov rcx,r12
+bg3.exe+F663E3: E8 D8 FC FF FF        - call bg3.exe+F660C0
+bg3.exe+F663E8: 3B 45 6F              - cmp eax,[rbp+6F]
+bg3.exe+F663EB: 0F 9E C1              - setle cl
+bg3.exe+F663EE: 80 BD 97 00 00 00 00  - cmp byte ptr [rbp+00000097],00
+bg3.exe+F663F5: 74 3C                 - je bg3.exe+F66433
 
+// wizardLevel - Old
 bg3.exe+215AFE0: 0F 11 46 10           - movups [rsi+10],xmm0
 bg3.exe+215AFE4: C6 46 18 01           - mov byte ptr [rsi+18],01
 bg3.exe+215AFE8: F2 0F 10 45 B8        - movsd xmm0,[rbp-48]
@@ -1895,7 +1556,7 @@ bg3.exe+215B032: 74 2F                 - je bg3.exe+215B063
       <Options moHideChildren="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-aobscanmodule(console,$process,81 E2 FF FF FF 01 3B)
+aobscanmodule(console,$process,3B ?? 2C 73 ?? 48 8B ?? ?? 48 8B)
 alloc(newmem,$1000,console)
 alloc(cmdCode,$1000)
 alloc(cmdStr0,$1000)
@@ -1909,22 +1570,24 @@ label(cmdArgs)
 label(cmdSelf)
 label(cmdAddr)
 label(cmdList)
-label(code)
+label(consoleBkp)
 label(return)
 
 newmem:
-  mov rax,cmdList
-  mov [rax],rcx
-code:
-  and edx,01FFFFFF
+  push rcx
+  mov rcx,cmdList
+  mov [rcx],rax
+  pop rcx
+consoleBkp:
+  readmem(console+05,8)
   jmp return
 
 cmdList:
   dq 0
 
-console:
+console+05:
   jmp newmem
-  nop
+  nop 3
 return:
 
 cmdCode:
@@ -1960,6 +1623,7 @@ cmdArgs:
   dq 0
 
 registersymbol(console)
+registersymbol(consoleBkp)
 registersymbol(cmdList)
 registersymbol(cmdCall)
 registersymbol(cmdAddr)
@@ -1972,9 +1636,10 @@ registersymbol(cmdStr3)
 registersymbol(cmdStr4)
 
 [DISABLE]
-console:
-  db 81 E2 FF FF FF 01
+console+05:
+  readmem(consoleBkp, 8)
 unregistersymbol(console)
+unregistersymbol(consoleBkp)
 dealloc(newmem)
 
 unregistersymbol(cmdList)
@@ -1990,6 +1655,34 @@ dealloc(cmdStr1)
 dealloc(cmdStr2)
 dealloc(cmdStr3)
 dealloc(cmdStr4)
+
+{
+// ORIGINAL CODE - INJECTION POINT: bg3.exe+2818090
+
+bg3.exe+2818064: 48 33 C4                 - xor rax,rsp
+bg3.exe+2818067: 48 89 84 24 20 01 00 00  - mov [rsp+00000120],rax
+bg3.exe+281806F: 4C 8B 2D 6A 45 31 03     - mov r13,[bg3.exe+5B2C5E0] // &lt;-- console
+bg3.exe+2818076: 4D 8B F0                 - mov r14,r8
+bg3.exe+2818079: C1 EA 03                 - shr edx,03
+bg3.exe+281807C: 81 E2 FF FF FF 01        - and edx,01FFFFFF
+bg3.exe+2818082: 4C 89 6C 24 40           - mov [rsp+40],r13
+bg3.exe+2818087: 49 8B 45 08              - mov rax,[r13+08]
+bg3.exe+281808B: 3B 50 2C                 - cmp edx,[rax+2C]
+bg3.exe+281808E: 73 0A                    - jae bg3.exe+281809A
+// ---------- INJECTING HERE ----------
+bg3.exe+2818090: 48 8B 40 20              - mov rax,[rax+20]
+// ---------- DONE INJECTING  ----------
+bg3.exe+2818094: 48 8B 3C D0              - mov rdi,[rax+rdx*8]
+bg3.exe+2818098: EB 02                    - jmp bg3.exe+281809C
+bg3.exe+281809A: 33 FF                    - xor edi,edi
+bg3.exe+281809C: 48 85 FF                 - test rdi,rdi
+bg3.exe+281809F: 0F 84 7E 02 00 00        - je bg3.exe+2818323
+bg3.exe+28180A5: 48 89 AC 24 68 01 00 00  - mov [rsp+00000168],rbp
+bg3.exe+28180AD: 48 8B D7                 - mov rdx,rdi
+bg3.exe+28180B0: 48 89 B4 24 78 01 00 00  - mov [rsp+00000178],rsi
+bg3.exe+28180B8: 49 8B CD                 - mov rcx,r13
+bg3.exe+28180BB: 4C 89 A4 24 38 01 00 00  - mov [rsp+00000138],r12
+}
 
 {
 // ORIGINAL CODE - INJECTION POINT: bg3.exe+2F153D3
@@ -2090,21 +1783,31 @@ for i = 1, size do
 end
 
 function PrepareCall(name)
-  local cmdAddr = getAddress("cmdAddr")
-  local cmdSelf = getAddress("cmdSelf")
   local cmd = getAddress(name)
-  writePointer(cmdAddr, cmd)
-  writePointer(cmdSelf, COMMAND_SELF[name])
+  if cmd and cmd ~= 0 then
+    local cmdAddr = getAddress("cmdAddr")
+    local cmdSelf = getAddress("cmdSelf")
+    writePointer(cmdAddr, cmd)
+    writePointer(cmdSelf, COMMAND_SELF[name])
+  else
+    print("Register Commands failed to find command "..name..". Please reregister.")
+    assert(false, "Command not registered")
+  end
 end
 
 function ExecuteCall(FuncName)
-  local cmdAddr = getAddress("cmdAddr")
-  local cmdSelf = getAddress("cmdSelf")
-  local cmdCall = getAddress("cmdCall")
   local cmd = getAddress(FuncName)
-  writePointer(cmdAddr, cmd)
-  writePointer(cmdSelf, COMMAND_SELF[FuncName])
-  return executeCodeEx(0, nil, cmdCall)
+  if cmd and cmd ~= 0 then
+    local cmdAddr = getAddress("cmdAddr")
+    local cmdSelf = getAddress("cmdSelf")
+    local cmdCall = getAddress("cmdCall")
+    writePointer(cmdAddr, cmd)
+    writePointer(cmdSelf, COMMAND_SELF[FuncName])
+    return executeCodeEx(0, nil, cmdCall)
+  else
+    print("Register Commands failed to find command "..FuncName..". Please reregister.")
+    assert(false, "Command not registered")
+  end
 end
 
 function GetArgAt(i)
@@ -3498,6 +3201,21 @@ if syntaxcheck then return end
 local player = GetHostCharacter()
 SetArgToString(0, player)
 ExecuteCall("RestoreParty")
+[DISABLE]
+</AssemblerScript>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>4934</ID>
+                  <Description>"Reset Illithid Powers"</Description>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>{$lua}
+if syntaxcheck then return end
+flag = {
+  "GLO_Tadpoled_UsedToday1_36d218ea-3eab-481f-fdaa-4ee185e76c25",
+  "GLO_Tadpoled_UsedToday2_b9d51e70-8963-e27f-a1fe-db5b9cfb3b1d"
+}
+[ENABLE]
+ClearFlagOnPlayer(flag)
 [DISABLE]
 </AssemblerScript>
                 </CheatEntry>
@@ -6610,6 +6328,78 @@ TemplateAddToPlayer(item, 10)
 </AssemblerScript>
                     </CheatEntry>
                     <CheatEntry>
+                      <ID>4974</ID>
+                      <Description>"10 Hag Hair for Strength"</Description>
+                      <VariableType>Auto Assembler Script</VariableType>
+                      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+[ENABLE]
+local item = "8f6b0c08-d1b1-4ae7-ade2-da3c679ce323"
+TemplateAddToPlayer(item, 10)
+[DISABLE]
+</AssemblerScript>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>4975</ID>
+                      <Description>"10 Hag Hair for Dexterity"</Description>
+                      <VariableType>Auto Assembler Script</VariableType>
+                      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+[ENABLE]
+local item = "7e3afbf6-4e1a-444e-826d-f8e0e0a8308f"
+TemplateAddToPlayer(item, 10)
+[DISABLE]
+</AssemblerScript>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>4976</ID>
+                      <Description>"10 Hag Hair for Constitution"</Description>
+                      <VariableType>Auto Assembler Script</VariableType>
+                      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+[ENABLE]
+local item = "d16922ba-a36b-4015-8072-27610821fb53"
+TemplateAddToPlayer(item, 10)
+[DISABLE]
+</AssemblerScript>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>4977</ID>
+                      <Description>"10 Hag Hair for Wisdom"</Description>
+                      <VariableType>Auto Assembler Script</VariableType>
+                      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+[ENABLE]
+local item = "de2c9582-fab5-4d5e-9a81-44d67af6a681"
+TemplateAddToPlayer(item, 10)
+[DISABLE]
+</AssemblerScript>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>4978</ID>
+                      <Description>"10 Hag Hair for Intelligence"</Description>
+                      <VariableType>Auto Assembler Script</VariableType>
+                      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+[ENABLE]
+local item = "9abbab89-d29f-47c0-9ffe-f12018dd83d9"
+TemplateAddToPlayer(item, 10)
+[DISABLE]
+</AssemblerScript>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>4979</ID>
+                      <Description>"10 Hag Hair for Charisma"</Description>
+                      <VariableType>Auto Assembler Script</VariableType>
+                      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+[ENABLE]
+local item = "eec5de82-c988-40e6-8f10-474d5675c550"
+TemplateAddToPlayer(item, 10)
+[DISABLE]
+</AssemblerScript>
+                    </CheatEntry>
+                    <CheatEntry>
                       <ID>4737</ID>
                       <Description>"Spawn End Game Supplies"</Description>
                       <VariableType>Auto Assembler Script</VariableType>
@@ -6640,6 +6430,17 @@ TemplateAddTo("dfb0bd5d-e4ed-4bd3-bcfe-45195260e7dc", bag, 10)
 if syntaxcheck then return end
 [ENABLE]
 GenerateTreasureBag("TEST_Potions")
+[DISABLE]
+</AssemblerScript>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>4932</ID>
+                      <Description>"Spawn Scrolls"</Description>
+                      <VariableType>Auto Assembler Script</VariableType>
+                      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+[ENABLE]
+GenerateTreasureBag("TEST_Scrolls")
 [DISABLE]
 </AssemblerScript>
                     </CheatEntry>
@@ -7757,6 +7558,22 @@ ExecuteCall("OpenMessageBox")
 </AssemblerScript>
                     </CheatEntry>
                     <CheatEntry>
+                      <ID>4960</ID>
+                      <Description>"GetAbility"</Description>
+                      <VariableType>Auto Assembler Script</VariableType>
+                      <AssemblerScript Async="1">{$lua}
+if syntaxcheck then return end
+[ENABLE]
+local player = GetHostCharacter()
+local message = "Zanzer Sends His Regards"
+SetArgToString(0, player)
+SetArgToLong(1, 1)
+local result = ExecuteCall("GetAbility")
+print(result)
+[DISABLE]
+</AssemblerScript>
+                    </CheatEntry>
+                    <CheatEntry>
                       <ID>1147</ID>
                       <Description>"GetHostCharacter"</Description>
                       <VariableType>Auto Assembler Script</VariableType>
@@ -8791,6 +8608,7 @@ if syntaxcheck then return end
 [ENABLE]
 local player = GetHostCharacter()
 local item = "MAG_Zhentarim_Demonspirit_Gloves_b1b7a557-3a7f-0fbf-8aef-6c1be7d4b209"
+local item = "S_SCL_SpidersLyre_0054e844-cc8a-4b4e-89f0-b79dafcef0e5"
 SetArgToString(0, player)
 SetArgToString(1, item)
 SetArgToLong(2, 1)
@@ -8837,6 +8655,8 @@ status = "ENLARGE"
 status = "UND_GLUT_ENRAGE"
 status = "GUARDIAN_OF_FAITH_SHIELD_VFX_LOLTH"
 status = "ORI_KARLACH_RAGE_FIRE_VFX"
+status = "TRIALFIRE"
+--status = "MYRMIDON_WILDSHAPE_FIRE"
 [ENABLE]
 local result = ApplyStatusToPlayer(status)
 if result ~= 1 then
@@ -8870,6 +8690,31 @@ status = "SPEAK_WITH_DEAD_RECAST"
 ApplyStatusToWeapon(status)
 [DISABLE]
 RemoveStatusFromWeapon(status)
+</AssemblerScript>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>4933</ID>
+                      <Description>"Apply Status"</Description>
+                      <VariableType>Auto Assembler Script</VariableType>
+                      <AssemblerScript Async="1">{$lua}
+if syntaxcheck then return end
+Status = "TRIALFIRE"
+[ENABLE]
+local Object = GetHostCharacter()
+local Duration = -1
+local Force = 1
+local Source = Object
+local result = ApplyStatus(Object, Status, Duration, Force, Source)
+if result ~= 1 then
+  print("ApplyStatus Failed")
+end
+[DISABLE]
+local Target = GetHostCharacter()
+local Cause = 0
+local result = RemoveStatus(Target, Status, Cause)
+if result ~= 1 then
+  print("RemoveStatus Failed")
+end
 </AssemblerScript>
                     </CheatEntry>
                   </CheatEntries>
@@ -9236,6 +9081,7 @@ passive = "MAG_Extended_Target_Cantrip_Passive"
 passive = "MAG_Warlock_Quickened_Cantrips_Passive"
 passive = "MAG_Light_FarlinDagger_Passive"
 passive = "MAG_Light_TheThorns_Passive"
+passive = "Land_Desert"
 [ENABLE]
 local result = AddPassiveToPlayer(passive)
 if result ~= 1 then
@@ -9347,6 +9193,7 @@ boosts = "UnlockSpell(Target_StinkingCloud,AddChildren,ae36a457-2903-4142-a266-c
 boosts = "WeightCategory(+3)"
 boosts = "UnlockSpell(Target_Fiendish_Resilience_Container)"
 boosts = "UnlockSpell(Projectile_MagicMissile,AddChildren,d136c5d9-0ff0-43da-acce-a74a07f8d6bf,,)"
+boosts = "UnlockSpellVariant(SubtleSpellCheck(),ModifySpellRoll('AttackType.RangedSpellAttack','AttackType.MeleeWeaponAttack'),ModifyTargetRadius(AdditiveBase,100),ModifyAreaRadius(AdditiveBase,20),ModifyNumberOfTargets(Override,10,false),ModifySpellFlags(Verbal,0),ModifySpellFlags(Stealth,1),ModifySpellFlags(Melee,0),ModifySpellFlags(Somatic,0))"
 [ENABLE]
 local result = AddBoostsToPlayer(boosts)
 if result ~= 1 then
@@ -11207,7 +11054,7 @@ bg3.exe+492BC7D: 48 89 44 24 48        - mov [rsp+48],rax
     </CheatEntry>
     <CheatEntry>
       <ID>4761</ID>
-      <Description>"--- Game v4.1.1.3669438 --- Table v9 ---"</Description>
+      <Description>"--- Game v4.1.1.3905231 --- Table v14 ---"</Description>
       <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
@@ -11805,6 +11652,132 @@ print("done")
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
+          <ID>282</ID>
+          <Description>"Dump Command List"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript Async="1">[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+local funcInfo = function(addr)
+  local info = {}
+  local name = readPointer(addr + 0x08)
+  info.name = readString(name, 256, false)
+  info.args = {}
+  local argCount = readInteger(addr + 0x18) - 1
+  if argCount &gt; 10 then
+    argCount = 10
+  end
+  local argList = readPointer(addr + 0x10)
+  for i = 0, argCount do
+    local argAddr = argList + i * 0x10
+    local argName = readPointer(argAddr)
+    argName = readString(argName, 256, false)
+    local argType = readInteger(argAddr + 0x0C)
+    local argInfo = {
+      name = argName,
+      isReturn = argType == 2
+    }
+    info.args[#info.args + 1] = argInfo
+  end
+  info.addr = readPointer(addr + 0x48)
+  return info
+end
+
+local funcDef = function(info)
+  local def = info.name .. "("
+  local args = info.args
+  for i = 1, #args do
+    if not args[i].isReturn then
+      if i &gt; 1 then
+        def = def .. ", "
+      end
+      def = def .. args[i].name
+    end
+  end
+  def = def .. ")"
+  for i = 1, #args do
+    if args[i].isReturn then
+      def = def .. ": " .. args[i].name
+    end
+  end
+  return def
+end
+
+local list = readPointer("cmdList")
+if list == 0 then return end
+
+local size = readInteger(list + 0x2C)
+if size &gt; 3000 then
+  -- just in case
+  print("truncated function list from "..size)
+  size = 3000
+end
+
+list = readPointer(list + 0x20)
+
+io.output("F:/BaldursGate3Dump/BaldursGate3-Functions2.txt")
+for i = 1, size do
+  local addr = readPointer(list)
+  if addr ~= 0 then
+    local info = funcInfo(addr)
+    local def = funcDef(info)
+    if info.addr &gt; 0x10000 then
+      unregisterSymbol(info.name)
+      registerSymbol(info.name, info.addr, true)
+    end
+    io.write(string.format("%016X %s\n", info.addr, def))
+  end
+  list = list + 0x08
+end
+io.close()
+
+local list = readPointer("cmdList")
+if list == 0 then return end
+
+local size = readInteger(list + 0x4C)
+if size &gt; 3000 then
+  -- just in case
+  print("truncated function list from "..size)
+  size = 3000
+end
+
+list = readPointer(list + 0x40)
+
+io.output("F:/BaldursGate3Dump/BaldursGate3-Functions3.txt")
+for i = 1, size do
+  local addr = readPointer(list)
+  if addr ~= 0 then
+    local info = funcInfo(addr)
+    local def = funcDef(info)
+    io.write(string.format("%016X %s\n", info.addr, def))
+  end
+  list = list + 0x08
+end
+io.close()
+
+
+local addr = readPointer("cmdList")
+local size = readInteger(addr + 0x8C)
+local list = readPointer(addr + 0x80)
+list = list + 0x10
+io.output("F:/BaldursGate3Dump/BaldursGate3-ArgTypes.txt")
+for i = 1, size do
+  local name = readPointer(list + 0x38)
+  name = readString(name, 256, false)
+  local index = readByte(list + 0x40)
+  io.write(string.format("%d %s\n", index, name))
+  list = list + 0x48
+end
+io.close()
+
+print("done")
+
+{$asm}
+[DISABLE]
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
           <ID>280</ID>
           <Description>"Function List 2"</Description>
           <Options moHideChildren="1"/>
@@ -11942,117 +11915,6 @@ dealloc(newmem)
                 <Offset>0</Offset>
                 <Offset>20</Offset>
               </Offsets>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>282</ID>
-              <Description>"Dump Function Names"</Description>
-              <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript Async="1">[ENABLE]
-{$lua}
-if syntaxcheck then return end
-
-local funcInfo = function(addr)
-  local info = {}
-  local name = readPointer(addr + 0x08)
-  info.name = readString(name, 256, false)
-  info.args = {}
-  local argCount = readInteger(addr + 0x18) - 1
-  if argCount &gt; 10 then
-    argCount = 10
-  end
-  local argList = readPointer(addr + 0x10)
-  for i = 0, argCount do
-    local argAddr = argList + i * 0x10
-    local argName = readPointer(argAddr)
-    argName = readString(argName, 256, false)
-    local argType = readInteger(argAddr + 0x0C)
-    local argInfo = {
-      name = argName,
-      isReturn = argType == 2
-    }
-    info.args[#info.args + 1] = argInfo
-  end
-  info.addr = readPointer(addr + 0x48)
-  return info
-end
-
-local funcDef = function(info)
-  local def = info.name .. "("
-  local args = info.args
-  for i = 1, #args do
-    if not args[i].isReturn then
-      if i &gt; 1 then
-        def = def .. ", "
-      end
-      def = def .. args[i].name
-    end
-  end
-  def = def .. ")"
-  for i = 1, #args do
-    if args[i].isReturn then
-      def = def .. ": " .. args[i].name
-    end
-  end
-  return def
-end
-
-local list = readPointer("functionListPtr")
-if list == 0 then return end
-
-local size = readInteger(list + 0x2C)
-if size &gt; 3000 then
-  -- just in case
-  size = 3000
-  print("truncated function list from "..size)
-end
-
-list = readPointer(list + 0x20)
-
-io.output("F:/BaldursGate3-Functions2.txt")
-for i = 1, size do
-  local addr = readPointer(list)
-  if addr ~= 0 then
-    local info = funcInfo(addr)
-    local def = funcDef(info)
-    if info.addr &gt; 0x10000 then
-      unregisterSymbol(info.name)
-      registerSymbol(info.name, info.addr, true)
-    end
-    io.write(string.format("%016X %s\n", info.addr, def))
-  end
-  list = list + 0x08
-end
-io.close()
-
-local list = readPointer("functionListPtr")
-if list == 0 then return end
-
-local size = readInteger(list + 0x4C)
-if size &gt; 3000 then
-  -- just in case
-  size = 3000
-  print("truncated function list from "..size)
-end
-
-list = readPointer(list + 0x40)
-
-io.output("F:/BaldursGate3-Functions3.txt")
-for i = 1, size do
-  local addr = readPointer(list)
-  if addr ~= 0 then
-    local info = funcInfo(addr)
-    local def = funcDef(info)
-    io.write(string.format("%016X %s\n", info.addr, def))
-  end
-  list = list + 0x08
-end
-io.close()
-
-print("done")
-
-{$asm}
-[DISABLE]
-</AssemblerScript>
             </CheatEntry>
             <CheatEntry>
               <ID>329</ID>
@@ -15130,6 +14992,1170 @@ Osiris.COsiArgumentDesc::AllocateExternalEventString+A404 - 49 8B CD            
 Osiris.COsiArgumentDesc::AllocateExternalEventString+A407 - E8 8438FCFF           - call Osiris.COsiSmartBuf::skip+18A0
 }
 </AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>4935</ID>
+          <Description>"funcs"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+//bg3.exe+2683F95 - 48 8D 0D 7464FFFF     - lea rcx,[ItemIsInPartyInventory] { (610044232) }
+//bg3.exe+2683F9C - 48 89 4C 24 28        - mov [rsp+28],rcx
+//bg3.exe+2683FA1 - 4C 89 74 24 20        - mov [rsp+20],r14
+//bg3.exe+2683FA6 - 4C 8D 0D B316A202     - lea r9,[bg3.exe+50A5660] { ("ItemIsInPartyInventory") }
+[DISABLE]
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>871</ID>
+          <Description>"Last Item Moved (moved item must have quantity of 2 or more)"</Description>
+          <Options moHideChildren="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(LastItemMoved,$process,44 38 ?? ?? ?? 0F 85 ?? ?? ?? ?? 48 8D ?? ?? ?? 48 8B ?? ?? ?? E8)
+alloc(newmem,$1000,LastItemMoved)
+
+label(LastItemMovedPtr)
+label(LastItemMovedBkp)
+label(return)
+
+newmem:
+LastItemMovedBkp:
+  readmem(LastItemMoved+10,5)
+  mov rax,LastItemMovedPtr
+  mov [rax],rcx
+  jmp return
+
+align 10
+LastItemMovedPtr:
+  dq 0
+
+LastItemMoved+10:
+  jmp newmem
+return:
+registersymbol(LastItemMoved)
+registersymbol(LastItemMovedBkp)
+registersymbol(LastItemMovedPtr)
+
+[DISABLE]
+LastItemMoved+10:
+  readmem(LastItemMovedBkp,5)
+unregistersymbol(LastItemMoved)
+unregistersymbol(LastItemMovedBkp)
+unregistersymbol(LastItemMovedPtr)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: bg3.exe+13EFEE3
+
+bg3.exe+13EFEB0: 4A 8D 0C CD 00 00 00 00  - lea rcx,[r9*8+00000000]
+bg3.exe+13EFEB8: 49 3B C8                 - cmp rcx,r8
+bg3.exe+13EFEBB: 0F 85 AF 00 00 00        - jne bg3.exe+13EFF70
+bg3.exe+13EFEC1: 4C 8D 44 24 20           - lea r8,[rsp+20]
+bg3.exe+13EFEC6: 48 8B D5                 - mov rdx,rbp
+bg3.exe+13EFEC9: 48 8D 4C 24 38           - lea rcx,[rsp+38]
+bg3.exe+13EFECE: E8 7D C4 D2 00           - call bg3.exe+211C350
+bg3.exe+13EFED3: 44 38 64 24 40           - cmp [rsp+40],r12b
+bg3.exe+13EFED8: 0F 85 9C 00 00 00        - jne bg3.exe+13EFF7A
+bg3.exe+13EFEDE: 48 8D 54 24 28           - lea rdx,[rsp+28]
+// ---------- INJECTING HERE ----------
+bg3.exe+13EFEE3: 48 8B 4C 24 38           - mov rcx,[rsp+38]
+// ---------- DONE INJECTING  ----------
+bg3.exe+13EFEE8: E8 43 29 E8 00           - call bg3.exe+2272830
+bg3.exe+13EFEED: 48 8B 38                 - mov rdi,[rax]
+bg3.exe+13EFEF0: 48 89 7C 24 20           - mov [rsp+20],rdi
+bg3.exe+13EFEF5: 48 8D 44 24 38           - lea rax,[rsp+38]
+bg3.exe+13EFEFA: 48 8B 4C 24 40           - mov rcx,[rsp+40]
+bg3.exe+13EFEFF: 84 C9                    - test cl,cl
+bg3.exe+13EFF01: 49 0F 45 C4              - cmovne rax,r12
+bg3.exe+13EFF05: 48 85 C0                 - test rax,rax
+bg3.exe+13EFF08: 0F 84 DA 00 00 00        - je bg3.exe+13EFFE8
+bg3.exe+13EFF0E: 48 8B 10                 - mov rdx,[rax]
+}
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>830</ID>
+              <Description>"Quantity"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>LastItemMovedPtr</Address>
+              <Offsets>
+                <Offset>4</Offset>
+                <Offset>10</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>425</ID>
+          <Description>"Settings Pointer"</Description>
+          <Options moHideChildren="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript Async="1">[ENABLE]
+aobscanmodule(settingsAob,$process,48 8B 05 ?? ?? ?? ?? 80 B8 ?? ?? ?? ?? 00 74 ?? BA 01 00 00 00)
+label(settings)
+label(godmode)
+settingsAob+(DWORD)[settingsAob+03]+7:
+settings:
+(DWORD)[settingsAob+09]:
+godmode:
+registersymbol(settings)
+registersymbol(godmode)
+
+[DISABLE]
+unregistersymbol(settings)
+unregistersymbol(godmode)
+
+{
+// ORIGINAL CODE - INJECTION POINT: bg3.exe+32A3AE1
+
+bg3.exe+32A3ABF: 33 DB                 - xor ebx,ebx
+bg3.exe+32A3AC1: 4C 8B 7C 24 20        - mov r15,[rsp+20]
+bg3.exe+32A3AC6: 48 8B 6C 24 58        - mov rbp,[rsp+58]
+bg3.exe+32A3ACB: 48 85 DB              - test rbx,rbx
+bg3.exe+32A3ACE: 74 3E                 - je bg3.exe+32A3B0E
+bg3.exe+32A3AD0: BA 00 08 00 00        - mov edx,00000800
+bg3.exe+32A3AD5: 48 8B CB              - mov rcx,rbx
+bg3.exe+32A3AD8: E8 83 7A 9E FF        - call bg3.exe+2C8B560
+bg3.exe+32A3ADD: 84 C0                 - test al,al
+bg3.exe+32A3ADF: 75 5C                 - jne bg3.exe+32A3B3D
+// ---------- INJECTING HERE ----------
+bg3.exe+32A3AE1: 48 8B 05 18 B0 33 04  - mov rax,[bg3.exe+75DEB00]
+// ---------- DONE INJECTING  ----------
+bg3.exe+32A3AE8: 80 B8 A4 01 00 00 00  - cmp byte ptr [rax+000001A4],00
+bg3.exe+32A3AEF: 74 1D                 - je bg3.exe+32A3B0E
+bg3.exe+32A3AF1: BA 01 00 00 00        - mov edx,00000001
+bg3.exe+32A3AF6: 48 8B CB              - mov rcx,rbx
+bg3.exe+32A3AF9: E8 62 7A 9E FF        - call bg3.exe+2C8B560
+bg3.exe+32A3AFE: 84 C0                 - test al,al
+bg3.exe+32A3B00: 74 0C                 - je bg3.exe+32A3B0E
+bg3.exe+32A3B02: 80 7E 62 00           - cmp byte ptr [rsi+62],00
+bg3.exe+32A3B06: 75 06                 - jne bg3.exe+32A3B0E
+bg3.exe+32A3B08: 80 7E 20 09           - cmp byte ptr [rsi+20],09
+}
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>427</ID>
+              <Description>"Settings"</Description>
+              <Options moHideChildren="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>settings</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>428</ID>
+                  <Description>"God Mode"</Description>
+                  <DropDownList DisplayValueAsItem="1">0:Off
+1:On
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Byte</VariableType>
+                  <Address>+godmode</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>540</ID>
+                  <Description>"Weighted Dice"</Description>
+                  <DropDownList DisplayValueAsItem="1">0:Off
+1:On
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Byte</VariableType>
+                  <Address>+810</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>430</ID>
+                  <Description>"Game Speed"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>+5C</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>1187</ID>
+          <Description>"Allow DLC Content (probably have to reload a save)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript Async="1">[ENABLE]
+aobscanmodule(dlc1,$process,0F 10 05 ?? ?? ?? ?? 0F 11 ?? ?? ?? 84 C0 75)
+dlc1+0E:
+  db EB
+registersymbol(dlc1)
+
+aobscanmodule(dlc2,$process,84 C0 75 ?? 48 8B ?? ?? ?? ?? ?? 8B ?? ?? 85 ?? 79 ?? 32 C0)
+dlc2+12:
+  mov al,1
+registersymbol(dlc2)
+
+[DISABLE]
+dlc1+0E:
+  db 75
+unregistersymbol(dlc1)
+
+dlc2+12:
+  db 32 C0
+unregistersymbol(dlc2)
+
+{
+// ORIGINAL CODE - INJECTION POINT: bg3.exe+146DCC6
+
+bg3.exe+146DC9B: 48 8B CD              - mov rcx,rbp
+bg3.exe+146DC9E: E8 3D 50 C6 FF        - call bg3.exe+10D2CE0
+bg3.exe+146DCA3: 48 8B F0              - mov rsi,rax
+bg3.exe+146DCA6: 48 85 C0              - test rax,rax
+bg3.exe+146DCA9: 0F 84 5C 01 00 00     - je bg3.exe+146DE0B
+bg3.exe+146DCAF: 48 8D 4D 10           - lea rcx,[rbp+10]
+bg3.exe+146DCB3: E8 F8 4F C6 FF        - call bg3.exe+10D2CB0
+bg3.exe+146DCB8: 0F 10 05 F1 8A 35 04  - movups xmm0,[bg3.exe+57C67B0]
+bg3.exe+146DCBF: 0F 11 44 24 38        - movups [rsp+38],xmm0
+bg3.exe+146DCC4: 84 C0                 - test al,al
+// ---------- INJECTING HERE ----------
+bg3.exe+146DCC6: 75 68                 - jne bg3.exe+146DD30
+// ---------- DONE INJECTING  ----------
+bg3.exe+146DCC8: 48 8D 4D 10           - lea rcx,[rbp+10]
+bg3.exe+146DCCC: E8 0F 06 1F FF        - call bg3.AK::Monitor::PostCodeVaList+C0D0
+bg3.exe+146DCD1: 48 8B D0              - mov rdx,rax
+bg3.exe+146DCD4: 48 8D 4C 24 48        - lea rcx,[rsp+48]
+bg3.exe+146DCD9: E8 62 F2 36 02        - call bg3.exe+37DCF40
+bg3.exe+146DCDE: 90                    - nop
+bg3.exe+146DCDF: 48 8D 54 24 48        - lea rdx,[rsp+48]
+bg3.exe+146DCE4: 48 8D 4C 24 20        - lea rcx,[rsp+20]
+bg3.exe+146DCE9: E8 92 6D C6 FF        - call bg3.exe+10D4A80
+bg3.exe+146DCEE: 90                    - nop
+}
+
+{
+// ORIGINAL CODE - INJECTION POINT: bg3.exe+146DE0B
+
+bg3.exe+146DDE4: 48 C1 E1 04              - shl rcx,04
+bg3.exe+146DDE8: 48 03 8B C8 00 00 00     - add rcx,[rbx+000000C8]
+bg3.exe+146DDEF: 48 8D 54 24 38           - lea rdx,[rsp+38]
+bg3.exe+146DDF4: E8 77 4B 34 00           - call bg3.exe+17B2970
+bg3.exe+146DDF9: 84 C0                    - test al,al
+bg3.exe+146DDFB: 75 4A                    - jne bg3.exe+146DE47
+bg3.exe+146DDFD: 48 8B 83 B8 00 00 00     - mov rax,[rbx+000000B8]
+bg3.exe+146DE04: 8B 14 B8                 - mov edx,[rax+rdi*4]
+bg3.exe+146DE07: 85 D2                    - test edx,edx
+bg3.exe+146DE09: 79 D5                    - jns bg3.exe+146DDE0
+// ---------- INJECTING HERE ----------
+bg3.exe+146DE0B: 32 C0                    - xor al,al
+// ---------- DONE INJECTING  ----------
+bg3.exe+146DE0D: 48 8B 4C 24 70           - mov rcx,[rsp+70]
+bg3.exe+146DE12: 48 33 CC                 - xor rcx,rsp
+bg3.exe+146DE15: E8 76 E7 C7 02           - call bg3.exe+40EC590
+bg3.exe+146DE1A: 4C 8D 9C 24 80 00 00 00  - lea r11,[rsp+00000080]
+bg3.exe+146DE22: 49 8B 5B 10              - mov rbx,[r11+10]
+bg3.exe+146DE26: 49 8B 6B 20              - mov rbp,[r11+20]
+bg3.exe+146DE2A: 49 8B 73 28              - mov rsi,[r11+28]
+bg3.exe+146DE2E: 49 8B E3                 - mov rsp,r11
+bg3.exe+146DE31: 5F                       - pop rdi
+bg3.exe+146DE32: C3                       - ret 
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>4968</ID>
+          <Description>"abilityCheck"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript Async="1">[ENABLE]
+aobscanmodule(abilityCheck,$process,F3 0F 5C 05 ?? ?? ?? ?? F3 0F 59 05 ?? ?? ?? ?? E8 ?? ?? ?? ?? F3 0F 2C D8)
+abilityCheck+15:
+  db 66 BB 64 00
+registersymbol(abilityCheck)
+
+[DISABLE]
+abilityCheck+15:
+  db F3 0F 2C D8
+unregistersymbol(abilityCheck)
+
+{
+// ORIGINAL CODE - INJECTION POINT: bg3.exe+3D1C344
+
+bg3.exe+3D1C313: 0F 85 46 01 00 00        - jne bg3.exe+3D1C45F
+bg3.exe+3D1C319: 8B D7                    - mov edx,edi
+bg3.exe+3D1C31B: 48 8B CE                 - mov rcx,rsi
+bg3.exe+3D1C31E: E8 5D 23 D5 FF           - call bg3.exe+3A6E680
+bg3.exe+3D1C323: F2 0F 2C 48 78           - cvttsd2si ecx,[rax+78]
+bg3.exe+3D1C328: 66 0F 6E C1              - movd xmm0,ecx
+bg3.exe+3D1C32C: 0F 5B C0                 - cvtdq2ps xmm0,xmm0
+bg3.exe+3D1C32F: F3 0F 5C 05 89 66 7C 01  - subss xmm0,[bg3.exe+54E29C0]
+bg3.exe+3D1C337: F3 0F 59 05 0D 63 7C 01  - mulss xmm0,[bg3.exe+54E264C]
+bg3.exe+3D1C33F: E8 91 D4 C8 00           - call bg3.exe+49A97D5
+// ---------- INJECTING HERE ----------
+bg3.exe+3D1C344: F3 0F 2C D8              - cvttss2si ebx,xmm0
+// ---------- DONE INJECTING  ----------
+bg3.exe+3D1C348: E9 12 01 00 00           - jmp bg3.exe+3D1C45F
+bg3.exe+3D1C34D: 48 8D 85 80 00 00 00     - lea rax,[rbp+00000080]
+bg3.exe+3D1C354: 83 BD 94 00 00 00 10     - cmp dword ptr [rbp+00000094],10
+bg3.exe+3D1C35B: 48 0F 43 85 80 00 00 00  - cmovae rax,[rbp+00000080]
+bg3.exe+3D1C363: 48 89 44 24 50           - mov [rsp+50],rax
+bg3.exe+3D1C368: 8B 85 90 00 00 00        - mov eax,[rbp+00000090]
+bg3.exe+3D1C36E: 89 44 24 58              - mov [rsp+58],eax
+bg3.exe+3D1C372: 48 8D 4C 24 50           - lea rcx,[rsp+50]
+bg3.exe+3D1C377: E8 44 45 15 FD           - call bg3.exe+E708C0
+bg3.exe+3D1C37C: 44 0F B6 F8              - movzx r15d,al
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>4961</ID>
+          <Description>"ability"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript Async="1">[ENABLE]
+aobscanmodule(ability,$process,48 89 44 24 20 48 8B F9 C7 44 24 28 08)
+alloc(newmem,$1000,ability)
+
+label(code)
+label(return)
+
+newmem:
+  mov rdi,[rsp+38]
+  lea rdi,[rdi]
+code:
+  mov [rsp+20],rax
+  jmp return
+
+ability:
+  jmp newmem
+return:
+registersymbol(ability)
+
+[DISABLE]
+ability:
+  db 48 89 44 24 20
+unregistersymbol(ability)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: bg3.exe+E70774
+
+bg3.exe+E7075B: CC                       - int 3 
+bg3.exe+E7075C: CC                       - int 3 
+bg3.exe+E7075D: CC                       - int 3 
+bg3.exe+E7075E: CC                       - int 3 
+bg3.exe+E7075F: CC                       - int 3 
+bg3.exe+E70760: 48 89 5C 24 08           - mov [rsp+08],rbx
+bg3.exe+E70765: 57                       - push rdi
+bg3.exe+E70766: 48 83 EC 30              - sub rsp,30
+bg3.exe+E7076A: 8B 59 08                 - mov ebx,[rcx+08]
+bg3.exe+E7076D: 48 8D 05 DC FA 02 04     - lea rax,[bg3.exe+4EA0250]
+// ---------- INJECTING HERE ----------
+bg3.exe+E70774: 48 89 44 24 20           - mov [rsp+20],rax
+// ---------- DONE INJECTING  ----------
+bg3.exe+E70779: 48 8B F9                 - mov rdi,rcx
+bg3.exe+E7077C: C7 44 24 28 08 00 00 00  - mov [rsp+28],00000008
+bg3.exe+E70784: 83 FB 08                 - cmp ebx,08
+bg3.exe+E70787: 75 1B                    - jne bg3.exe+E707A4
+bg3.exe+E70789: 48 8D 54 24 20           - lea rdx,[rsp+20]
+bg3.exe+E7078E: E8 FD FF 6E FF           - call bg3.AK::WriteBytesCount::Reserve+6700
+bg3.exe+E70793: 85 C0                    - test eax,eax
+bg3.exe+E70795: 75 0D                    - jne bg3.exe+E707A4
+bg3.exe+E70797: B0 01                    - mov al,01
+bg3.exe+E70799: 48 8B 5C 24 40           - mov rbx,[rsp+40]
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>4969</ID>
+          <Description>"get ability"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{
+bg3.exe+3D1C086 - E8 D54615FD           - call bg3.exe+E70760
+bg3.exe+3D1C08B - 0FB6 F0               - movzx esi,al
+bg3.exe+3D1C08E - 4D 85 F6              - test r14,r14
+bg3.exe+3D1C091 - 0F84 AFFEFFFF         - je bg3.exe+3D1BF46
+bg3.exe+3D1C097 - 40 80 FE 07           - cmp sil,07 { 7
+bg3.exe+3D1C09B - 0F84 92010000         - je bg3.exe+3D1C233
+bg3.exe+3D1C0A1 - 40 0FB6 DE            - movzx ebx,sil
+bg3.exe+3D1C0A5 - 0FB6 44 24 31         - movzx eax,byte ptr [rsp+31]
+bg3.exe+3D1C0AA - 3C 03                 - cmp al,03 { 3
+bg3.exe+3D1C0AC - 74 16                 - je bg3.exe+3D1C0C4
+-----------------------------------------------------------------------------------
+bg3.exe+3D1C0AE - 41 8B 5C 9E 04        - mov ebx,[r14+rbx*4+04]
+-----------------------------------------------------------------------------------
+bg3.exe+3D1C0B3 - 3C 02                 - cmp al,02 { 2
+bg3.exe+3D1C0B5 - 0F85 A4030000         - jne bg3.exe+3D1C45F
+bg3.exe+3D1C0BB - 66 0F6E C3            - movd xmm0,ebx
+bg3.exe+3D1C0BF - E9 68020000           - jmp bg3.exe+3D1C32C
+bg3.exe+3D1C0C4 - 48 8B 05 051CE101     - mov rax,[bg3.exe+5B2DCD0] { (21BE12C2D00)
+
+bg3.exe+3D1C32F - F3 0F5C 05 89667C01   - subss xmm0,[bg3.exe+54E29C0] { (10.00)
+bg3.exe+3D1C337 - F3 0F59 05 0D637C01   - mulss xmm0,[bg3.exe+54E264C] { (0.50)
+bg3.exe+3D1C33F - E8 91D4C800           - call bg3.exe+49A97D5 { -&gt;-&gt;ucrtbase.floorf
+bg3.exe+3D1C344 - F3 0F2C D8            - cvttss2si ebx,xmm0
+
+bg3.exe+E6F8CE - 48 8D 05 8B050604     - lea rax,[bg3.exe+4ECFE60] { ("hcd19f46ag85bcg41f2gb8fbg1dc69843d250")
+bg3.exe+E6F79E - 48 8D 05 6B060604     - lea rax,[bg3.exe+4ECFE10] { ("hc30ef867gedecg4c22ga387g648ea8224248")
+}
+[DISABLE]
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>927</ID>
+          <Description>"Saved Character Pointers"</Description>
+          <Options moHideChildren="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript Async="1">[ENABLE]
+aobscanmodule(saveChar,$process,?? 8B ?? ?? ?? 8B ?? E8 ?? ?? ?? ?? ?? 8B ?? ?? 0F 10 ?? 0F 10 ?? ?? 44 0F 10 ?? ?? 44 0F 10 ?? ?? 44 0F 10 ?? ?? F2)
+alloc(newmem,$1000,saveChar)
+
+label(saveCharPtr)
+label(saveCharBkp)
+label(return)
+
+newmem:
+  test r14,r14
+  je @f
+  xor rcx,rcx
+  mov ecx,[r14+34]
+  cmp ecx,#20
+  jg @f
+  mov r9,saveCharPtr
+  mov [r9+rcx*8],rax
+saveCharBkp:
+  readmem(saveChar,7)
+  jmp return
+
+align 10
+saveCharPtr:
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+  dq 0
+
+saveChar:
+  jmp newmem
+  nop 2
+return:
+registersymbol(saveChar)
+registersymbol(saveCharBkp)
+registersymbol(saveCharPtr)
+
+[DISABLE]
+saveChar:
+  readmem(saveCharBkp,7)
+unregistersymbol(saveChar)
+unregistersymbol(saveCharBkp)
+unregistersymbol(saveCharPtr)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: bg3.exe+2C4374C
+
+bg3.exe+2C43725: 48 0F A3 D1        - bt rcx,rdx
+bg3.exe+2C43729: 0F 92 C0           - setb al
+bg3.exe+2C4372C: 84 C0              - test al,al
+bg3.exe+2C4372E: 0F 84 CE 00 00 00  - je bg3.exe+2C43802
+bg3.exe+2C43734: 48 8B 13           - mov rdx,[rbx]
+bg3.exe+2C43737: 45 33 C0           - xor r8d,r8d
+bg3.exe+2C4373A: 49 8B 4E 08        - mov rcx,[r14+08]
+bg3.exe+2C4373E: E8 3D BF A4 FE     - call bg3.exe+168F680
+bg3.exe+2C43743: 4C 8B 44 24 48     - mov r8,[rsp+48]
+bg3.exe+2C43748: 48 8D 55 80        - lea rdx,[rbp-80]
+// ---------- INJECTING HERE ----------
+bg3.exe+2C4374C: 49 8B 4E 10        - mov rcx,[r14+10]
+// ---------- DONE INJECTING  ----------
+bg3.exe+2C43750: 4C 8B C8           - mov r9,rax
+bg3.exe+2C43753: E8 A8 6A 07 00     - call bg3.exe+2CBA200
+bg3.exe+2C43758: 41 8B 4E 30        - mov ecx,[r14+30]
+bg3.exe+2C4375C: 0F 10 30           - movups xmm6,[rax]
+bg3.exe+2C4375F: 0F 10 78 10        - movups xmm7,[rax+10]
+bg3.exe+2C43763: 44 0F 10 40 20     - movups xmm8,[rax+20]
+bg3.exe+2C43768: 44 0F 10 48 30     - movups xmm9,[rax+30]
+bg3.exe+2C4376D: 44 0F 10 50 40     - movups xmm10,[rax+40]
+bg3.exe+2C43772: F2 44 0F 10 58 50  - movsd xmm11,[rax+50]
+bg3.exe+2C43778: 41 8B 46 34        - mov eax,[r14+34]
+}
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>1008</ID>
+              <Description>"Save the game. Pointers will populate. Change values. Save the game again. Load that save."</Description>
+              <GroupHeader>1</GroupHeader>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>928</ID>
+              <Description>"Character 1"</Description>
+              <Options moHideChildren="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>saveCharPtr+0</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>929</ID>
+                  <Description>"Name (do NOT change)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>String</VariableType>
+                  <Length>99</Length>
+                  <Unicode>0</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>+28</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>930</ID>
+                  <Description>"Strength"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+44</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>931</ID>
+                  <Description>"Dexterity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+48</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>932</ID>
+                  <Description>"Constitution"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>933</ID>
+                  <Description>"Intelligence"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+50</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>934</ID>
+                  <Description>"Wisdom"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+54</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>935</ID>
+                  <Description>"Charisma"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+58</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>936</ID>
+              <Description>"Character 2"</Description>
+              <Options moHideChildren="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>saveCharPtr+8</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>937</ID>
+                  <Description>"Name (do NOT change)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>String</VariableType>
+                  <Length>99</Length>
+                  <Unicode>0</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>+28</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>938</ID>
+                  <Description>"Strength"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+44</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>939</ID>
+                  <Description>"Dexterity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+48</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>940</ID>
+                  <Description>"Constitution"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>941</ID>
+                  <Description>"Intelligence"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+50</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>942</ID>
+                  <Description>"Wisdom"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+54</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>943</ID>
+                  <Description>"Charisma"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+58</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>944</ID>
+              <Description>"Character 3"</Description>
+              <Options moHideChildren="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>saveCharPtr+10</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>945</ID>
+                  <Description>"Name (do NOT change)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>String</VariableType>
+                  <Length>99</Length>
+                  <Unicode>0</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>+28</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>946</ID>
+                  <Description>"Strength"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+44</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>947</ID>
+                  <Description>"Dexterity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+48</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>948</ID>
+                  <Description>"Constitution"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>949</ID>
+                  <Description>"Intelligence"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+50</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>950</ID>
+                  <Description>"Wisdom"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+54</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>951</ID>
+                  <Description>"Charisma"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+58</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>952</ID>
+              <Description>"Character 4"</Description>
+              <Options moHideChildren="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>saveCharPtr+18</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>953</ID>
+                  <Description>"Name (do NOT change)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>String</VariableType>
+                  <Length>99</Length>
+                  <Unicode>0</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>+28</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>954</ID>
+                  <Description>"Strength"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+44</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>955</ID>
+                  <Description>"Dexterity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+48</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>956</ID>
+                  <Description>"Constitution"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>957</ID>
+                  <Description>"Intelligence"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+50</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>958</ID>
+                  <Description>"Wisdom"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+54</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>959</ID>
+                  <Description>"Charisma"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+58</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>960</ID>
+              <Description>"Character 5"</Description>
+              <Options moHideChildren="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>saveCharPtr+20</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>961</ID>
+                  <Description>"Name (do NOT change)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>String</VariableType>
+                  <Length>99</Length>
+                  <Unicode>0</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>+28</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>962</ID>
+                  <Description>"Strength"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+44</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>963</ID>
+                  <Description>"Dexterity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+48</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>964</ID>
+                  <Description>"Constitution"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>965</ID>
+                  <Description>"Intelligence"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+50</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>966</ID>
+                  <Description>"Wisdom"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+54</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>967</ID>
+                  <Description>"Charisma"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+58</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>968</ID>
+              <Description>"Character 6"</Description>
+              <Options moHideChildren="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>saveCharPtr+28</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>969</ID>
+                  <Description>"Name (do NOT change)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>String</VariableType>
+                  <Length>99</Length>
+                  <Unicode>0</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>+28</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>970</ID>
+                  <Description>"Strength"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+44</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>971</ID>
+                  <Description>"Dexterity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+48</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>972</ID>
+                  <Description>"Constitution"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>973</ID>
+                  <Description>"Intelligence"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+50</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>974</ID>
+                  <Description>"Wisdom"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+54</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>975</ID>
+                  <Description>"Charisma"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+58</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>976</ID>
+              <Description>"Character 7"</Description>
+              <Options moHideChildren="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>saveCharPtr+30</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>977</ID>
+                  <Description>"Name (do NOT change)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>String</VariableType>
+                  <Length>99</Length>
+                  <Unicode>0</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>+28</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>978</ID>
+                  <Description>"Strength"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+44</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>979</ID>
+                  <Description>"Dexterity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+48</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>980</ID>
+                  <Description>"Constitution"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>981</ID>
+                  <Description>"Intelligence"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+50</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>982</ID>
+                  <Description>"Wisdom"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+54</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>983</ID>
+                  <Description>"Charisma"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+58</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>984</ID>
+              <Description>"Character 8"</Description>
+              <Options moHideChildren="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>saveCharPtr+38</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>985</ID>
+                  <Description>"Name (do NOT change)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>String</VariableType>
+                  <Length>99</Length>
+                  <Unicode>0</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>+28</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>986</ID>
+                  <Description>"Strength"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+44</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>987</ID>
+                  <Description>"Dexterity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+48</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>988</ID>
+                  <Description>"Constitution"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>989</ID>
+                  <Description>"Intelligence"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+50</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>990</ID>
+                  <Description>"Wisdom"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+54</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>991</ID>
+                  <Description>"Charisma"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+58</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>992</ID>
+              <Description>"Character 9"</Description>
+              <Options moHideChildren="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>saveCharPtr+40</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>993</ID>
+                  <Description>"Name (do NOT change)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>String</VariableType>
+                  <Length>99</Length>
+                  <Unicode>0</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>+28</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>994</ID>
+                  <Description>"Strength"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+44</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>995</ID>
+                  <Description>"Dexterity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+48</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>996</ID>
+                  <Description>"Constitution"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>997</ID>
+                  <Description>"Intelligence"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+50</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>998</ID>
+                  <Description>"Wisdom"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+54</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>999</ID>
+                  <Description>"Charisma"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+58</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1000</ID>
+              <Description>"Character 10"</Description>
+              <Options moHideChildren="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>saveCharPtr+48</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1001</ID>
+                  <Description>"Name (do NOT change)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>String</VariableType>
+                  <Length>99</Length>
+                  <Unicode>0</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>+28</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1002</ID>
+                  <Description>"Strength"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+44</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1003</ID>
+                  <Description>"Dexterity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+48</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1004</ID>
+                  <Description>"Constitution"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1005</ID>
+                  <Description>"Intelligence"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+50</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1006</ID>
+                  <Description>"Wisdom"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+54</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1007</ID>
+                  <Description>"Charisma"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+58</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
