@@ -1,0 +1,78 @@
+{
+    "EPalWorkSuitability": [
+        "EPalWorkSuitability::OilExtraction",
+        "EPalWorkSuitability::Seeding",
+        "EPalWorkSuitability::GenerateElectricity",
+        "EPalWorkSuitability::ProductMedicine",
+        "EPalWorkSuitability::Watering",
+        "EPalWorkSuitability::Deforest",
+        "EPalWorkSuitability::Cool",
+        "EPalWorkSuitability::Collection",
+        "EPalWorkSuitability::Handcraft",
+        "EPalWorkSuitability::MonsterFarm",
+        "EPalWorkSuitability::Mining",
+        "EPalWorkSuitability::Transport",
+        "EPalWorkSuitability::EmitFlame"
+    ],
+    "EPalGenderType": [
+        "EPalGenderType::Female",
+        "EPalGenderType::Male"
+    ],
+    "EPalBaseCampWorkerSickType": [
+        "EPalBaseCampWorkerSickType::None",
+        "EPalBaseCampWorkerSickType::Cold",
+        "EPalBaseCampWorkerSickType::Sprain",
+        "EPalBaseCampWorkerSickType::Bulimia",
+        "EPalBaseCampWorkerSickType::GastricUlcer",
+        "EPalBaseCampWorkerSickType::Fracture",
+        "EPalBaseCampWorkerSickType::Weakness",
+        "EPalBaseCampWorkerSickType::DepressionSprain",
+        "EPalBaseCampWorkerSickType::DisturbingElement"
+    ],
+    "EPalStatusPhysicalHealthType": [
+        "EPalStatusPhysicalHealthType::Healthful",
+        "EPalStatusPhysicalHealthType::MinorInjury",
+        "EPalStatusPhysicalHealthType::Severe",
+        "EPalStatusPhysicalHealthType::Dying",
+        "EPalStatusPhysicalHealthType::DeadBody",
+        "EPalStatusPhysicalHealthType::CloudCemetery"
+    ],
+    "EPalStatusHungerType": [
+        "EPalStatusHungerType::Default",
+        "EPalStatusHungerType::Hunger",
+        "EPalStatusHungerType::Starvation"
+    ],
+    "EPalBaseCampWorkerEventType": [
+        "EPalBaseCampWorkerEventType::EatTooMuch",
+        "EPalBaseCampWorkerEventType::DodgeWork_Sleep",
+        "EPalBaseCampWorkerEventType::DodgeWork_Short",
+        "EPalBaseCampWorkerEventType::DodgeWork"
+    ],
+    "EPalWorkableType": [
+        "EPalWorkableType::MonsterFarm",
+        "EPalWorkableType::Repair",
+        "EPalWorkableType::OnlyJoin",
+        "EPalWorkableType::Progress",
+        "EPalWorkableType::OnlyJoinAndWalkAround",
+        "EPalWorkableType::Defense"
+    ],
+    "EPalTribeID": [
+        "EPalTribeID::None",
+        "EPalTribeID::GrassMammoth",
+        "EPalTribeID::RobinHood",
+        "EPalTribeID::LavaGirl"
+    ],
+    "EPalGroupType": [
+        "EPalGroupType::Organization",
+        "EPalGroupType::Guild",
+        "EPalGroupType::Neutral"
+    ],
+    "EPalDungeonType": [
+        "EPalDungeonType::Fixed",
+        "EPalDungeonType::Normal"
+    ],
+    "EPalDungeonInstanceBossState": [
+        "EPalDungeonInstanceBossState::Dead",
+        "EPalDungeonInstanceBossState::Spawned"
+    ]
+}

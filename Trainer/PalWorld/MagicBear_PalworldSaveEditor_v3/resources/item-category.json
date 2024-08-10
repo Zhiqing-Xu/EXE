@@ -1,0 +1,2460 @@
+{
+    "Stone": [
+        "MapObjectItem",
+        "CharacterItem",
+        "BelongInfo",
+        "Common"
+    ],
+    "Wood": [
+        "MapObjectItem",
+        "BelongInfo",
+        "Common",
+        "CharacterItem"
+    ],
+    "Berries": [
+        "MapObjectItem",
+        "BelongInfo",
+        "Common",
+        "FoodEquip",
+        "CharacterItem"
+    ],
+    "BerrySeeds": [
+        "MapObjectItem",
+        "BelongInfo",
+        "Common",
+        "CharacterItem"
+    ],
+    "Money": [
+        "MapObjectItem",
+        "BelongInfo",
+        "Common"
+    ],
+    "Pan": [
+        "MapObjectItem",
+        "Common",
+        "FoodEquip"
+    ],
+    "PalSphere_Tera": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalSphere_Giga": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalUpgradeStone": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalSphere": [
+        "MapObjectItem",
+        "BelongInfo",
+        "Common"
+    ],
+    "PalSphere_Mega": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "TreasureBoxKey02": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "TreasureBoxKey03": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_WeakerBow_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Arrow": [
+        "MapObjectItem",
+        "BelongInfo",
+        "Common"
+    ],
+    "TreasureBoxKey01": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalUpgradeStone3": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "RoughBullet": [
+        "MapObjectItem",
+        "Common",
+        "BelongInfo"
+    ],
+    "PalUpgradeStone2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_CopperHelmet_3": [
+        "MapObjectItem"
+    ],
+    "Herbs": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Medicines": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_HandGun_Default_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Eemerald": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_SandTornado": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_IronHelmet_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "TechnologyBook_G2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Sapphire": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_IceMissile": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_FurArmor_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_CopperArmor_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "HandgunBullet": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_CopperArmorCold_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_FurArmorHeat_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_ClothArmor_5": [
+        "MapObjectItem"
+    ],
+    "Diamond": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_HyperBeam": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_AssaultRifle_Default2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_IronArmor_3": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_AirCanon": [
+        "MapObjectItem"
+    ],
+    "Accessory_AT_1": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "Blueprint_ClothArmor_3": [
+        "MapObjectItem"
+    ],
+    "Ruby": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Accessory_CoolResist_1": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "Blueprint_HandGun_Default_4": [
+        "MapObjectItem"
+    ],
+    "Blueprint_AssaultRifle_Default3": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_FurHelmet_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_BowGun_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_ThunderFunnel": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Accessory_defense_1": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "TechnologyBook_G1": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_CopperHelmet_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_HandGun_Default_3": [
+        "MapObjectItem"
+    ],
+    "Blueprint_FurHelmet_3": [
+        "MapObjectItem"
+    ],
+    "Blueprint_IronHelmet_4": [
+        "MapObjectItem"
+    ],
+    "Blueprint_ClothArmorHeat_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_PumpActionShotgun_3": [
+        "MapObjectItem"
+    ],
+    "Blueprint_FurArmorHeat_3": [
+        "MapObjectItem"
+    ],
+    "Blueprint_ClothArmorHeat_3": [
+        "MapObjectItem"
+    ],
+    "Blueprint_CopperArmor_3": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_Launcher_Default_3": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_CopperArmorHeat_2": [
+        "MapObjectItem"
+    ],
+    "Blueprint_ClothArmor_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_WeakerBow_3": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_BowGun_3": [
+        "MapObjectItem"
+    ],
+    "Blueprint_IronArmor_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_AquaJet": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_ClothArmorCold_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Accessory_HeatResist_1": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "Accessory_HP_1": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "SkillCard_BubbleShot": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_LockonLaser": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_PumpActionShotgun_2": [
+        "MapObjectItem"
+    ],
+    "Accessory_WorkSpeed_1": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "Blueprint_BowGun_4": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_AcidRain": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_IronHelmet_3": [
+        "MapObjectItem"
+    ],
+    "SkillCard_FireBlast": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalEgg_Earth_05": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalEgg_Normal_01": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalEgg_Fire_04": [
+        "MapObjectItem"
+    ],
+    "Pal_crystal_S": [
+        "MapObjectItem",
+        "BelongInfo",
+        "Common"
+    ],
+    "Egg": [
+        "MapObjectItem",
+        "CharacterItem",
+        "BelongInfo",
+        "Common"
+    ],
+    "Leather": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_DragonCanon": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "CopperOre": [
+        "MapObjectItem",
+        "CharacterItem",
+        "BelongInfo",
+        "Common"
+    ],
+    "SkillCard_ThunderBall": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Coal": [
+        "MapObjectItem",
+        "BelongInfo",
+        "CharacterItem",
+        "Common"
+    ],
+    "Wool": [
+        "MapObjectItem",
+        "BelongInfo",
+        "Common",
+        "CharacterItem"
+    ],
+    "Sulfur": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_PowerShot": [
+        "MapObjectItem"
+    ],
+    "SkillCard_MudShot": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_WindCutter": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "FireOrgan": [
+        "MapObjectItem",
+        "BelongInfo",
+        "Common"
+    ],
+    "SkillCard_WaterGun": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_FlareArrow": [
+        "MapObjectItem"
+    ],
+    "SkillCard_ThreeThunder": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_GrassTornado": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_LineThunder": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_FireSeed": [
+        "MapObjectItem"
+    ],
+    "SkillCard_DragonBreath": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_ShadowBall": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_ElecWave": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_SeedMachinegun": [
+        "MapObjectItem"
+    ],
+    "SkillCard_BlizzardLance": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_PoisonShot": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_DarkWave": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_FireBall": [
+        "MapObjectItem"
+    ],
+    "SkillCard_SolarBeam": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Cement": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Arrow_Fire": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Bow_Poison": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "MachineParts": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "LuxuryMedicines": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "CopperIngot": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Horn": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "bone": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Charcoal": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "MachineParts2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Honey": [
+        "MapObjectItem",
+        "BelongInfo",
+        "Common",
+        "FoodEquip",
+        "CharacterItem"
+    ],
+    "TomatoSeeds": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "IceOrgan": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "ElectricOrgan": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "StealIngot": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_IceBlade": [
+        "MapObjectItem"
+    ],
+    "WheatSeeds": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Flour": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "LettuceSeeds": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalSphere_Master": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalFluid": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "IronIngot": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "CarbonFiber": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Fiber": [
+        "MapObjectItem",
+        "BelongInfo",
+        "Common"
+    ],
+    "Venom": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Quartz": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "ElectronicCircuit": [
+        "MapObjectItem"
+    ],
+    "ShotgunBullet": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalEgg_Water_02": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Bow_Fire": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "ExplosiveBullet": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Cloth2": [
+        "MapObjectItem",
+        "BelongInfo",
+        "Common"
+    ],
+    "Cloth": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalItem_ToSell_05": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalCrystal_Ex": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalItem_ToSell_01": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Polymer": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Silicon": [
+        "MapObjectItem"
+    ],
+    "Milk": [
+        "MapObjectItem",
+        "BelongInfo",
+        "Common",
+        "CharacterItem"
+    ],
+    "JamBun": [
+        "MapObjectItem",
+        "FoodEquip",
+        "Common"
+    ],
+    "Cake": [
+        "MapObjectItem",
+        "Common",
+        "FoodEquip"
+    ],
+    "PalItem_CatMage": [
+        "MapObjectItem"
+    ],
+    "PalItem_PlantSlime": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalOil": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalItem_ColorfulBird": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Poppy": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalItem_CaptainPenguin": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalItem_ToSell_02": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalItem_ToSell_03": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalItem_ToSell_04": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalEgg_Ice_02": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalEgg_Ice_03": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Head012_1": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Head013_1": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Head015_1": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Head011_1": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Head004_1": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Head003_1": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_Head016_1": [
+        "MapObjectItem"
+    ],
+    "SkillCard_SpreadPulse": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_SeedMine": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_StoneShotgun": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_ThrowRock": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalEgg_Earth_02": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_PowerBall": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalEgg_Fire_02": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalEgg_Fire_01": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalEgg_Normal_02": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalEgg_Water_03": [
+        "MapObjectItem"
+    ],
+    "FurArmorCold": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "InkBullet": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Accessory_defense_3": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "Blueprint_IronHelmet_5": [
+        "MapObjectItem"
+    ],
+    "Accessory_AT_2": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "Pickaxe_Tier_02": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "Accessory_EarthResist_3": [
+        "MapObjectItem"
+    ],
+    "Blueprint_CopperHelmet_4": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_CopperArmorHeat_3": [
+        "MapObjectItem"
+    ],
+    "Blueprint_ClothArmorCold_3": [
+        "MapObjectItem"
+    ],
+    "Blueprint_IronArmorHeat_3": [
+        "MapObjectItem"
+    ],
+    "Blueprint_FurArmor_3": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Accessory_HeatResist_3": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "Accessory_WorkSpeed_2": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "Accessory_defense_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Shield_03": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "Musket": [
+        "MapObjectItem",
+        "WeaponLoadOut"
+    ],
+    "AssaultRifle_Default2": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "AssaultRifleBullet": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "FragGrenade": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Accessory_CoolResist_2": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "StatusPointResetSan": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_DragonWave": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_RootAttack": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_Flamethrower": [
+        "MapObjectItem"
+    ],
+    "SkillCard_FlareTornado": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_FrostBreath": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_GhostFlame": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalEgg_Dark_05": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "FurArmor_3": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Leaf_02": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_HandGun_Default_5": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Shield_02": [
+        "MapObjectItem",
+        "PlayerEquipArmor"
+    ],
+    "MakeshiftHandgun": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "Blueprint_FurArmorCold_3": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Electricity_01": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Accessory_HP_2": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "PalEgg_Electricity_03": [
+        "MapObjectItem"
+    ],
+    "CopperArmor": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "Torch": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "BowGun": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "Accessory_NormalResist_1": [
+        "MapObjectItem",
+        "PlayerEquipArmor"
+    ],
+    "HandGun_Default": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "Wheat": [
+        "MapObjectItem",
+        "BelongInfo",
+        "Common",
+        "FoodEquip",
+        "CharacterItem"
+    ],
+    "Tomato": [
+        "MapObjectItem",
+        "BelongInfo",
+        "Common",
+        "CharacterItem"
+    ],
+    "Lettuce": [
+        "MapObjectItem",
+        "BelongInfo",
+        "FoodEquip",
+        "Common"
+    ],
+    "Baked_Berries": [
+        "MapObjectItem",
+        "FoodEquip",
+        "Common"
+    ],
+    "Mushroom": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_DarkLaser": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_HydroPump": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_IcicleThrow": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_Thunderbolt": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_RockLance": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_SelfDestruct": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_LightningStrike": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_Inferno": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_BowGun_5": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_StealHelmet_5": [
+        "MapObjectItem"
+    ],
+    "Blueprint_StealArmorCold_5": [
+        "MapObjectItem"
+    ],
+    "Blueprint_PumpActionShotgun_5": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Launcher_Default_5": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_AssaultRifle_Default5": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_CopperArmorHeat_4": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_FurArmorHeat_4": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Launcher_Default_4": [
+        "MapObjectItem"
+    ],
+    "Blueprint_IronArmorCold_4": [
+        "MapObjectItem"
+    ],
+    "Blueprint_CopperArmor_5": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Leaf_05": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Dragon_05": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "GrapplingGun2": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "Accessory_ThunderResist_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Accessory_DarkResist_1": [
+        "MapObjectItem",
+        "PlayerEquipArmor"
+    ],
+    "WeakerBow_5": [
+        "MapObjectItem"
+    ],
+    "Bow_triple": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "FurArmor": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "GunPowder2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_PumpActionShotgun_4": [
+        "MapObjectItem"
+    ],
+    "BowGun_2": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "PumpActionShotgun_2": [
+        "MapObjectItem",
+        "WeaponLoadOut"
+    ],
+    "AssaultRifle_Default1": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "AssaultRifle_Default5": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "CopperArmorHeat": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "CopperArmorCold": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "CopperHelmet_4": [
+        "MapObjectItem"
+    ],
+    "SkillCard_WaterBall": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_CopperHelmet_5": [
+        "MapObjectItem"
+    ],
+    "Blueprint_FurArmorCold_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "BowGun_5": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "Shield_04": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "StealHelmet_5": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "IronArmorHeat_5": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "Blueprint_WeakerBow_4": [
+        "MapObjectItem"
+    ],
+    "Blueprint_ClothArmorHeat_4": [
+        "MapObjectItem"
+    ],
+    "Blueprint_IronArmorCold_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_DragonMeteor": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "MeatCutterKnife": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "DecalGun_4": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Launcher_Default_5": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "Accessory_AT_3": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "Glider_Super": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "Narcotic": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Dark_03": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalEgg_Fire_05": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Water_05": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Ice_05": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Normal_03": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalEgg_Ice_01": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Ice_04": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Water_01": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Dark_02": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Fire_03": [
+        "MapObjectItem"
+    ],
+    "Sweet": [
+        "MapObjectItem",
+        "BelongInfo",
+        "Common",
+        "FoodEquip"
+    ],
+    "Shield_01": [
+        "MapObjectItem",
+        "PlayerEquipArmor"
+    ],
+    "GrapplingGun": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "BowGun_Fire": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "Accessory_FireResist_1": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "Axe_Tier_00": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "FurArmorHeat": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "Axe_Tier_02": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "Blueprint_WeakerBow_5": [
+        "MapObjectItem"
+    ],
+    "WeakerBow_2": [
+        "MapObjectItem",
+        "WeaponLoadOut"
+    ],
+    "Axe_Tier_01": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "Glider_Old": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "Spear_2": [
+        "MapObjectItem",
+        "WeaponLoadOut"
+    ],
+    "SphereLauncher_Once": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "IronHelmet_3": [
+        "MapObjectItem",
+        "PlayerEquipArmor"
+    ],
+    "HandGun_Default_4": [
+        "MapObjectItem",
+        "WeaponLoadOut"
+    ],
+    "Pickaxe_Tier_01": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "Head001": [
+        "MapObjectItem",
+        "PlayerEquipArmor"
+    ],
+    "CopperHelmet_3": [
+        "MapObjectItem",
+        "PlayerEquipArmor"
+    ],
+    "Head002": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "Head006": [
+        "MapObjectItem"
+    ],
+    "CopperHelmet": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "Arrow_Poison": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "BowGun_Poison": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "FurHelmet_2": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Head005_1": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Head007_1": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Head008_1": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Head009_1": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Head014_1": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Head017_1": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Dark_04": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_IronArmorHeat_5": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Head001_1": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Head006_1": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Head002_1": [
+        "MapObjectItem"
+    ],
+    "StealArmorHeat": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "Blueprint_IronArmorHeat_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Pickaxe_Tier_00": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "Spear": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "WeakerBow": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "ClothArmor": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "Opium": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "BowGun_4": [
+        "MapObjectItem",
+        "WeaponLoadOut"
+    ],
+    "PalEgg_Dark_01": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Salad": [
+        "MapObjectItem",
+        "FoodEquip",
+        "Common"
+    ],
+    "Omelet": [
+        "MapObjectItem",
+        "FoodEquip"
+    ],
+    "FriedEggs": [
+        "MapObjectItem",
+        "Common",
+        "FoodEquip"
+    ],
+    "Pancake": [
+        "MapObjectItem",
+        "FoodEquip"
+    ],
+    "BakedMeat_Deer": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "BakedMeat_LazyCatfish": [
+        "MapObjectItem"
+    ],
+    "ChickenSaute": [
+        "MapObjectItem",
+        "Common",
+        "FoodEquip"
+    ],
+    "GrilledSheepHerbs": [
+        "MapObjectItem",
+        "Common",
+        "FoodEquip"
+    ],
+    "Eaglestew": [
+        "MapObjectItem"
+    ],
+    "MarinatedMushrooms": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalEgg_Leaf_01": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_Launcher_Default_2": [
+        "MapObjectItem"
+    ],
+    "Bat": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "Accessory_EarthResist_1": [
+        "MapObjectItem"
+    ],
+    "FragGrenade_Ice": [
+        "MapObjectItem"
+    ],
+    "GrapplingGun3": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "SingleShotRifle": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "Blueprint_FurHelmet_5": [
+        "MapObjectItem"
+    ],
+    "Bat2": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "PalEgg_Earth_01": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_StealHelmet_2": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_StealHelmet_3": [
+        "MapObjectItem"
+    ],
+    "Accessory_IceResist_2": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Leaf_04": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Electricity_04": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Leaf_03": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Earth_03": [
+        "MapObjectItem"
+    ],
+    "BakedMeat_CowPal": [
+        "MapObjectItem",
+        "FoodEquip"
+    ],
+    "BakedMeat_BerryGoat": [
+        "MapObjectItem"
+    ],
+    "BakedMeat_SakuraSaurus": [
+        "MapObjectItem"
+    ],
+    "BakedMeat_IceDeer": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "FragGrenade_Elec": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "RepairKit": [
+        "BelongInfo",
+        "MapObjectItem",
+        "Common"
+    ],
+    "PalSphere_Legend": [
+        "Common",
+        "MapObjectItem"
+    ],
+    "RifleBullet": [
+        "Common",
+        "MapObjectItem"
+    ],
+    "SkillUnlock_HawkBird": [
+        "Essential"
+    ],
+    "SkillUnlock_DreamDemon": [
+        "Essential"
+    ],
+    "SkillUnlock_Garm": [
+        "Essential",
+        "MapObjectItem"
+    ],
+    "SkillUnlock_Monkey": [
+        "Essential"
+    ],
+    "SkillUnlock_NaughtyCat": [
+        "Essential"
+    ],
+    "SkillUnlock_Carbunclo": [
+        "Essential"
+    ],
+    "SkillUnlock_FlyingManta": [
+        "Essential"
+    ],
+    "SkillUnlock_Kitsunebi": [
+        "Essential"
+    ],
+    "SkillUnlock_Deer": [
+        "Essential"
+    ],
+    "SkillUnlock_Penguin": [
+        "Essential"
+    ],
+    "SkillUnlock_WeaselDragon": [
+        "Essential"
+    ],
+    "SkillUnlock_Alpaca": [
+        "Essential"
+    ],
+    "SkillUnlock_FlowerDinosaur": [
+        "Essential"
+    ],
+    "SkillUnlock_BirdDragon": [
+        "Essential"
+    ],
+    "SkillUnlock_FlowerRabbit": [
+        "Essential"
+    ],
+    "SkillUnlock_DrillGame": [
+        "Essential"
+    ],
+    "AutoMealPouch_Tier1": [
+        "Essential"
+    ],
+    "SkillUnlock_HadesBird": [
+        "Essential"
+    ],
+    "SkillUnlock_ElecPanda": [
+        "Essential"
+    ],
+    "SkillUnlock_Suzaku": [
+        "Essential"
+    ],
+    "SkillUnlock_Horus": [
+        "Essential"
+    ],
+    "SkillUnlock_MopKing": [
+        "Essential"
+    ],
+    "SkillUnlock_Boar": [
+        "Essential"
+    ],
+    "SkillUnlock_WindChimes": [
+        "Essential"
+    ],
+    "SkillUnlock_KingAlpaca": [
+        "Essential"
+    ],
+    "SkillUnlock_SakuraSaurus": [
+        "Essential"
+    ],
+    "SkillUnlock_GhostBeast": [
+        "Essential"
+    ],
+    "AutoMealPouch_Tier3": [
+        "Essential"
+    ],
+    "AutoMealPouch_Tier2": [
+        "Essential"
+    ],
+    "SkillUnlock_Umihebi": [
+        "Essential"
+    ],
+    "AutoMealPouch_Tier4": [
+        "Essential"
+    ],
+    "Lantern": [
+        "Essential"
+    ],
+    "SkillUnlock_Manticore_Dark": [
+        "Essential"
+    ],
+    "SkillUnlock_ThunderBird": [
+        "Essential"
+    ],
+    "SkillUnlock_RaijinDaughter": [
+        "Essential"
+    ],
+    "SkillUnlock_SkyDragon": [
+        "Essential"
+    ],
+    "SkillUnlock_ColorfulBird": [
+        "Essential"
+    ],
+    "SkillUnlock_Kirin": [
+        "Essential"
+    ],
+    "SkillUnlock_FengyunDeeper": [
+        "Essential"
+    ],
+    "SkillUnlock_Umihebi_Fire": [
+        "Essential"
+    ],
+    "AutoMealPouch_Tier5": [
+        "Essential"
+    ],
+    "SkillUnlock_BlackGriffon": [
+        "Essential"
+    ],
+    "SkillUnlock_JetDragon": [
+        "Essential",
+        "MapObjectItem"
+    ],
+    "SkillUnlock_BlackMetalDragon": [
+        "Essential"
+    ],
+    "SkillUnlock_GrassPanda_Electric": [
+        "Essential"
+    ],
+    "StealArmorCold_5": [
+        "PlayerEquipArmor",
+        "MapObjectItem",
+        "Common"
+    ],
+    "HandGun_Default_5": [
+        "WeaponLoadOut",
+        "MapObjectItem",
+        "Common"
+    ],
+    "AssaultRifle_Default3": [
+        "WeaponLoadOut",
+        "MapObjectItem"
+    ],
+    "PumpActionShotgun_3": [
+        "WeaponLoadOut",
+        "MapObjectItem"
+    ],
+    "Blueprint_CopperArmorCold_4": [
+        "MapObjectItem"
+    ],
+    "Blueprint_CopperArmorCold_3": [
+        "MapObjectItem"
+    ],
+    "Blueprint_ClothArmor_4": [
+        "MapObjectItem"
+    ],
+    "Blueprint_CopperArmor_4": [
+        "MapObjectItem"
+    ],
+    "FriedKelpie": [
+        "MapObjectItem",
+        "FoodEquip"
+    ],
+    "Hamburger_2": [
+        "MapObjectItem",
+        "BelongInfo",
+        "FoodEquip",
+        "Common"
+    ],
+    "Chowder": [
+        "MapObjectItem",
+        "Common",
+        "FoodEquip"
+    ],
+    "IronArmorHeat": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "Accessory_AquaResist_1": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "Blueprint_FurHelmet_4": [
+        "MapObjectItem"
+    ],
+    "Blueprint_FurArmor_5": [
+        "MapObjectItem"
+    ],
+    "Blueprint_StealArmor_2": [
+        "MapObjectItem"
+    ],
+    "Blueprint_StealArmorCold_2": [
+        "MapObjectItem"
+    ],
+    "Blueprint_StealHelmet_4": [
+        "MapObjectItem"
+    ],
+    "Blueprint_StealArmorCold_3": [
+        "MapObjectItem"
+    ],
+    "TechnologyBook_G3": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "GrapplingGun4": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "Blueprint_StealArmorHeat_5": [
+        "MapObjectItem"
+    ],
+    "Blueprint_IronArmorCold_5": [
+        "MapObjectItem"
+    ],
+    "SphereLauncher": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "HomingSphereLauncher": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "FragGrenade_Fire": [
+        "MapObjectItem",
+        "WeaponLoadOut"
+    ],
+    "Accessory_HP_3": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "PumpActionShotgun_5": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "Launcher_Default_2": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "StealArmorCold": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "Head005": [
+        "MapObjectItem"
+    ],
+    "Head016": [
+        "MapObjectItem"
+    ],
+    "Head015": [
+        "MapObjectItem"
+    ],
+    "Accessory_WorkSpeed_3": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "Accessory_AquaResist_3": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Accessory_LeafResist_2": [
+        "MapObjectItem",
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "Accessory_DarkResist_2": [
+        "MapObjectItem",
+        "PlayerEquipArmor"
+    ],
+    "Head007": [
+        "MapObjectItem"
+    ],
+    "Accessory_LeafResist_1": [
+        "MapObjectItem"
+    ],
+    "PumpActionShotgun": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "Glider_Good": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "HandGun_Default_3": [
+        "MapObjectItem",
+        "WeaponLoadOut"
+    ],
+    "BakedMeat_GrassMammoth": [
+        "MapObjectItem",
+        "FoodEquip",
+        "Common"
+    ],
+    "IronArmorCold": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "Head001_5": [
+        "MapObjectItem"
+    ],
+    "FurHelmet_5": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Head002_5": [
+        "MapObjectItem"
+    ],
+    "Head003_5": [
+        "MapObjectItem"
+    ],
+    "Head004_5": [
+        "MapObjectItem"
+    ],
+    "Head007_5": [
+        "MapObjectItem"
+    ],
+    "Head017_5": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "SkillCard_Psychokinesis": [
+        "MapObjectItem"
+    ],
+    "PalEgg_Electricity_05": [
+        "MapObjectItem"
+    ],
+    "SkillUnlock_IceHorse": [
+        "MapObjectItem",
+        "Essential"
+    ],
+    "SkillUnlock_BlackCentaur": [
+        "MapObjectItem",
+        "Essential"
+    ],
+    "SkillUnlock_SaintCentaur": [
+        "MapObjectItem",
+        "Essential"
+    ],
+    "DecalGun_1": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Pal_crystal_L": [
+        "MapObjectItem"
+    ],
+    "Spear_ForestBoss": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "ElecBaton": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "Meat_LazyCatfish": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Meat_GrassMammoth": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "DecalGun_5": [
+        "Common",
+        "MapObjectItem"
+    ],
+    "SkillUnlock_FairyDragon": [
+        "Essential"
+    ],
+    "SkillUnlock_GrassMammoth": [
+        "Essential"
+    ],
+    "SkillUnlock_BlueDragon": [
+        "Essential"
+    ],
+    "SkillUnlock_GrassPanda": [
+        "Essential"
+    ],
+    "SkillUnlock_Suzaku_Water": [
+        "Essential"
+    ],
+    "SkillUnlock_LazyDragon_Electric": [
+        "Essential"
+    ],
+    "SkillUnlock_Yeti_Grass": [
+        "Essential"
+    ],
+    "SkillUnlock_Eagle": [
+        "Essential"
+    ],
+    "StealArmorHeat_5": [
+        "PlayerEquipArmor",
+        "Common",
+        "MapObjectItem"
+    ],
+    "ClothArmorCold": [
+        "Common",
+        "PlayerEquipArmor",
+        "MapObjectItem"
+    ],
+    "MindControlDrug": [
+        "Common",
+        "MapObjectItem"
+    ],
+    "FurHelmet": [
+        "PlayerEquipArmor",
+        "Common",
+        "MapObjectItem"
+    ],
+    "Head003": [
+        "PlayerEquipArmor",
+        "MapObjectItem"
+    ],
+    "BakedMushroom": [
+        "Common"
+    ],
+    "Meat_SheepBall": [
+        "Common",
+        "MapObjectItem"
+    ],
+    "Meat_ChickenPal": [
+        "Common"
+    ],
+    "Meat_Deer": [
+        "Common",
+        "FoodEquip"
+    ],
+    "SkillUnlock_Serpent": [
+        "Essential"
+    ],
+    "SkillUnlock_KingAlpaca_Ice": [
+        "Essential"
+    ],
+    "SkillUnlock_IceHorse_Dark": [
+        "Essential"
+    ],
+    "Accessory_CoolResist_3": [
+        "PlayerEquipArmor",
+        "Common",
+        "MapObjectItem"
+    ],
+    "SkillUnlock_LazyDragon": [
+        "Essential"
+    ],
+    "SkillUnlock_Yeti": [
+        "Essential"
+    ],
+    "SkillUnlock_GrassMammoth_Ice": [
+        "Essential"
+    ],
+    "SkillUnlock_KingBahamut": [
+        "Essential"
+    ],
+    "SkillUnlock_Manticore": [
+        "Essential"
+    ],
+    "Head017": [
+        "Common",
+        "PlayerEquipArmor",
+        "MapObjectItem"
+    ],
+    "StealHelmet_3": [
+        "PlayerEquipArmor"
+    ],
+    "FurHelmet_4": [
+        "PlayerEquipArmor"
+    ],
+    "Head004": [
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "SkillUnlock_FireKirin": [
+        "Essential"
+    ],
+    "FurArmorCold_2": [
+        "PlayerEquipArmor"
+    ],
+    "PalSphere_Debug": [
+        "Common"
+    ],
+    "Sword": [
+        "Common",
+        "WeaponLoadOut",
+        "MapObjectItem"
+    ],
+    "DecalGun_3": [
+        "Common"
+    ],
+    "DecalGun_2": [
+        "Common"
+    ],
+    "SkillUnlock_AmaterasuWolf": [
+        "Essential"
+    ],
+    "SkillUnlock_BadCatgirl": [
+        "Essential"
+    ],
+    "SkillUnlock_BirdDragon_Ice": [
+        "Essential"
+    ],
+    "SkillUnlock_BlackFurDragon": [
+        "Essential"
+    ],
+    "SkillUnlock_DarkMutant": [
+        "Essential"
+    ],
+    "SkillUnlock_Deer_Ground": [
+        "Essential"
+    ],
+    "SkillUnlock_ElecLion": [
+        "Essential"
+    ],
+    "SkillUnlock_FairyDragon_Water": [
+        "Essential"
+    ],
+    "SkillUnlock_FeatherOstrich": [
+        "Essential"
+    ],
+    "SkillUnlock_FireKirin_Dark": [
+        "Essential"
+    ],
+    "SkillUnlock_FlameBuffalo": [
+        "Essential"
+    ],
+    "SkillUnlock_FlowerDinosaur_Electric": [
+        "Essential"
+    ],
+    "SkillUnlock_GoldenHorse": [
+        "Essential"
+    ],
+    "SkillUnlock_GuardianDog": [
+        "Essential"
+    ],
+    "SkillUnlock_Hedgehog": [
+        "Essential"
+    ],
+    "SkillUnlock_Hedgehog_Ice": [
+        "Essential"
+    ],
+    "SkillUnlock_IceDeer": [
+        "Essential"
+    ],
+    "SkillUnlock_NegativeOctopus": [
+        "Essential"
+    ],
+    "SkillUnlock_SakuraSaurus_Water": [
+        "Essential"
+    ],
+    "SkillUnlock_Serpent_Ground": [
+        "Essential"
+    ],
+    "SkillUnlock_ThunderDog": [
+        "Essential"
+    ],
+    "SkillUnlock_VolcanicMonster": [
+        "Essential"
+    ],
+    "SkillUnlock_VolcanicMonster_Ice": [
+        "Essential"
+    ],
+    "SkillUnlock_WindChimes_Ice": [
+        "Essential"
+    ],
+    "SkillUnlock_WingGolem": [
+        "Essential"
+    ],
+    "CheeseBurger_2": [
+        "FoodEquip",
+        "MapObjectItem",
+        "Common"
+    ],
+    "StealArmor_5": [
+        "PlayerEquipArmor",
+        "MapObjectItem"
+    ],
+    "Glider_Legendary": [
+        "PlayerEquipArmor",
+        "MapObjectItem"
+    ],
+    "IronHelmet": [
+        "PlayerEquipArmor",
+        "MapObjectItem"
+    ],
+    "StealArmor": [
+        "PlayerEquipArmor",
+        "MapObjectItem"
+    ],
+    "HotDog_2": [
+        "Common",
+        "MapObjectItem"
+    ],
+    "Launcher_Default_4": [
+        "WeaponLoadOut"
+    ],
+    "FurArmorCold_4": [
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "IronArmorCold_2": [
+        "Common"
+    ],
+    "IronHelmet_5": [
+        "PlayerEquipArmor"
+    ],
+    "Launcher_Default": [
+        "WeaponLoadOut",
+        "MapObjectItem"
+    ],
+    "Blueprint_StealArmorHeat_3": [
+        "Common",
+        "MapObjectItem"
+    ],
+    "IronArmorCold_5": [
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "SkillUnlock_RedArmorBird": [
+        "Essential"
+    ],
+    "StealArmorCold_3": [
+        "PlayerEquipArmor"
+    ],
+    "Accessory_LeafResist_3": [
+        "Common"
+    ],
+    "CopperHelmet_2": [
+        "PlayerEquipArmor",
+        "MapObjectItem"
+    ],
+    "ClothArmor_5": [
+        "PlayerEquipArmor",
+        "MapObjectItem",
+        "Common"
+    ],
+    "Head012": [
+        "PlayerEquipArmor"
+    ],
+    "Meat_Boar": [
+        "Common",
+        "MapObjectItem"
+    ],
+    "Meat_CowPal": [
+        "Common"
+    ],
+    "FurArmor_5": [
+        "Common",
+        "MapObjectItem",
+        "PlayerEquipArmor"
+    ],
+    "CopperArmorCold_2": [
+        "Common",
+        "PlayerEquipArmor"
+    ],
+    "CopperArmorHeat_2": [
+        "PlayerEquipArmor",
+        "MapObjectItem",
+        "Common"
+    ],
+    "BakedMeat_SheepBall": [
+        "Common",
+        "MapObjectItem"
+    ],
+    "ClothArmorHeat": [
+        "PlayerEquipArmor",
+        "MapObjectItem"
+    ],
+    "Meat_BerryGoat": [
+        "Common",
+        "MapObjectItem"
+    ],
+    "PalSphere_Robbery": [
+        "Common"
+    ],
+    "CopperArmorCold_5": [
+        "MapObjectItem",
+        "PlayerEquipArmor"
+    ],
+    "ClothArmorCold_5": [
+        "MapObjectItem"
+    ],
+    "Blueprint_ClothArmorCold_5": [
+        "MapObjectItem"
+    ],
+    "ClothArmorCold_2": [
+        "MapObjectItem"
+    ],
+    "FurArmor_2": [
+        "MapObjectItem"
+    ],
+    "HandGun_Default_2": [
+        "MapObjectItem",
+        "Common",
+        "WeaponLoadOut"
+    ],
+    "Accessory_AquaResist_2": [
+        "MapObjectItem"
+    ],
+    "Blueprint_CopperArmorCold_5": [
+        "MapObjectItem"
+    ],
+    "IronArmor": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "IronHelmet_2": [
+        "MapObjectItem",
+        "PlayerEquipArmor"
+    ],
+    "PalEgg_Dragon_04": [
+        "MapObjectItem"
+    ],
+    "Blueprint_IronArmorCold_3": [
+        "MapObjectItem"
+    ],
+    "DoubleBarrelShotgun": [
+        "WeaponLoadOut",
+        "MapObjectItem"
+    ],
+    "PumpActionShotgun_4": [
+        "WeaponLoadOut",
+        "MapObjectItem"
+    ],
+    "Meat_SakuraSaurus": [
+        "Common"
+    ],
+    "Head008": [
+        "PlayerEquipArmor"
+    ],
+    "Accessory_DragonResist_2": [
+        "MapObjectItem"
+    ],
+    "StealArmorHeat_4": [
+        "MapObjectItem"
+    ],
+    "CopperArmorHeat_5": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "AssaultRifle_Default4": [
+        "MapObjectItem",
+        "WeaponLoadOut"
+    ],
+    "FriedChicken": [
+        "MapObjectItem",
+        "FoodEquip"
+    ],
+    "DeerStew": [
+        "MapObjectItem"
+    ],
+    "DeerLocoMoco": [
+        "MapObjectItem"
+    ],
+    "StealArmorCold_4": [
+        "MapObjectItem"
+    ],
+    "MushroomSoup": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Head010_1": [
+        "MapObjectItem"
+    ],
+    "BowGun_3": [
+        "MapObjectItem",
+        "WeaponLoadOut",
+        "Common"
+    ],
+    "FurArmor_4": [
+        "MapObjectItem"
+    ],
+    "Blueprint_ClothArmorCold_4": [
+        "MapObjectItem"
+    ],
+    "Blueprint_StealArmor_3": [
+        "MapObjectItem"
+    ],
+    "Blueprint_IronArmor_4": [
+        "MapObjectItem"
+    ],
+    "Blueprint_StealArmorHeat_2": [
+        "MapObjectItem"
+    ],
+    "Accessory_IceResist_3": [
+        "MapObjectItem"
+    ],
+    "StealHelmet_2": [
+        "MapObjectItem"
+    ],
+    "Accessory_EarthResist_2": [
+        "MapObjectItem"
+    ],
+    "StealArmorCold_2": [
+        "MapObjectItem",
+        "PlayerEquipArmor"
+    ],
+    "StealHelmet": [
+        "MapObjectItem",
+        "PlayerEquipArmor"
+    ],
+    "IronArmor_3": [
+        "MapObjectItem"
+    ],
+    "Accessory_IceResist_1": [
+        "MapObjectItem"
+    ],
+    "Blueprint_AssaultRifle_Default4": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "Blueprint_IronArmorHeat_4": [
+        "MapObjectItem"
+    ],
+    "Accessory_NormalResist_2": [
+        "MapObjectItem",
+        "PlayerEquipArmor"
+    ],
+    "StealArmorHeat_2": [
+        "MapObjectItem",
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "Blueprint_FurArmor_4": [
+        "MapObjectItem"
+    ],
+    "WeakerBow_3": [
+        "MapObjectItem"
+    ],
+    "Blueprint_StealArmorHeat_4": [
+        "MapObjectItem"
+    ],
+    "Spear_3": [
+        "WeaponLoadOut"
+    ],
+    "BakedMeat_ChickenPal": [
+        "FoodEquip"
+    ],
+    "CopperArmor_3": [
+        "PlayerEquipArmor",
+        "MapObjectItem"
+    ],
+    "IronArmor_2": [
+        "PlayerEquipArmor"
+    ],
+    "CopperArmor_4": [
+        "Common"
+    ],
+    "StealArmor_2": [
+        "PlayerEquipArmor",
+        "Common"
+    ],
+    "FurHelmet_3": [
+        "PlayerEquipArmor",
+        "MapObjectItem"
+    ],
+    "IronArmorHeat_2": [
+        "Common"
+    ],
+    "PV_Glider_Manta": [
+        "PlayerEquipArmor"
+    ],
+    "Spear_QueenBee": [
+        "MapObjectItem",
+        "WeaponLoadOut"
+    ],
+    "CopperArmorHeat_4": [
+        "MapObjectItem"
+    ],
+    "Blueprint_StealArmor_5": [
+        "MapObjectItem"
+    ],
+    "FriedVegetables": [
+        "Common"
+    ],
+    "FurArmorCold_3": [
+        "Common"
+    ],
+    "Meat_IceDeer": [
+        "Common"
+    ],
+    "Launcher_Default_3": [
+        "MapObjectItem"
+    ],
+    "IronArmorCold_4": [
+        "PlayerEquipArmor"
+    ],
+    "Pizza": [
+        "MapObjectItem",
+        "FoodEquip"
+    ],
+    "Blueprint_StealArmorCold_4": [
+        "MapObjectItem"
+    ],
+    "Blueprint_FurArmorCold_4": [
+        "MapObjectItem"
+    ],
+    "IronArmor_4": [
+        "MapObjectItem",
+        "PlayerEquipArmor"
+    ],
+    "IronArmorHeat_3": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "ClothArmorCold_4": [
+        "MapObjectItem"
+    ],
+    "Pickaxe_Tier_03": [
+        "MapObjectItem"
+    ],
+    "Blueprint_Head017_3": [
+        "MapObjectItem"
+    ],
+    "CopperArmorCold_3": [
+        "MapObjectItem",
+        "Common"
+    ],
+    "StealArmor_3": [
+        "MapObjectItem",
+        "PlayerEquipArmor"
+    ],
+    "Accessory_FireResist_2": [
+        "MapObjectItem"
+    ],
+    "Meat_Eagle": [
+        "Common"
+    ],
+    "CopperArmorHeat_3": [
+        "Common"
+    ],
+    "CopperArmor_5": [
+        "PlayerEquipArmor"
+    ],
+    "HotMilk": [
+        "Common",
+        "MapObjectItem"
+    ],
+    "Relic": [
+        "Essential"
+    ],
+    "Blueprint_ClothArmorHeat_5": [
+        "MapObjectItem"
+    ],
+    "Bow_Triple": [
+        "MapObjectItem"
+    ]
+}

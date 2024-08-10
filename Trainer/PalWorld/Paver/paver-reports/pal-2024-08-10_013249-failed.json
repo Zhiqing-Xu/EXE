@@ -1,0 +1,30 @@
+{
+  "summary": {
+    "about-summary": "This is just general information about your primary world save, and some aggregate stats. If there's anything else in particular you'd like to see here or throughout the report, please let me know!",
+    "need-help-or-have-questions": "If you need help or have questions, please reach out to me on Discord (https://discord.gg/Zy3h6p7pA9) or open an issue on GitHub. I'm happy to help!",
+    "paver": {
+      "runtimeStartedAt": "pal-2024-08-10_013249",
+      "runtimeCompletedAt": "2024-08-10T05:33:08.024Z"
+    },
+    "pythonVersion": "Python 3.9.12",
+    "configLocation": "./config.json",
+    "targetGameDirectory": "D:/PalWorld_2/steamapps/common/PalServer/Pal/Saved/SaveGames/0/1E65792E4B9305155AB9C0AAD72FE9B6",
+    "conversionSettings": {
+      "skipSavJsonConversion": false,
+      "cheahjsSaveToolsUrl": "https://github.com/cheahjs/palworld-save-tools/releases/download/v0.18.0/palworld-save-tools-windows-v0.18.0.zip",
+      "cheahjsSaveToolsInstallPath": "./helpers/cheahjs-save-tools"
+    }
+  },
+  "criticalErrors": [
+    "Critical error encountered when converting Level.sav to JSON: Error: Command failed: python \"./helpers/cheahjs-save-tools/convert.py\" \"D:/PalWorld_2/steamapps/common/PalServer/Pal/Saved/SaveGames/0/1E65792E4B9305155AB9C0AAD72FE9B6/Level.sav\"\nTraceback (most recent call last):\r\n  File \"C:\\Users\\cesiu\\Desktop\\Github_all\\Git_EXE\\Trainer\\PalWorld\\Paver\\helpers\\cheahjs-save-tools\\convert.py\", line 160, in <module>\r\n    main()\r\n  File \"C:\\Users\\cesiu\\Desktop\\Github_all\\Git_EXE\\Trainer\\PalWorld\\Paver\\helpers\\cheahjs-save-tools\\convert.py\", line 71, in main\r\n    convert_sav_to_json(\r\n  File \"C:\\Users\\cesiu\\Desktop\\Github_all\\Git_EXE\\Trainer\\PalWorld\\Paver\\helpers\\cheahjs-save-tools\\convert.py\", line 114, in convert_sav_to_json\r\n    gvas_file = GvasFile.read(\r\n  File \"C:\\Users\\cesiu\\Desktop\\Github_all\\Git_EXE\\Trainer\\PalWorld\\Paver\\helpers\\cheahjs-save-tools\\palworld_save_tools\\gvas.py\", line 131, in read\r\n    gvas_file.properties = reader.properties_until_end()\r\n  File \"C:\\Users\\cesiu\\Desktop\\Github_all\\Git_EXE\\Trainer\\PalWorld\\Paver\\helpers\\cheahjs-save-tools\\palworld_save_tools\\archive.py\", line 279, in properties_until_end\r\n    properties[name] = self.property(type_name, size, f\"{path}.{name}\")\r\n  File \"C:\\Users\\cesiu\\Desktop\\Github_all\\Git_EXE\\Trainer\\PalWorld\\Paver\\helpers\\cheahjs-save-tools\\palworld_save_tools\\archive.py\", line 292, in property\r\n    value = self.struct(path)\r\n  File \"C:\\Users\\cesiu\\Desktop\\Github_all\\Git_EXE\\Trainer\\PalWorld\\Paver\\helpers\\cheahjs-save-tools\\palworld_save_tools\\archive.py\", line 403, in struct\r\n    value = self.struct_value(struct_type, path)\r\n  File \"C:\\Users\\cesiu\\Desktop\\Github_all\\Git_EXE\\Trainer\\PalWorld\\Paver\\helpers\\cheahjs-save-tools\\palworld_save_tools\\archive.py\", line 430, in struct_value\r\n    return self.properties_until_end(path)\r\n  File \"C:\\Users\\cesiu\\Desktop\\Github_all\\Git_EXE\\Trainer\\PalWorld\\Paver\\helpers\\cheahjs-save-tools\\palworld_save_tools\\archive.py\", line 279, in properties_until_end\r\n    properties[name] = self.property(type_name, size, f\"{path}.{name}\")\r\n  File \"C:\\Users\\cesiu\\Desktop\\Github_all\\Git_EXE\\Trainer\\PalWorld\\Paver\\helpers\\cheahjs-save-tools\\palworld_save_tools\\archive.py\", line 289, in property\r\n    value = self.custom_properties[path][0](self, type_name, size, path)\r\n  File \"C:\\Users\\cesiu\\Desktop\\Github_all\\Git_EXE\\Trainer\\PalWorld\\Paver\\helpers\\cheahjs-save-tools\\palworld_save_tools\\rawdata\\map_object.py\", line 21, in decode\r\n    map_object[\"Model\"][\"value\"][\"RawData\"][\"value\"] = map_model.decode_bytes(\r\n  File \"C:\\Users\\cesiu\\Desktop\\Github_all\\Git_EXE\\Trainer\\PalWorld\\Paver\\helpers\\cheahjs-save-tools\\palworld_save_tools\\rawdata\\map_model.py\", line 42, in decode_bytes\r\n    raise Exception(\"Warning: EOF not reached\")\r\nException: Warning: EOF not reached\r\n"
+  ],
+  "warnings": [],
+  "changelog": [],
+  "playerData": {
+    "about-playerData": "This is where we'll store some general player data, and any applicable notes/warnings we find over time. If there's anything else in particular you'd like to see here or throughout the report, please let me know!"
+  },
+  "levelSavMetaData": {
+    "header": null,
+    "trailer": null
+  }
+}
